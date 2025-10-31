@@ -1,0 +1,1 @@
+- [N9E architecture](https://lucid.app/lucidchart/f328617b-e8ff-49a5-85c0-2bc6577aec5b/edit?invitationId=inv_36d7034b-1599-4e6f-bb9e-c45f04a3ede2)
