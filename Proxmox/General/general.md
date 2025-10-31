@@ -6,3 +6,4 @@
 * **Linux Containers (LXC)** là công nghệ ảo hóa ở mức độ OS level, **LXC** có thể khởi chạy nhiều linux container trên host linux đơn lẻ, dùng chung kernel với linux đơn lẻ đó. Cách ly qua namespace \+ cgroups.  
 * **Về hiệu năng:** Container có hiệu năng cao hơn và nhẹ hơn do dùng chung Proxmox's Linux Kernel; 
 
+![](images/VM_Container.png)
