@@ -1,4 +1,4 @@
-*SƠ LƯỢC VỀ PROXMOX
+# SƠ LƯỢC VỀ PROXMOX
 
 **Proxmox Virtual Environment** là giải pháp quản lí ảo hóa mã nguồn mở. Phát triển dựa trên QEMU/KVM và LXC. Tại đây ta có thể quản lí VM, Linux Container, HA Cluster, Storage và Network thông qua 1 giao diện Web UI tập trung.  
 **Proxmox VE** phát triển dựa trên Debian và Linux kernel tùy chỉnh.   
