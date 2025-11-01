@@ -4,6 +4,11 @@
 * **KVM (Kernel-based Virtual Machine)** là công nghệ ảo hóa được tích hợp vào kernel với dạng module phục vụ cho việc tạo và khởi chạy Linux, Window VMs với phần tài nguyên tách biệt cho riêng VM đó, chạy kernel của riêng nó.  
 * **QEMU** là thành phần để quản lý các tài nguyên được ảo hóa, điều khiển quân cờ **"KVM (Kernel-based Virtual Machine)"** ảo hóa tài nguyên theo yêu cầu.  
 * **Linux Containers (LXC)** là công nghệ ảo hóa ở mức độ OS level, **LXC** có thể khởi chạy nhiều linux container trên host linux đơn lẻ, dùng chung kernel với linux đơn lẻ đó. Cách ly qua namespace \+ cgroups.  
-* **Về hiệu năng:** Container có hiệu năng cao hơn và nhẹ hơn do dùng chung Proxmox's Linux Kernel; 
+* **Về hiệu năng:** Container có hiệu năng cao hơn và nhẹ hơn do dùng chung Proxmox's Linux Kernel. Kernel đóng vai trò là trung gian điều phối tài nguyên (CPU, RAM, Storage, Network,...) đến các tiến trình; được vận hành bởi các module với các thuật toán điều khiển; vì thế, khi đi qua nhiều lớp kernel thì sẽ làm giảm hiệu năng của các tiến trình hoạt động trên VM, đặc biệt là các tiến trình yêu cầu nhiều tài nguyên.
 
 ![](../images/VM_Container.png)
+
+# Câu hỏi ?
+
+## Tại sao có thể khởi tạo Window VM mà không thể khởi tạo Window Container trên Proxmox ?
+* Tại vì **Window VM** khi được khởi tạo trên **Proxmox** thì chạy trên Window Kernel của riêng nó; còn container dùng chung Proxmox's Linux Kernel, mà các window app thì không thể chạy trên Proxmox's Linux Kernel được. Vì thế **Window Container** chỉ có thể chạy trên Window OS.
