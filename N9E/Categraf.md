@@ -1,4 +1,4 @@
-# Các bước cài đặt agent Categraf khi triển khai [N9E Architecture](../N9E/General/general.md)
+# Các bước cài đặt và cấu hình agent Categraf khi triển khai [N9E Architecture](../N9E/General/general.md)
 
 * Bước 1: Tải tệp categraf-v0.4.22-linux-amd64.tar.gz từ [Categraf release](https://github.com/flashcatcloud/categraf/releases).
 ```
@@ -197,6 +197,7 @@ systemctl status categraf
 ```
 journalctl -u categraf -f
 ```
+
 
 
 
