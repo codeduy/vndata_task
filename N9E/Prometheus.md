@@ -1,25 +1,26 @@
 # Các bước cài đặt và cấu hình Prometheus - Monitoring System khi triển khai [N9E Architecture](../N9E/General/general.md)
 
+* Bước 1: Tải gói Prometheus cho Linux tại [Prometheus Release](https://github.com/prometheus/prometheus/releases/)
 ```
 wget https://github.com/prometheus/prometheus/releases/download/v3.7.3/prometheus-3.7.3.linux-amd64.tar.gz
 ```
-
+* Bước 2: Giải nén file Prometheus
 ```
 tar -xf prometheus-3.7.3.linux-amd64.tar.gz
 ```
-
+* Bước 3: Truy cập vào thư mục giải nén
 ```
 cd prometheus-3.7.3.linux-amd64
 ```
-
+* Bước 4: Di chuyển các file cần thiết đến thư mục chuẩn /opt
 ```
 mkdir -p /opt/prometheus && mv prometheus prometheus.yml promtool /opt/prometheus && cd && cd /opt/prometheus
 ```
-
+* Bước 5: Mở file cấu hình Prometheus
 ```
 nano prometheus.yml 
 ```
-
+* Bước 6: Cấu hình Prometheus
 ```
 # my global config
 global:
@@ -54,11 +55,11 @@ scrape_configs:
         labels:
           app: "prometheus"
 ```
-
+* Bước 7: Tạo file service cho Prometheus
 ```
 nano /etc/systemd/system/prometheus.service
 ```
-
+* Bước 8: Dán nội dung cấu hình systemd
 ```
 [Unit]
 Description=Prometheus Monitoring Service
@@ -84,13 +85,14 @@ SyslogIdentifier=prometheus
 [Install]
 WantedBy=multi-user.target
 ```
-
+* Bước 9: Kích hoạt và khởi chạy Prometheus
 ```
 systemctl enable --now prometheus
 ```
-
+* Bước 10: Kiểm tra trạng thái hoạt động
 ```
 systemctl status prometheus
 journalctl -u prometheus -f
 ```
+
 
