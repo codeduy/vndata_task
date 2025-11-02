@@ -1,22 +1,24 @@
 # Các bước cài đặt và cấu hình Grafana Alloy - Observability Agent khi triển khai [N9E Architecture](../N9E/General/general.md)
+
+* Bước 1: Thêm repository chính thức của Grafana
 ```
 sudo mkdir -p /etc/apt/keyrings/
 wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
 ```
-
+* Bước 2: Cập nhật danh sách package
 ```
 sudo apt-get update
 ```
-
+* Bước 3: Cài đặt Grafana Alloy
 ```
 sudo apt-get install alloy
 ```
-
+* Bước 4: Mở file cấu hình chính
 ```
 nano /etc/alloy/config.alloy
 ```
-
+* Bước 5: Cấu hình Alloy để gửi Metrics & Logs
 ```
 // =======================
 // METRICS -> Prometheus
@@ -74,15 +76,16 @@ loki.write "grafana_loki" {
   }
 }
 ```
-
+* Bước 6: Kích hoạt và khởi chạy Alloy
 ```
 sudo systemctl enable --now alloy.service
 ```
-
+* Bước 7: Kiểm tra trạng thái và theo dõi log
 ```
 sudo systemctl status alloy
 sudo journalctl -u alloy -f
 ```
+
 
 
 
