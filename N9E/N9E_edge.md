@@ -1,25 +1,26 @@
 # Các bước cài đặt và cấu hình N9E trên n9e-edge VM khi triển khai [N9E Architecture](../N9E/General/general.md)
 
+* Bước 1: Tạo thư mục chứa và truy cập
 ```
 cd /opt && mkdir n9e-edge && cd n9e-edge
 ```
-
+* Bước 2: Tải file binary của N9E tại [N9E Release](https://github.com/ccfos/nightingale/releases)
 ```
 wget https://github.com/ccfos/nightingale/releases/download/v8.4.0/n9e-v8.4.0-linux-amd64.tar.gz
 ```
-
+* Bước 3: Giải nén gói vừa tải
 ```
 tar -xf n9e-v8.4.0-linux-amd64.tar.gz
 ```
-
+* Bước 4: Xóa file nén để dọn dẹp
 ```
 rm -rf n9e-v8.4.0-linux-amd64.tar.gz
 ```
-
+* Bước 5: Mở file cấu hình chính
 ```
 cd etc/edge && nano edge.toml
 ```
-
+* Bước 6: Cấu hình N9E Edge
 ```
 [Global]
 RunMode = "release"
@@ -160,11 +161,11 @@ RedisType = "standalone"
 # SentinelUsername = ""
 # SentinelPassword = ""
 ```
-
+* Bước 7: Tạo service file cho N9E Edge
 ```
 nano /etc/systemd/system/n9e-edge.service
 ```
-
+* Bước 8: Dán nội dung cấu hình systemd
 ```
 Unit]
 Description=Nightingale Edge Service
@@ -186,12 +187,13 @@ SyslogIdentifier=n9e-edge
 [Install]
 WantedBy=multi-user.target
 ```
-
+* Bước 9: Enable và khởi chạy N9E Edge
 ```
 systemctl enable --now n9e-edge
 ```
-
+* Bước 10: Kiểm tra hoạt động
 ```
 systemctl status n9e-edge
 journalctl -u n9e-edge -f
 ```
+
