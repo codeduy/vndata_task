@@ -1,17 +1,18 @@
 # Các bước cài đặt và cấu hình Grafana Loki - Log Aggregation System khi triển khai [N9E Architecture](../N9E/General/general.md)
 
+* Bước 1: Cập nhật danh sách package
 ```
 sudo apt-get update
 ```
-
+* Bước 2: Cài đặt Grafana Loki
 ```
 sudo apt-get install loki
 ```
-
+* Bước 3: Mở file cấu hình chính
 ```
 nano /etc/loki/config.yml
 ```
-
+* Bước 4: Cấu hình Loki.
 ```
 auth_enabled: false
 
@@ -82,13 +83,14 @@ frontend:
 #analytics:
 #  reporting_enabled: false
 ```
-
+* Bước 5: Kích hoạt và khởi chạy Loki
 ```
 systemctl enable --now loki.service
 ```
-
+* Bước 6: Kiểm tra trạng thái dịch vụ và log hoạt động
 ```
 sudo systemctl status loki
 sudo journalctl -u loki -f
 ```
+
 
