@@ -1,25 +1,26 @@
 # Các bước cài đặt và cấu hình N9E trên n9ecenter VM khi triển khai [N9E Architecture](../N9E/General/general.md)
 
+* Bước 1: Tạo thư mục chứa các file/folder cần thiết của N9E và truy cập vào đó.
 ```
 cd /opt && mkdir n9e && cd n9e
 ```
-
+* Bước 2: Tải file Binary của N9E từ [N9E Release](https://github.com/ccfos/nightingale/releases)
 ```
 wget https://github.com/ccfos/nightingale/releases/download/v8.4.0/n9e-v8.4.0-linux-amd64.tar.gz
 ```
-
+* Bước 3: Giải nén file .gz vừa mới tải
 ```
 tar -xf n9e-v8.4.0-linux-amd64.tar.gz
 ```
-
+* Bước 4: Xóa file .gz 
 ```
 rm -rf n9e-v8.4.0-linux-amd64.tar.gz
 ```
-
+* Bước 5: Mở file cấu hình của N9E
 ```
 cd etc && nano config.toml
 ```
-
+* Bước 6: Cấu hình theo mẫu config dưới đây:
 ```
 [Global]
 RunMode = "release"
@@ -211,11 +212,11 @@ MaxIdleConnsPerHost = 100
 Enable = true
 RPCListen = "0.0.0.0:20090"
 ```
-
+* Bước 7: Khởi tạo và cấu hình file service cho N9E để chạy như dịch vụ hệ thống
 ```
 nano /etc/systemd/system/n9e.service
 ```
-
+* Bước 8: Dán đoạn nội dung sau:
 ```
 [Unit]
 Description=Nightingale Monitoring Service
@@ -237,15 +238,15 @@ SyslogIdentifier=n9e
 [Install]
 WantedBy=multi-user.target
 ```
-
+* Bước 9: Enable và start dịch vụ n9e
 ```
 systemctl enable --now n9e
 ```
-
+* Bước 10: Kiểm tra trạng thái dịch vụ N9E
 ```
 systemctl status n9e
 ```
-
+* Bước 11: Kiểm tra log N9E
 ```
 journalctl -u n9e -f
 ```
