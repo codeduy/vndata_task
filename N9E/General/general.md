@@ -19,5 +19,8 @@
 * Luồng **H**: **Grafana Alloy** sẽ thu thập metrics của **n9e-edge** VM bao gồm các thông tin về disk, cpu, ram, network,... sau đó gửi đến HTTP endpoint của **n9e-edge**(cấu hình tại /etc/alloy/config.alloy) và sẽ được **n9e-edge** chuyển tiếp đến **Prometheus** để lưu trữ cho việc truy vấn(cấu hình tại phần [[Pushgw.Writers]] - /opt/n9e-edge/etc/edge/edge.toml).
 * Luồng **I**: nhận metrics được chuyển tiếp từ **Grafana Alloy** đến **n9e-edge** và lưu vào **Prometheus**.
 * Luồng **K**: nhận logs theo cấu hình của **Grafana Alloy**(/etc/alloy/config.alloy) và chuyển đến lưu trữ tại **Loki**.
+
+> Ở các luồng **A**, **B**, **C** đều được cấu hình kết nối với nhau qua IP Private.
+
 ### Tham khảo thêm
 * [Details N9E architecture](https://lucid.app/lucidchart/f328617b-e8ff-49a5-85c0-2bc6577aec5b/edit?invitationId=inv_36d7034b-1599-4e6f-bb9e-c45f04a3ede2)
