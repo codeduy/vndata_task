@@ -4,13 +4,13 @@
 ```
 wget https://github.com/flashcatcloud/categraf/releases/download/v0.4.22/categraf-slim-v0.4.22-linux-amd64.tar.gz
 ```
-* Bước 2: Giải nén tệp categraf-v0.4.22-linux-amd64.tar.gz
+* Bước 2: Giải nén tệp categraf-slim-v0.4.22-linux-amd64.tar.gz
 ```
-tar -xf categraf-v0.4.22-linux-amd64.tar.gz
+tar -xf categraf-slim-v0.4.22-linux-amd64.tar.gz
 ```
 * Bước 3: Di chuyển tệp đến thư mục /opt
 ```
-mv categraf-v0.4.22-linux-amd64 /opt
+mv categraf-slim-v0.4.22-linux-amd64 /opt
 ```
 * Bước 4: Truy cập thư mục /opt
 ```
@@ -18,7 +18,7 @@ cd /opt
 ```
 * Bước 5: Đổi tên để dễ quản lí.
 ```
-mv categraf-v0.4.22-linux-amd64 categraf
+mv categraf-slim-v0.4.22-linux-amd64 categraf
 ```
 * Bước 6: Cấp quyền thực thi cho file categraf
 ```
@@ -197,6 +197,7 @@ systemctl status categraf
 ```
 journalctl -u categraf -f
 ```
+
 
 
 
