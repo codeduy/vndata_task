@@ -56,7 +56,7 @@
   ![](../Proxmox/images/basic/network_step.png)
 * Ở bước này, ta xem lại các thông số của VM, nếu thấy đã ổn thì bấm **Finish** để tạo VM
   ![](../Proxmox/images/basic/confirm_step.png)  
-* Sau khi tạo VM thành công thì ta bấm **Start**, click **Console** và bắt đầu quá trình cài đặt
+* Sau khi tạo VM thành công thì ta bấm **Start** để khởi chạy VM, click **Console** truy cập VM và bắt đầu quá trình cài đặt
   ![](../Proxmox/images/basic/linuxVM_view.png)
   ![](../Proxmox/images/basic/linuxVM_shell.png)
   
