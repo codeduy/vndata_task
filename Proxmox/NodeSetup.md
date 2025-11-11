@@ -61,8 +61,16 @@
   ![](../Proxmox/images/basic/linuxVM_shell.png)
 
 ### Khởi tạo Windows Server 2019 VM
-* Đầu tiên, ta cần tải file ISO từ [Windows Server 2019 download](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019) về ổ đĩa mà ta muốn cài **Window Server VM** lên đó
-  ![](../Proxmox/images/basic/ubuntuiso_download_step.png)
+* Đầu tiên, ta cần tải file ISO, driver ảo VirtIO từ [Windows Server 2019 download](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019) và [VirtIO-Win](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/?C=M;O=D) về ổ đĩa mà ta muốn cài **Window Server VM** lên đó
+  ![](../Proxmox/images/basic/windowISO_downloadStep.png)
+* Sau khi click chọn **Download from URL** thì sẽ hiện ra một form dialog để dán - xác thực link tải và tải về (làm tương tự so với file VirtIO-Win)
+  ![](../Proxmox/images/basic/downloadWin2019ISO.png)
+* Khi đã tải xong thì file ISO sẽ hiển thị như trong ảnh:
+  ![](../Proxmox/images/basic/Win2019ISO_downloaded.png)
+* Tiếp đến, ta click chọn Create VM để bắt đầu khởi tạo VM
+  ![](../Proxmox/images/basic/WinISO_VMCreate.png)
+
+  
   
 
 ## Sơ lược về các thành phần cơ bản trong giao diện Proxmox
