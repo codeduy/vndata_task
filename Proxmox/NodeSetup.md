@@ -30,10 +30,10 @@
 
 ## Các bước khởi tạo VM từ file ISO
 
-### Khởi tạo Linux Ubuntu Server 22.04.05 LTS VM từ ISO
+### Khởi tạo Linux Ubuntu Server 22.04.05 LTS VM
 * Đầu tiên, ta cần tải file ISO từ [Ubuntu Release](https://releases.ubuntu.com/jammy/) về ổ đĩa mà ta muốn cài **Linux VM** lên đó
   ![](../Proxmox/images/basic/ubuntuiso_download_step.png)
-* Sau khi cick chọn **Download from URL** thì sẽ hiện ra một form dialog để dán - xác thực link tải và tải về
+* Sau khi click chọn **Download from URL** thì sẽ hiện ra một form dialog để dán - xác thực link tải và tải về
   ![](../Proxmox/images/basic/download_URL.png)
 * Khi đã tải xong thì file ISO sẽ hiển thị như trong ảnh:
   ![](../Proxmox/images/basic/linuxiso_downloaded.png)
@@ -59,7 +59,12 @@
 * Sau khi tạo VM thành công thì ta bấm **Start** để khởi chạy VM, click **Console** truy cập VM và bắt đầu quá trình cài đặt
   ![](../Proxmox/images/basic/linuxVM_view.png)
   ![](../Proxmox/images/basic/linuxVM_shell.png)
+
+### Khởi tạo Windows Server 2019 VM
+* Đầu tiên, ta cần tải file ISO từ [Windows Server 2019 download](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019) về ổ đĩa mà ta muốn cài **Window Server VM** lên đó
+  ![](../Proxmox/images/basic/ubuntuiso_download_step.png)
   
+
 ## Sơ lược về các thành phần cơ bản trong giao diện Proxmox
 
 
