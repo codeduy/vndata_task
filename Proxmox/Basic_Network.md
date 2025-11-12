@@ -9,7 +9,7 @@
 * Reboot VM để áp dụng cấu hình mạng
 
 ## Cấu hình network private giữa các VM
-### Tạo linux bridge vmbr1 gắn dải ip private -> cấp phát cho các VM
+### Tạo linux bridge vmbr1 gắn dải ip private - cấp phát cho các VM
 * Truy cập vào phần **Network** của node **proxmox** để bắt đầu tạo linux bridge
   ![](../Proxmox/images/Network_Basic/Createvmbr1.png)
 * Điền thông tin của **vmbr1** và bấm **Create** để tạo linux bridge **vmbr1**
