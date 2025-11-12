@@ -6,7 +6,6 @@
   ![](../Proxmox/images/Network_Basic/Edit_NetworkDevice.png)
 * Chọn bridge **vmbr0** tại phần **Bridge** và chọn **OK**
   ![](../Proxmox/images/Network_Basic/Bridge_SelectStep.png)
-* Reboot VM để áp dụng cấu hình mạng
 
 ## Cấu hình network private giữa các VM
 ### Tạo linux bridge vmbr1 gắn dải ip private - cấp phát cho các VM
@@ -19,7 +18,6 @@
   ![](../Proxmox/images/Network_Basic/NetworkDevice_vmbr1.png)
   ![](../Proxmox/images/Network_Basic/vmbr1attach.png)
   ![](../Proxmox/images/Network_Basic/vmbr1_vm_view.png)
-* Reboot lại VM để áp dụng NIC vmbr1
 * Cấu hình thủ công file cấu hình mạng trong VM để có thể giao tiếp nội bộ bên trong NIC vmbr1
   ![](../Proxmox/images/Network_Basic/netplan_vmbr1.png)
 
@@ -44,6 +42,11 @@
 * Click **Yes**
   ![](../Proxmox/images/Network_Basic/SDN/SDN_Yes.png)
   ![](../Proxmox/images/Network_Basic/SDN/Zone001_Available.png)
+* Để gán ip private của subnet mới tạo trong **SDN (Zone001 - Vnet001)** thì ta thực hiện tương tự trong phần hướng dẫn ![Cấu hình bridge Network cho VM ra Internet](https://github.com/codeduy/vndata_task/blob/main/Proxmox/Basic_Network.md#c%E1%BA%A5u-h%C3%ACnh-bridge-network-cho-vm-ra-internet)
+  ![](../Proxmox/images/Network_Basic/SDN/SDN_VMAttach.png)
+  ![](../Proxmox/images/Network_Basic/SDN/SDN_VM_Vnet001Apply.png)
+* Cấu hình thủ công file cấu hình mạng trong VM để có thể giao tiếp nội bộ bên trong subnet tương ứng của NIC **Vnet001**
+  ![](../Proxmox/images/Network_Basic/SDN/SDN_VM_View.png)
   
   
   
