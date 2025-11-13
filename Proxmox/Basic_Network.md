@@ -47,6 +47,30 @@
   ![](../Proxmox/images/Network_Basic/SDN/SDN_VM_Vnet001Apply.png)
 * Cấu hình thủ công file cấu hình mạng trong VM để có thể giao tiếp nội bộ bên trong subnet tương ứng của NIC **Vnet001**
   ![](../Proxmox/images/Network_Basic/SDN/SDN_VM_View.png)
-  
-  
-  
+> Các cấu hình của SDN được lưu ở phía node tại đường dẫn ```/etc/pve/sdn```
+
+### Cấu hình NAT cho các NIC - Linux bridge
+* Để NAT cho NIC **vmbr1** đã tạo ở phần hướng dẫn trước, ta cần truy cập vào **Shell** của **proxmox** host hoặc qua trình SSH để cấu hình NAT tại ```/etc/network/interfaces```
+  ![](../Proxmox/images/Network_Basic/NAT/proxmoxShell_NAT.png)
+  ![](../Proxmox/images/Network_Basic/NAT/termius_SSH.png)
+* Thêm các dòng như ảnh để có thể NAT **vmbr0** quan **vmbr1**. Tham khảo thêm tại [Proxmox Docs](https://pve.proxmox.com/wiki/Network_Configuration#sysadmin_network_masquerading)
+  ![](../Proxmox/images/Network_Basic/NAT/vmbr1_NAT.png)
+  > * Các dòng ở (1) là cấu hình cho phép kernel forward gói tin từ NIC **vmbr1** và bật SNAT khi up; khi **vmbr1** down thì sẽ xóa rule SNAT này. 
+  > * Các dòng ở (2) đảm bảo đặt conntrack của request vào đúng conntrack zone bởi trong một số trường hợp khi đặt firewall cho riêng VM thì firewall của VM đó có thể thay đổi conntrack zone của request gây ảnh hưởng đến NAT - mapping request đúng theo ip private <--> ip public tương ứng, và tự động thêm/xóa rule khi NIC up/down.
+  > ![](../Proxmox/images/Network_Basic/NAT/NAT_VMFirewall.png)
+  > * Câu hỏi: Các dạng/loại kết nối nào cần thiết phải thêm conntrack? -> Tùy các tác nhân gây ảnh hưởng lên request làm sai thông số conntrack zone mà ta cần định nghĩa lại rule PREROUTING ở bảng raw để đặt request lại cho đúng conntrack zone
+
+### Cấu hình NAT cho các subnet trong SDN
+* Đầu tiên, ta cần mở form dialog - Edit subnet theo các bước như hình
+  ![](../Proxmox/images/Network_Basic/NAT/NAT_SDN_SubnetEdit.png)
+* Tiếp theo, ta tick chọn **SNAT** và click **OK** để lưu cấu hình
+  ![](../Proxmox/images/Network_Basic/NAT/NAT_SDN_SNATTick.png)
+* Click **SDN** và chọn **Apply**
+  ![](../Proxmox/images/Network_Basic/NAT/NAT_SDN_Apply.png)
+* Chọn **Yes**
+  ![](../Proxmox/images/Network_Basic/NAT/NAT_SDNApply.png)
+* Gán ip của subnet trong SDN vào VM và kiểm tra
+  ![](../Proxmox/images/Network_Basic/NAT/NAT_SDN_Success.png)
+
+### Cấu hình pve, phpipam để cấp phát IP tự động cho VM
+> Coming soon

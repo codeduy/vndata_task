@@ -91,8 +91,6 @@
   ![](../Proxmox/images/basic/WinVM_shell.png)
   
 ## Sơ lược về các thành phần quản lí cơ bản trong giao diện Proxmox
-
-### Datacenter
-* **Search**
+> Coming soon
   
 
