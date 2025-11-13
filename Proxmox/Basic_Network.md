@@ -71,6 +71,14 @@
   ![](../Proxmox/images/Network_Basic/NAT/NAT_SDNApply.png)
 * Gán ip của subnet trong SDN vào VM và kiểm tra
   ![](../Proxmox/images/Network_Basic/NAT/NAT_SDN_Success.png)
+  > * Lưu ý: Khi bỏ tick **SNAT** của subnet trong SDN để tắt **SNAT** cho subnet đó thì proxmox sẽ không loại bỏ rule tương ứng ở iptables; mặc dù khi tick chọn để bật **SNAT** thì vẫn chèn rule bình thường. Vì thế dễ gây lặp lại rule như hình dưới.
+  ![](../Proxmox/images/Network_Basic/NAT/NAT_DuplicateRule.png)
+  > * Vì vậy, để tắt **SNAT** triệt để cho subnet - SDN thì trước tiên cần bỏ tick **SNAT** và thực thi lệnh ```iptables -t nat -F``` -        xóa hết rules của bảng nat và chạy lại lệnh ```ifreload -a``` - reload lại cấu hình mạng của proxmox host
+  ![](../Proxmox/images/Network_Basic/NAT/NAT_ReloadNetworkConfig.png)
 
 ### Cấu hình pve, phpipam để cấp phát IP tự động cho VM
 > Coming soon
+
+## Cơ bản về Firewall trong Proxmox
+### Sơ lược
+
