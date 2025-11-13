@@ -71,4 +71,6 @@
   ![](../Proxmox/images/Network_Basic/NAT/NAT_SDNApply.png)
 * Gán ip của subnet trong SDN vào VM và kiểm tra
   ![](../Proxmox/images/Network_Basic/NAT/NAT_SDN_Success.png)
-  
+
+### Cấu hình pve, phpipam để cấp phát IP tự động cho VM
+> Coming soon
