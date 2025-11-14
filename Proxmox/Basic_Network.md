@@ -83,11 +83,58 @@
 ### Sơ lược
 * Luồng hoạt động - độ ưu tiên được thể hiện trong hình dưới đây:
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_Flowchart.png)
-* Các firewall **Options** tại **Datacenter**, **proxmmox** node, VM
-  
+* Các firewall **Options** tại **Datacenter**, **proxmox** node, VM
+  * Datacenter
+    * **Firewall(Yes/No):** Bật/Tắt Firewall Layer 3/4 (iptables) - Kiểm soát traffic TCP/UDP/ICMP/... cho Datacenter, Node, và VM.
+    * **ebtables(Yes/No):** Bật/Tắt Firewall Layer 2 của Proxmox (ebtables) - bao gồm MAC filter, DHCP filter, NDP filter,...
+    * **Log rate limit:** Giới hạn tốc độ log firewall - Mặc định: 5 logs ngay lập tức + 1 log mỗi giây.
+    <table>
+      <tr>
+          <td></td>
+          <td>ACCEPT</td>
+          <td>DROP</td>
+          <td>REJECT</td>
+      </tr>
+      <tr>
+          <td>Input Policy</td>
+          <td>Mặc định <b>chấp nhận</b> toàn bộ request <b>từ bên ngoài vào host</b> trừ các DROP/REJECT rule </td>
+          <td>Mặc định <b>từ chối</b> toàn bộ request <b>từ bên ngoài vào host</b> trừ các ACCEPT rule </td>
+          <td>Mặc định <b>từ chối</b> toàn bộ request <b>từ bên ngoài vào host</b> trừ các ACCEPT rule, nhưng sẽ có <b>phản hồi</b> </td>
+      </tr>
+      <tr>
+          <td>Output Policy</td>
+          <td>Mặc định <b>chấp nhận</b> toàn bộ request gửi từ bên <b>trong host ra ngoài</b> trừ các DROP/REJECT rule </td>
+          <td>Mặc định <b>từ chối</b> toàn bộ request từ bên <b>trong host ra ngoài</b> trừ các ACCEPT rule </td>
+          <td>Mặc định <b>từ chối</b> toàn bộ request từ bên <b>trong host ra ngoài</b> trừ các ACCEPT rule, nhưng sẽ có <b>phản hồi</b>  </td>
+      </tr>
+      <tr>
+          <td>Forward Policy</td>
+          <td>Mặc định <b>chấp nhận</b> toàn bộ request <b>chuyển tiếp</b> trừ các DROP/REJECT rule </td>
+          <td>Mặc định <b>từ chối</b> toàn bộ request <b>chuyển tiếp</b> qua host trừ các ACCEPT rule </td>
+          <td></td>
+      </tr>
+    </table>  
+    
+    ![](../Proxmox/images/Network_Basic/Firewall/Firewall_Datacenter.png)
+  * Node
+    * **Firewall(Yes/No):** Bật tắt firewall L3/L4 của node (iptables)
+    * **SMURFS filter(Yes/No):** Chặn tấn công Smurf attack (ICMP broadcast).
+    * **TCP flags filter(Yes/No):** Chặn các packet TCP có flag bất thường (malformed TCP).
+    * **NDP(Yes/No):** DHCP filter + ARP filter nhưng cho IPv6.
+    * **nf_conntrack_max(Default/custom):** Số lượng entry connection tracking tối đa cho node (nếu node có nhiều VM thì cần tăng lên   để tránh quá tải).
+    * **nf_conntrack_tcp_timeout_established (Default / custom):** Timeout cho TCP connections ở trạng thái ESTABLISHED.
+    * **log_level_in, log_level_out, log_level_forward, tcp_flags_log_level, smurf_log_level:** cấp độ lưu log lần lượt cho traffic in/out/forward/gói TCP có flags bất thường/gói bị Smurf filter drop (tùy mỗi level mà thể hiện độ chi tiết của log).
+    * **nftables(tech preview) - Yes/No:** Bật backend nftables thay cho iptables-legacy (iptables-legacy đóng vai trò là wrapper convert qua nftables vì thế nên vẫn thực thi các lệnh iptables bình thường - không cần thiết phải thực thi các lệnh nftables thuần túy).
+  * VM
+    * 
+    
+    
 * Các rule trên firewall khi được thực thi sẽ chèn rule vào bảng filter trong iptables với dạng **custom chain**, **custom chain jump**
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_chain.png)
+  > Vì thế nên điều kiện tiên quyết để VM Firewall hoạt động thì cần phải bật Firewall ở Datacenter, Proxmox Node để chèn các custom        chain trên.
 * Một ví dụ về custom chain jump
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomchainJump_Input.png)
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomChainJump_PVEFW-HOST-IN.png)
+* Nếu có nhiều rule thì firewall sẽ thực thi các rule theo quy tắc ưu tiên thứ tự từ trên xuống dưới, và phải để **ACCEPT** rule trước; **DROP/REJECT** sau; vì nếu để rule **DROP/REJECT** ở thứ tự trước thì sẽ ghi đè rule **ACCEPT** sau nếu có xung đột phạm vi áp dụng rule.
+  > Ví dụ: **ACCEPT INPUT/OUTPUT/FORWARD** ở **Datacenter**, **proxmox** node, sắp xếp các rule **ACCEPT** ping icmp, **DROP** in/out
 
