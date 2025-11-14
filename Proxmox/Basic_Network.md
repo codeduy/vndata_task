@@ -81,4 +81,13 @@
 
 ## Cơ bản về Firewall trong Proxmox
 ### Sơ lược
+* Luồng hoạt động - độ ưu tiên được thể hiện trong hình dưới đây:
+  ![](../Proxmox/images/Network_Basic/Firewall/Firewall_Flowchart.png)
+* Các firewall **Options** tại **Datacenter**, **proxmmox** node, VM
+  
+* Các rule trên firewall khi được thực thi sẽ chèn rule vào bảng filter trong iptables với dạng **custom chain**, **custom chain jump**
+  ![](../Proxmox/images/Network_Basic/Firewall/Firewall_chain.png)
+* Một ví dụ về custom chain jump
+  ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomchainJump_Input.png)
+  ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomChainJump_PVEFW-HOST-IN.png)
 
