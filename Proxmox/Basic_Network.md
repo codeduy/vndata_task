@@ -125,16 +125,63 @@
     * **nf_conntrack_tcp_timeout_established (Default / custom):** Timeout cho TCP connections ở trạng thái ESTABLISHED.
     * **log_level_in, log_level_out, log_level_forward, tcp_flags_log_level, smurf_log_level:** cấp độ lưu log lần lượt cho traffic in/out/forward/gói TCP có flags bất thường/gói bị Smurf filter drop (tùy mỗi level mà thể hiện độ chi tiết của log).
     * **nftables(tech preview) - Yes/No:** Bật backend nftables thay cho iptables-legacy (iptables-legacy đóng vai trò là wrapper convert qua nftables vì thế nên vẫn thực thi các lệnh iptables bình thường - không cần thiết phải thực thi các lệnh nftables thuần túy).
+    ![](../Proxmox/images/Network_Basic/Firewall/Firewall_Node.png)
   * VM
-    * 
-    
-    
+    * **Firewall:** Bật/tắt firewall cho VM.
+    * **DHCP:** Cho phép VM gửi/nhận gói DHCP Discover/Offer/Request/Ack - nhận ip được router ảo cấp phát tự động.
+    * **NDP:** DHCP filter + ARP filter nhưng cho IPv6.
+    * **Router Advertisement:** Bật/tắt nhận/gửi IPv6 Router Advertisement.
+    * **MAC Filter:** Bật tính năng này để buộc VM dùng MAC do proxmox cung cấp; nếu user tự đổi MAC thì sẽ drop traffic của NIC tương ứng trong VM đó.
+    * **IP Filter:** Nếu bật tính năng này thì VM chỉ được dùng IP do proxmox cung cấp (qua DHCP,...); nếu tắt thì ngược lại - có thể tự chỉnh IP thủ công, miễn đúng route phù hợp mục đích của VM.
+    * **log_level_in, log_level_out:** Điều khiển mức độ thông tin log khi có rule match.
+      <table>
+        <tr>
+            <td></td>
+            <td>ACCEPT</td>
+            <td>DROP</td>
+            <td>REJECT</td>
+        </tr>
+        <tr>
+            <td>Input Policy</td>
+            <td>Mặc định <b>chấp nhận</b> toàn bộ request <b>từ bên ngoài vào host</b> trừ các DROP/REJECT rule </td>
+            <td>Mặc định <b>từ chối</b> toàn bộ request <b>từ bên ngoài vào host</b> trừ các ACCEPT rule </td>
+            <td>Mặc định <b>từ chối</b> toàn bộ request <b>từ bên ngoài vào host</b> trừ các ACCEPT rule, nhưng sẽ có <b>phản hồi</b> </td>
+        </tr>
+        <tr>
+            <td>Output Policy</td>
+            <td>Mặc định <b>chấp nhận</b> toàn bộ request gửi từ bên <b>trong host ra ngoài</b> trừ các DROP/REJECT rule </td>
+            <td>Mặc định <b>từ chối</b> toàn bộ request từ bên <b>trong host ra ngoài</b> trừ các ACCEPT rule </td>
+            <td>Mặc định <b>từ chối</b> toàn bộ request từ bên <b>trong host ra ngoài</b> trừ các ACCEPT rule, nhưng sẽ có <b>phản hồi</b>  </td>
+        </tr>
+      </table>  
+
+      ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM.png)    
 * Các rule trên firewall khi được thực thi sẽ chèn rule vào bảng filter trong iptables với dạng **custom chain**, **custom chain jump**
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_chain.png)
-  > Vì thế nên điều kiện tiên quyết để VM Firewall hoạt động thì cần phải bật Firewall ở Datacenter, Proxmox Node để chèn các custom        chain trên.
+  > Điều kiện tiên quyết để VM Firewall hoạt động thì cần phải bật Firewall ở Datacenter, Proxmox Node để chèn các custom        chain trên.
 * Một ví dụ về custom chain jump
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomchainJump_Input.png)
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomChainJump_PVEFW-HOST-IN.png)
 * Nếu có nhiều rule thì firewall sẽ thực thi các rule theo quy tắc ưu tiên thứ tự từ trên xuống dưới, và phải để **ACCEPT** rule trước; **DROP/REJECT** sau; vì nếu để rule **DROP/REJECT** ở thứ tự trước thì sẽ ghi đè rule **ACCEPT** sau nếu có xung đột phạm vi áp dụng rule.
-  > Ví dụ: **ACCEPT INPUT/OUTPUT/FORWARD** ở **Datacenter**, **proxmox** node, sắp xếp các rule **ACCEPT** ping icmp, **DROP** in/out
+  > Ví dụ: **Input/Output/Forward Policy: ACCEPT** ở **Datacenter**, VM; sắp xếp các rule **ACCEPT** ping icmp, **DROP** in/out
+  > * Tại **Datacenter** Firewall
+  >   ![](../Proxmox/images/Network_Basic/Firewall/Datacenter_FW_View.png)
+  >   ![](../Proxmox/images/Network_Basic/Firewall/Datacenter_FWOptions_View.png)
+  > * Tại **Node** Firewall
+  >   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_Node_View.png)
+  >   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_NodeOptions_View.png)
+  > * Trường hợp 1: rule ACCEPT ở thứ tự trên/trước so với các rule DROP thỏa quy tắc trên  
+  >   * Tại VM Firewall
+  >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_Case1View.png)
+  >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_Case1_2_OptionsView.png)
+  >   * Tại VM Console: ở đây ta có thể thấy là rule ACCEPT vẫn có hiệu lực.
+  >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_ConsoleCase1View.png)
+  > * Trường hợp 2: rule ACCEPT ở thứ tự dưới/sau so với các rule DROP - sai quy tắc trên
+  >   * Tại VM Firewall
+  >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_Case2View.png)
+  >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_Case1_2_OptionsView.png)
+  >   * Tại VM Console: rule ACCEPT không còn hiệu lực nữa do bị ghi đè phạm vi rule bởi các rule DROP ở mức độ ưu tiên cao hơn
+  >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_ConsoleCase2_View.png)
+  
+  
 
