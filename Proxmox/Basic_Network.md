@@ -158,7 +158,7 @@
       ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM.png)    
 * Các rule trên firewall khi được thực thi sẽ chèn rule vào bảng filter trong iptables với dạng **custom chain**, **custom chain jump**
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_chain.png)
-  > Vì thế nên điều kiện tiên quyết để VM Firewall hoạt động thì cần phải bật Firewall ở Datacenter, Proxmox Node để chèn các custom        chain trên.
+  > Điều kiện tiên quyết để VM Firewall hoạt động thì cần phải bật Firewall ở Datacenter, Proxmox Node để chèn các custom        chain trên.
 * Một ví dụ về custom chain jump
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomchainJump_Input.png)
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_CustomChainJump_PVEFW-HOST-IN.png)
