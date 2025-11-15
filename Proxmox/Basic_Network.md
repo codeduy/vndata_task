@@ -203,5 +203,36 @@
   ![](../Proxmox/images/Network_Basic/pfSense/pfSense_DownLinkShow.png)
   ![](../Proxmox/images/Network_Basic/pfSense/pfSense_URLDownload.png)
   ![](../Proxmox/images/Network_Basic/pfSense/pfSense_ISODownloaded.png)
-* 
+* Tiếp đến, tiếp hành khởi tạo VM pfSense.
+  * Click **Create VM**, điền tên VM và bấm **Next**
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_General.png)
+  * Chọn file ISO của pfSense tại **ISO Image** và bấm **Next**
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_OS.png)
+  * Tick chọn **Qemu Agent** để cho phép **proxmox** giao tiếp với VM qua Qemu Guest Agent và click **Next**
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_System.png)
+  * Ta có thể điều chỉnh dung lượng đĩa cấp phát cho VM ở phần **Disk size** và click **Next**
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_Disks.png)
+  * Có thể điều chỉnh nhân CPU cấp phát cho VM ở phần **Cores** và click **Next**
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_CPU.png)
+  * Tùy nhu cầu mà điều chỉnh bộ nhớ RAM cấp phát cho VM ở phần **Memory**, click **Next**
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_Memory.png)
+  * Tick chọn **No network device**, click **Next**
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_Network.png)
+  * Click **Finish** để tiến hành tạo VM
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_Confirm.png)
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VM_Summary.png)
+  * Sau khi tạo VM thành công thì ta tiến hành add WAN NIC và LAN NIC vào VM pfSense, cụ thể ở đây là **vmbr0**, **Vnet001**.
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VMAddNetworkDevice.png)
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VMAddWAN.png)
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VMAddLAN.png)
+    ![](../Proxmox/images/Network_Basic/pfSense/pfSense_NetworkDeviceList.png)
+* Sau khi add xong WAN NIC, LAN NIC thì click **Start** để bật VM và tiếp tục các bước cấu hình
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_StartVM.png)
+* Click **Console**, nhấn nút <Enter> để **Accept**
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VMConfig.png)
+* Nhấn nút <Enter> để **OK** với tùy chọn **Install pfSense**
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_Install.png)
 
+
+
+> Tham khảo: Sơ đồ thể hiện kiến trúc SDN, SDN + pfSense
