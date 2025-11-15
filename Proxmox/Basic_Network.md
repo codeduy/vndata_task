@@ -79,8 +79,8 @@
 ### Cấu hình pve, phpipam để cấp phát IP tự động cho VM
 > Coming soon
 
-## Cơ bản về Firewall trong Proxmox
-### Sơ lược
+## Cơ bản về Firewall
+### Sơ lược về Firewall trong Proxmox
 * Luồng hoạt động - độ ưu tiên được thể hiện trong hình dưới đây:
   ![](../Proxmox/images/Network_Basic/Firewall/Firewall_Flowchart.png)
 * Các firewall **Options** tại **Datacenter**, **proxmox** node, VM
@@ -182,6 +182,26 @@
   >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_Case1_2_OptionsView.png)
   >   * Tại VM Console: rule ACCEPT không còn hiệu lực nữa do bị ghi đè phạm vi rule bởi các rule DROP ở mức độ ưu tiên cao hơn
   >     ![](../Proxmox/images/Network_Basic/Firewall/Firewall_VM_ConsoleCase2_View.png)
-  
-  
+
+### Cài đặt và cấu hình Firewall cơ bản với pfSense
+* Đầu tiên, ta cần truy cập [pfSense Download](https://www.pfsense.org/download/) để tải file ISO
+* Click **Download**
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_DownloadPage.png)
+* Thực hiện theo các bước như ảnh
+  * (1) Tại trường **Installation Image**, chọn **AMD64 ISO IPMI/Virtual Machines**
+  * (2) Click **ADD TO CART**
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_addISOVMtoCart.png)
+* Click **ENTER CART**
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_clickEnterCart.png)
+* Click **CHECKOUT**
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_checkOutClick.png)
+* Login tài khoản Netgate qua Email/Password. Nếu chưa có tài khoản thì đăng kí mới tại [Netgate Registration Page](https://shop.netgate.com/account/register)
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_netgateLogin.png)
+* Hoàn thành các thông tin liên quan và chọn **Complete order**
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_netgate_CO.png)
+* Copy link và tiến hành tải file ISO vào ổ đĩa lưu trữ
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_DownLinkShow.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_URLDownload.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_ISODownloaded.png)
+* 
 
