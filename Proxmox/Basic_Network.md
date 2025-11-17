@@ -297,7 +297,10 @@
   ![](../Proxmox/images/Network_Basic/pfSense/2_pfSense_Menu.png)
   ![](../Proxmox/images/Network_Basic/pfSense/3_pfSense_IPPublic.png)
   ![](../Proxmox/images/Network_Basic/pfSense/4_pfSense_Dashboard.png)
-      
+
+### VNet Firewall
+> Coming soon
+
 > Tham khảo: Sơ đồ thể hiện kiến trúc SDN + pfSense
   ![](../Proxmox/images/Network_Basic/pfSense/1_SDN_pfSense_Refer01.png)
   ![](../Proxmox/images/Network_Basic/pfSense/2_SDN_pfSense_Refer02.png)
