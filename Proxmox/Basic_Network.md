@@ -267,7 +267,9 @@
 * Chọn **Reboot**
   ![](../Proxmox/images/Network_Basic/pfSense/18_pfSense_Reboot.png)
   ![](../Proxmox/images/Network_Basic/pfSense/19_pfSense_InstallComplete.png)
+* Sau khi khởi động lại, ta cần chỉnh lại LAN: ip address/subnet mask cho đúng.
+  * Chọn tùy chọn **2** và nhấn **Enter**.
+    ![](../Proxmox/images/Network_Basic/pfSense/1_pfSense_SetLAN.png)
   
-
 
 > Tham khảo: Sơ đồ thể hiện kiến trúc SDN, SDN + pfSense
