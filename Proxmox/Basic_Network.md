@@ -267,9 +267,37 @@
 * Chọn **Reboot**
   ![](../Proxmox/images/Network_Basic/pfSense/18_pfSense_Reboot.png)
   ![](../Proxmox/images/Network_Basic/pfSense/19_pfSense_InstallComplete.png)
-* Sau khi khởi động lại, ta cần chỉnh lại LAN: ip address/subnet mask cho đúng.
+* Sau khi khởi động lại, ta cần chỉnh lại LAN - ip address/subnet mask cho đúng; cấu hình đường dẫn truy cập pfSense GUI.
   * Chọn tùy chọn **2** và nhấn **Enter**.
     ![](../Proxmox/images/Network_Basic/pfSense/1_pfSense_SetLAN.png)
-  
-
-> Tham khảo: Sơ đồ thể hiện kiến trúc SDN, SDN + pfSense
+  * Chọn tùy chọn **2** -> Enter.
+    ![](../Proxmox/images/Network_Basic/pfSense/2_pfSense_LANChoosing.png)
+  * Nhập **n** để không bật DHCPv4
+    ![](../Proxmox/images/Network_Basic/pfSense/3_pfSense_Disable_DHCPv4.png)
+  * Ta sẽ cấu hình dải ip như hình cho phần kết nối LAN - pfSense
+    ![](../Proxmox/images/Network_Basic/pfSense/4_pfSense_Vnet001Show.png)
+  * Nhập địa chỉ ip thuộc dải trong hình trên, và IP này sẽ đóng vai trò là IP Gateway cho các VM muốn nằm sau pfSense Firewall
+    ![](../Proxmox/images/Network_Basic/pfSense/5_pfSense_EnterNewLAN.png)
+  * Nhập CIDR
+    ![](../Proxmox/images/Network_Basic/pfSense/6_pfSense_EnterCIDR.png)
+  * Để trống phần này -> Nhấn **Enter**
+    ![](../Proxmox/images/Network_Basic/pfSense/7_pfSense_EnterForNone.png)
+  * Không bật DHCP6 -> **n**
+    ![](../Proxmox/images/Network_Basic/pfSense/8_pfSense_DisableDHCPv6.png)
+  * Để trống IPv6 LAN -> nhấn **Enter**
+    ![](../Proxmox/images/Network_Basic/pfSense/9_pfSense_NonLANIpv6.png)
+  * Không bật DHCP Server -> Nhập **n**
+    ![](../Proxmox/images/Network_Basic/pfSense/10_pfSense_noDHCPonLAN.png)
+  * Giữ tuỳ chọn mã hóa HTTPS khi truy cập GUI pfSense -> Nhập **n**
+    ![](../Proxmox/images/Network_Basic/pfSense/11_pfSense_keepHTTPs.png)
+  * Hoàn tất cấu hình
+    ![](../Proxmox/images/Network_Basic/pfSense/12_pfSense_LANSetup_Done.png)
+* Ta có thể truy cập pfSense GUI qua 1 VM Window nằm cùng mạng với pfSense; thông tin đăng nhập mặc định là **admin**/**pfsense**
+  ![](../Proxmox/images/Network_Basic/pfSense/1_pfSenseGUI_Access.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/2_pfSense_Menu.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/3_pfSense_IPPublic.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/4_pfSense_Dashboard.png)
+      
+> Tham khảo: Sơ đồ thể hiện kiến trúc SDN + pfSense
+  ![](../Proxmox/images/Network_Basic/pfSense/1_SDN_pfSense_Refer01.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/2_SDN_pfSense_Refer02.png)
