@@ -228,11 +228,46 @@
     ![](../Proxmox/images/Network_Basic/pfSense/pfSense_NetworkDeviceList.png)
 * Sau khi add xong WAN NIC, LAN NIC thì click **Start** để bật VM và tiếp tục các bước cấu hình
   ![](../Proxmox/images/Network_Basic/pfSense/pfSense_StartVM.png)
-* Click **Console**, nhấn nút <Enter> để **Accept**
+* Click **Console**, nhấn nút **Enter** trên bàn phím để **Accept**
   ![](../Proxmox/images/Network_Basic/pfSense/pfSense_VMConfig.png)
-* Nhấn nút <Enter> để **OK** với tùy chọn **Install pfSense**
-  ![](../Proxmox/images/Network_Basic/pfSense/pfSense_Install.png)
-
+  > Từ phần cài đặt pfSense ở giao diện Console này thì ta chỉ có thể dùng các phím điều hướng để thay đổi các tùy chọn và nhấn **Enter** trên bàn phím để chọn tùy chọn đó
+* Chọn **OK** để tiến hành cài đặt pfSense
+  ![](../Proxmox/images/Network_Basic/pfSense/0_pfSense_Install.png)
+* Chọn **OK**
+  ![](../Proxmox/images/Network_Basic/pfSense/1_NetworkInstallation.png)
+* Chọn WAN NIC tương ứng với **Network Device** đã cấu hình ở phần **Hardware**
+  ![](../Proxmox/images/Network_Basic/pfSense/2_WANSelection.png)
+* Chọn **OK**
+  ![](../Proxmox/images/Network_Basic/pfSense/3_WANSelectionContinue.png)
+* Chọn LAN NIC tương ứng với **Network Device** đã cấu hình ở phần **Hardware**
+  ![](../Proxmox/images/Network_Basic/pfSense/4_LANSelection.png)
+* Chọn **OK**
+  ![](../Proxmox/images/Network_Basic/pfSense/5_LANSelectionContinue.png)
+* Chọn WAN NIC để kết nối đến Internet
+  ![](../Proxmox/images/Network_Basic/pfSense/6_WANSelectForInstallation.png)
+* Chọn **Install CE**
+  ![](../Proxmox/images/Network_Basic/pfSense/7_InstallCESelection.png)
+* Chọn **OK** để **Continue**
+  ![](../Proxmox/images/Network_Basic/pfSense/8_InstallCESelectionContinue.png)
+* Chọn **OK**
+  ![](../Proxmox/images/Network_Basic/pfSense/9_ZFS_OK.png)
+* Tới phần chọn Disk để cài đặt - Chọn **OK**
+  ![](../Proxmox/images/Network_Basic/pfSense/10_SelectDisk.png)
+* Chọn **Yes**
+  ![](../Proxmox/images/Network_Basic/pfSense/11_Disk_da0_Confirm.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/12_Partitioning.png)
+* Chọn **OK** để chọn phiên bản pfSense 2.8.1 stable
+  ![](../Proxmox/images/Network_Basic/pfSense/13_pfSense_VersionSelection.png)
+* Tiến hành tự động tải và cài đặt các thành phần liên quan
+  ![](../Proxmox/images/Network_Basic/pfSense/14_pfSense_Download.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/15_pfSense_Download_01.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/16_pfSense_Download_02.png)
+* Chọn **OK**
+  ![](../Proxmox/images/Network_Basic/pfSense/17_pfSense_Installation_Done.png)
+* Chọn **Reboot**
+  ![](../Proxmox/images/Network_Basic/pfSense/18_pfSense_Reboot.png)
+  ![](../Proxmox/images/Network_Basic/pfSense/19_pfSense_InstallComplete.png)
+  
 
 
 > Tham khảo: Sơ đồ thể hiện kiến trúc SDN, SDN + pfSense
