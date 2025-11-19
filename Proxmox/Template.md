@@ -44,5 +44,11 @@
     ![](../Proxmox/images/Template/LinuxTemplate/1_LinuxTemplate_ShutdownClick)
   * Click **Yes**
     ![](../Proxmox/images/Template/LinuxTemplate/2_LinuxTemplate_Shutdown_ClickYes.png)
+    ![](../Proxmox/images/Template/LinuxTemplate/3_LinuxTemplate_ShutdownView.png)
+  * Tiếp theo, click **More** -> **Convert to template**
+    ![](../Proxmox/images/Template/LinuxTemplate/4_LinuxTemplate_ConvertToTemplate.png)
+  * Click **Yes**
+    ![](../Proxmox/images/Template/LinuxTemplate/5_LinuxTemplate_ConvertToTemplate_ClickYes.png)
+    ![](../Proxmox/images/Template/LinuxTemplate/6_LinuxTemplate_TemplateConverted.png)
 
 ## VM Backup & Restore
