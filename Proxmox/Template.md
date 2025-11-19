@@ -52,3 +52,7 @@
     ![](../Proxmox/images/Template/LinuxTemplate/6_LinuxTemplate_TemplateConverted.png)
 
 ## VM Backup & Restore
+* **Backup & Restore** là tính năng được tích hợp sẵn trong **proxmox** giúp sao lưu (**Backup**) dữ liệu trong Disk của VM và khôi phục (**Restore**) bản sao lưu - hoàn tác VM về trạng thái cũ tương ứng với bản Backup
+* Các loại **Backup**:
+  * **Snapshot**: là chế độ backup mà ở đó sẽ tiến hành backup dữ liệu trong disk mà VM vẫn có thể hoạt động bình thường. Vì thế sẽ có rủi ro nhỏ về độ nhất quán của dữ liệu (các app vẫn tiến hành ghi dữ liệu vào disk bình thường trong khi backup nên "thời gian backup hoàn thành" của mỗi phần dữ liệu sẽ khác nhau - ví dụ như dữ liệu của 2 apps có liên quan mật thiết trong quá trình hoạt động, mà trong quá trình backup thì 2 apps đều đang ghi dữ liệu vào disk; thời gian hoàn thành backup của 2 apps khác nhau, nên dữ liệu của 2 apps đó trong bản backup sẽ không khớp, đồng bộ với nhau như ở thời điểm 2 apps đó ghi dữ liệu vào disk)
+  * **Suspend**: 
