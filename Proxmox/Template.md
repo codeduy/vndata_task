@@ -54,5 +54,23 @@
 ## VM Backup & Restore
 * **Backup & Restore** là tính năng được tích hợp sẵn trong **proxmox** giúp sao lưu (**Backup**) dữ liệu trong Disk của VM và khôi phục (**Restore**) bản sao lưu - hoàn tác VM về trạng thái cũ tương ứng với bản Backup
 * Các loại **Backup**:
-  * **Snapshot**: là chế độ backup mà ở đó sẽ tiến hành backup dữ liệu trong disk mà VM vẫn có thể hoạt động bình thường. Vì thế sẽ có rủi ro nhỏ về độ nhất quán của dữ liệu (các app vẫn tiến hành ghi dữ liệu vào disk bình thường trong khi backup nên "thời gian backup hoàn thành" của mỗi phần dữ liệu sẽ khác nhau - ví dụ như dữ liệu của 2 apps có liên quan mật thiết trong quá trình hoạt động, mà trong quá trình backup thì 2 apps đều đang ghi dữ liệu vào disk; thời gian hoàn thành backup của 2 apps khác nhau, nên dữ liệu của 2 apps đó trong bản backup sẽ không khớp, đồng bộ với nhau như ở thời điểm 2 apps đó ghi dữ liệu vào disk)
-  * **Suspend**: 
+  * **Snapshot**: là chế độ backup mà ở đó sẽ tiến hành backup dữ liệu trong disk mà VM vẫn có thể hoạt động bình thường. Vì thế sẽ có rủi ro nhỏ về độ nhất quán của dữ liệu (các app vẫn tiến hành ghi dữ liệu vào disk bình thường trong khi backup nên "thời gian backup hoàn thành" của mỗi phần dữ liệu sẽ khác nhau - ví dụ như dữ liệu của 2 apps có liên quan mật thiết trong quá trình hoạt động, mà trong quá trình backup thì 2 apps đều đang ghi dữ liệu vào disk; thời gian hoàn thành backup của 2 apps khác nhau, nên dữ liệu của 2 apps đó trong bản backup sẽ không khớp, đồng bộ với nhau như ở thời điểm 2 apps đó ghi dữ liệu vào disk). Khi VM có cài đặt **Qemu Guest Agent** thì khi backup với mode này sẽ chạy 2 lệnh **guest-fsfreeze-freeze** and **guest-fsfreeze-thaw** giúp đóng băng các tiến trình có chọn lọc trong khoảng thời gian rất ngắn để chụp trạng thái dữ liệu ở block level - đảm bảo tính nhất quản của dữ liệu mà vẫn đảm bảo VM vận hành với khả năng downtime thấp nhất.
+    ![](../Proxmox/images/Template/Backup_Restore/1_Backup_SnapshotMode.png)
+  * **Suspend**: ở mode này thì sẽ suspend - tạm dừng toàn bộ VM ở 1 khoảng thời gian ngắn để chụp trạng thái của VM Disk ở block Layer, trước khi gọi **Snapshot** mode. Sẽ mất khoảng thời gian để tạm dừng hoàn toàn VM, vì thế nên dùng **Snapshot** để backup VM sẽ tối ưu hơn (tối ưu hơn về downtime, thời gian backup; còn về độ nhất quán dữ liệu thì không khác biệt gì so với **Snapshot**).
+    ![](../Proxmox/images/Template/Backup_Restore/2_Backup_SuspendMode.png)
+  * **Stop**: đây là mode gây rủi ro downtime cao nhất nhưng độ nhất quán của dữ liệu cao nhất trong 3 modes. Khi bắt đầu backup VM với mode này thì **Qemu** sẽ shutdown VM - tạm dừng toàn bộ các tiến trình (tạm dừng việc đọc/ghi dữ liệu vào disk), sau đó sẽ tự động bật lại VM để chụp trạng thái dữ liệu của disk ở block layer -> bắt đầu quá trình Backup(khi này VM sẽ hoạt động bình thường lại hoặc không tùy thuộc vào trạng thái của VM trước khi backup).
+    ![](../Proxmox/images/Template/Backup_Restore/3_Backup_StopMode.png)
+* **Restore**:
+  * Để restore bản backup vào VM thì cần click chọn VM cần restore -> chọn **Backup** -> chọn bản backup muốn restore cho VM -> bấm **Restore**
+    ![](../Proxmox/images/Template/Backup_Restore/1_Restore_Click.png)
+  * Sau đó sẽ hiện 1 dialog form
+    ![](../Proxmox/images/Template/Backup_Restore/2_Restore_Dialog.png)
+    * Ở phần này ta có thể điều chỉnh các trường như sau:
+      * **Storage**: chọn **Storage** đích - nơi chứa **Hard Disk** của VM sau khi restore
+      * **Bandwidth Limit**: giới hạn băng thông - tốc độ ghi dữ liệu xuống disk mới
+      * **Unique**: nếu tick tùy chọn này thì sẽ generate mới lại các thông tin riêng biệt của VM như uuid, MAC Address,...
+      * **Start after restore**: nếu tick tùy chọn này thì sẽ tự đông bật lại VM sau khi restore hoàn thành.
+      * **Override Settings**: tập hợp các tùy chọn điều chỉnh lại cấu hình VM sau khi hoàn thành restore.
+        * **Name**: thay đổi tên của VM
+        * **Memory**: thay đổi bộ nhớ **RAM** cấp phát cho  VM
+        * **Cores**, **Sockets**: thay đổi lại số nhân **CPU** cấp phát cho VM
