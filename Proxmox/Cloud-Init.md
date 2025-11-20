@@ -1,1 +1,1 @@
-> Coming soon 
+# Cloud-init trong Proxmox
