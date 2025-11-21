@@ -10,7 +10,7 @@
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/1_LinuxCloudInit_ClickCreateVM.png)
 * Điều chỉnh **Name** cho VM và bấm **Next**
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/2_LinuxCloudInit_VMGeneral.png)
-* Ta sẽ import image ở định dạng **.img** sau, vì thế ta chọn **Do not use any media** và click **Next**
+* Ta sẽ import image ở các bước sau ở định dạng **.img** sau, vì thế ta chọn **Do not use any media** và click **Next**
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/3_LinuxCloudInit_VMOS.png)
 * Click chọn **Qemu Agent** và bấm **Next**
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/4_LinuxCloudInit_VMSystem.png)
@@ -22,7 +22,7 @@
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/7_LinuxCloudInit_CPU.png)
 * Có thể tùy chỉnh bộ nhớ RAM cho VM tại **Memory** -> bấm **Next**
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/8_LinuxCloudInit_Memory.png)
-* Chọn bridge tại **Bridge** -> bấm **Next**
+* Chọn network bridge tại **Bridge** -> bấm **Next**
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/9_LinuxCloudInit_Network.png)
 * Chọn **Finish**
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/10_LinuxCloudInit_Confirm.png)
@@ -66,7 +66,7 @@
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/33_LinuxCloudInit_ConfirmReboot.png)
 * Sau khi **Reboot** hoàn thành thì ta có thể dùng các thông tin login tại Cloud-Init ở bước trước để login VM
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/34_LinuxCloudInit_LoginSuccess.png)
-* Hiện tại thì VM chưa có thể truy cập ra Internet được do thiếu cấu hình mạng
+* Hiện tại thì VM chưa thể truy cập ra Internet được do thiếu cấu hình mạng
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/35_LinuxCloudInit_NoNetwork.png)
 * Ta sẽ cấu hình các phần liên quan tại **Cloud-Init** để kiểm thử việc kết nối mạng
   * Đầu tiên là thay đổi DNS: Click **Cloud-Init** -> Double click vào phần **DNS servers**
@@ -89,3 +89,5 @@
 ## Tạo Template Windows Server tích hợp với Cloudbase-Init
 
 ### Khởi tạo Windows Server 2022 VM
+* Đầu tiên, ta cần tải file ISO từ [Windows Server 2022 download](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
+  
