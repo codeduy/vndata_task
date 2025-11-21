@@ -1,7 +1,7 @@
 # Cloud-init trong Proxmox
 
 ## Sơ lược
-* Cloud-Init là một tính năng có sẵn trong Proxmox, có thể cấu hình để giao tiếp với Cloud-Init trên Linux và Cloudbase-Init trên window thông qua một ổ CD Drive ảo; hữu ích cho việc thay đổi username, password, cấu hình mạng,... của VM mà không cần phải truy cập trực tiếp vào **Console**.
+* Cloud-Init là một tính năng có sẵn trong Proxmox, có thể cấu hình để giao tiếp với Cloud-Init trên Linux và Cloudbase-Init trên Windows thông qua một ổ CD Drive ảo; hữu ích cho việc thay đổi username, password, cấu hình mạng,... của VM mà không cần phải truy cập trực tiếp vào **Console**.
 
 ## Tạo template Linux Ubuntu tích hợp Cloud-Init
 
@@ -85,3 +85,7 @@
 * Kiểm tra kết nối Internet
   ![](../Proxmox/images/Cloud-Init/Linux_CloudInit/43_LinuxCloudInit_VMNetworkCheck.png)
 > Từ đây, ta có thể convert VM ra Template và clone từ Template ra các VM khác
+
+## Tạo Template Windows Server tích hợp với Cloudbase-Init
+
+### Khởi tạo Windows Server 2022 VM
