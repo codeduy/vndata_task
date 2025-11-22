@@ -88,6 +88,6 @@
 
 ## Tạo Template Windows Server tích hợp với Cloudbase-Init
 
-### Khởi tạo Windows Server 2022 VM
-* Đầu tiên, ta cần tải file ISO từ [Windows Server 2022 download](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022)
+### Khởi tạo Windows Server 2019 VM
+
   
