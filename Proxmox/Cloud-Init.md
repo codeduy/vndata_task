@@ -89,5 +89,16 @@
 ## Tạo Template Windows Server tích hợp với Cloudbase-Init
 
 ### Khởi tạo Windows Server 2019 VM
+* 
 
-  
+
+
+
+
+
+
+
+
+
+## Tạo template Windows tích hợp với Cloudbase-Init
+> Coming soon
