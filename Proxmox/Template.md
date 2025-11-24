@@ -77,3 +77,6 @@
         * **Name**: thay đổi tên của VM
         * **Memory**: thay đổi bộ nhớ **RAM** cấp phát cho  VM
         * **Cores**, **Sockets**: thay đổi lại số nhân **CPU** cấp phát cho VM
+       
+* Tùy chọn **Snapshots**
+> Coming soon     
