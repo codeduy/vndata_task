@@ -51,6 +51,9 @@
     ![](../Proxmox/images/Template/LinuxTemplate/5_LinuxTemplate_ConvertToTemplate_ClickYes.png)
     ![](../Proxmox/images/Template/LinuxTemplate/6_LinuxTemplate_TemplateConverted.png)
 
+### Tạo template Window Server 2019
+> Coming soon
+
 ## VM Backup & Restore
 * **Backup & Restore** là tính năng được tích hợp sẵn trong **proxmox** giúp sao lưu (**Backup**) dữ liệu trong Disk của VM và khôi phục (**Restore**) bản sao lưu - hoàn tác VM về trạng thái cũ tương ứng với bản Backup
 * Các loại **Backup**:
@@ -74,3 +77,6 @@
         * **Name**: thay đổi tên của VM
         * **Memory**: thay đổi bộ nhớ **RAM** cấp phát cho  VM
         * **Cores**, **Sockets**: thay đổi lại số nhân **CPU** cấp phát cho VM
+       
+* Tùy chọn **Snapshots**
+> Coming soon     
