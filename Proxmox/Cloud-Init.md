@@ -88,17 +88,32 @@
 
 ## Tạo Template Windows Server tích hợp với Cloudbase-Init
 
-### Khởi tạo Windows Server 2019 VM
-* 
+### Khởi tạo Windows Server 2019 VM và cài đặt Cloudbase-Init
+* Click **Create VM** để bắt đầu khởi tạo VM
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/1_WCI_CreateVM.png)
+* Điền **Name** của VM và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/2_WCI_General.png)
+* Điều chỉnh các phần **ISO image**; **Type**; **Version**; **Storage** và **ISO image** của **VirtIO drivers** nhưng trong hình 
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/3_WCI_OS.png)
+* Tick **Qemu Agent** và chọn **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/4_WCI_System.png)
+* Điều chỉnh phần **Disk size** cho phù hợp và chọn **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/5_WCI_Disks.png)
+* Điều chỉnh nhân CPU cấp phát cho VM tại **Cores** và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/6_WCI_CPU.png)
+* Điều chỉnh bộ nhớ RAM cấp phát cho VM tại **Memory** và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/7_WCI_Memory.png)
+* Chọn **Bridge** mạng và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/8_WCI_Network.png)
+* Kiểm tra lại các thông tin của VM và bấm **Finish** để khởi tạo VM
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/9_WCI_Confirm.png)
 
 
 
 
 
 
-
-
-
+### Các usecase
 
 ## Tạo template Windows tích hợp với Cloudbase-Init
 > Coming soon
