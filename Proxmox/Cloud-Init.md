@@ -238,6 +238,10 @@
   * Cấu hình network của VM trước khi áp dụng cấu hình từ Cloud-Init Proxmox như hình
     ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/65_WCI_ConfigNetwork_View.png)
   * Tiếp đến, ta click tab **Cloud-Init** và tiến hành sửa các thông tin cấu hình như trong hình, sau đó click **Regenerate Image**
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/66_WCI_ConfigCloud-Init.png)
+  * Sau đó, **Reboot** lại VM, và kiểm tra lại cấu hình mạng, mật khẩu
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/67_WCI_CheckNetworkConfig.png)
+* Tiếp đến, ta sẽ chạy Sysprep để buộc xóa các thông tin nhận dạng phần cứng (Hardware) mà OS nhìn thấy -> buộc OS phải nhận dạng lại ở lần boot tiếp theo
   
 ## Tạo template Windows tích hợp với Cloudbase-Init
 > Coming soon
