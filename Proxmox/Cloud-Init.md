@@ -107,13 +107,141 @@
   ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/8_WCI_Network.png)
 * Kiểm tra lại các thông tin của VM và bấm **Finish** để khởi tạo VM
   ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/9_WCI_Confirm.png)
-
-
-
-
-
-
-### Các usecase
-
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/10_WCI_VMSummary.png)
+* Tiếp đến, ta sẽ thêm **CloudInit Drive** ở phần **Hardware** 
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/11_WCI_AddCIDrive.png)
+* Chọn **Storage** chứa **CloudInit Drive** và bấm **Add**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/12_WCI_AddCIDrive.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/13_WCI.png)
+* Click **Console** và bấm **Start** để khởi chạy VM
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/14_WCI_VMStart.png)
+* Sau khi VM khởi động thì bắt đầu các bước cài đặt OS. Click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/15_WCI_InstallWinOS_Step1.png)
+* Click **Install now**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/16_WCI_InstallWinOS_Step2.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/17_WCI_InstallWinOS_Step2Waiting.png)
+* Chọn loại OS như hình và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/18_WCI_InstallWinOS_Step3.png)
+* Click **I accept the license terms** và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/19_WCI_InstallWinOS_Step4.png)
+* Chọn **Custom**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/20_WCI_InstallWinOS_Step5.png)
+* Click **Load driver**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/21_WCI_InstallWinOS_Step6.png)
+* Click **OK**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/22_WCI_InstallWinOS_Step7.png)
+* Chọn tùy chọn VirtIO Driver như hình và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/23_WCI_InstallWinOS_Step8.png)
+* Click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/24_WCI_InstallWinOS_Step9.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/25_WCI_InstallWinOS_Step9Waiting.png)
+* Sau khi hoàn thành quá trình cài đặt thì sẽ tự động reboot lại OS
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/26_WCI_InstallWinOS_Step9_Reboot.png)
+* Tiếp theo, ta nhập password và bấm **Finish**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/28_WCI_InstallWinOS_Step10_InputPassword.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/29_WCI_InstallWinOS_Completed.png)
+* Nhập password và login vào OS
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/30_WCI_InputPassword_Submit.png)
+* Sau khi login thành công thì sẽ tự động khởi chạy **Server Manager** và hiện message như hình, có thể thực hiện các bước như hình để tắt đi
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/31_WCI_ServerManager.png)
+* Click **Local Server** -> **On** (IE Enhanced Security Configuration)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/32_WCI_IE_EnhancedOff.png)
+* Click tùy chọn **Off** và chọn **OK** như trong hình
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/33_WCI_IE_EnhancedOff.png)
+* Tiếp theo, mở **Windows Explorer** -> **This PC** -> Double Click **CD Drive (D:)** để truy cập ổ đĩa ảo của VirtIO drivers
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/34_WCI_OpenVirtIODrive.png)
+* Double click vào file như trong hình để tiến hành cài đặt **Qemu Guest Agent**, các driver còn thiếu và các thành phần liên quan
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/35_WCI_InstallVirtIOGuestTools.png)
+* Tick chọn ở **(1)** và bấm **Install**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/36_WCI_InstallVirtIOGuestTools_Step1.png)
+* Click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/37_WCI_InstallVirtIOGuestTools_Step2.png)
+* Tick chọn ở **(1)** và bấm **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/38_WCI_InstallVirtIOGuestTools_Step3.png)
+* Click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/39_WCI_InstallVirtIOGuestTools_Step4.png)
+* Click **Install**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/40_WCI_InstallVirtIOGuestTools_Step5.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/41_WCI_InstallVirtIOGuestTools_Step5_View.png)
+* Click **Finish**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/42_WCI_InstallVirtIOGuestTools_Step6.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/43_WCI_InstallVirtIOGuestTools_Step6_View.png)
+* Click **Close**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/44_WCI_InstallVirtIOGuestTools_Step7.png)
+* Hiện tại thì VM Windows chưa có kết nối Internet. Ta cần cấu hình IP tĩnh cho VM
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/45_WCI_NoNetworkStatusVM.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/46_WCI_SetNetworkConfig.png)
+* Tiếp đến, ta truy cập trình duyệt IE để tiến hành tải Cloudbase-Init
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/47_WCI_EnterIE.png)
+* Truy cập [Cloudbase-init download](https://cloudbase.it/cloudbase-init/#download) và click chọn **Cloudbase-Init x64** như hình
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/48_WCI_ClickDownloadCI.png)
+* Click **Run** để sau khi tải xong và khởi chạy ngay tiến trình cài đặt
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/49_WCI_ClickRUN.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/50_WCI_DownloadProgress.png)
+* Click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/51_WCI_CI_Step1.png)
+* Tick chọn ở (1) và click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/52_WCI_CI_Step2.png)
+* Click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/53_WCI_CI_Step3.png)
+* Tick chọn ở (1) để kích hoạt Cloudbase-Init service chạy như dịch vụ hệ thống và click **Next**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/54_WCI_CI_Step4.png)
+* Click **Install**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/55_WCI_CI_Step5.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/56_WCI_CI_Step5_View.png)
+* Click **Finish**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/57_WCI_CI_Step6.png)
+* Tiếp theo, ta truy cập thư mục **C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf**, sửa lại file **cloudbase-init.conf** theo nội dung sau:
+  ```
+  [DEFAULT]
+  username=Administrator
+  groups=Administrators
+  inject_user_password=true
+  first_logon_behaviour=no
+  config_drive_raw_hhd=true
+  config_drive_cdrom=true
+  config_drive_vfat=true
+  bsdtar_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\bsdtar.exe
+  mtools_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\
+  verbose=true
+  debug=true
+  log_dir=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\
+  log_file=cloudbase-init.log
+  default_log_levels=comtypes=INFO,suds=INFO,iso8601=WARN,requests=WARN
+  logging_serial_port_settings=
+  mtu_use_dhcp_config=true
+  ntp_use_dhcp_config=true
+  local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\
+  check_latest_version=true
+  metadata_services=cloudbaseinit.metadata.services.configdrive.ConfigDriveService
+  plugins=cloudbaseinit.plugins.common.networkconfig.NetworkConfigPlugin,
+  cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin
+  ```
+  > ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/58_WCI_CI_Step7.png)
+  > * Tại phần **username**, ta sẽ đổi thành **Administrator** -> áp dụng các phần cấu hình password, network chỉ cho user này.
+  > * Chèn thêm **first_logon_behaviour=no** để Windows buộc người dùng đặt lại password cho lần login đầu tiên.
+  > * Thêm dòng **metadata_services=cloudbaseinit.metadata.services.configdrive.ConfigDriveService** để Cloudbase-Init đọc dữ liệu từ ổ đĩa ảo **CloudInit Drive** mà ta đã thêm ở bước trước.
+  > * Tại phần **plugins**, ta sẽ thêm 2 plugins về cấu hình Network, Password; ở đây có thể bỏ phần plugins này thì mặc định Cloudbase-Init sẽ chạy tất cả các plugin mà có hỗ trợ cho Windows; nhưng vẫn nên thêm cụ thể các plugins mà ta cần dùng để phần cấu hình rõ ràng hơn và tránh các lỗi không cần thiết. Nếu metadata gửi từ Cloud-Init của proxmox có sự thay đổi thì sẽ thực thi các plugin theo thứ tự từ trái qua phải.
+  > * Tham khảo thêm tại [Cloudbase-Init Docs](https://cloudbase-init.readthedocs.io/en/latest/tutorial.html#configuration-file)
+* Tiếp theo, ta cần cấu hình dịch vụ **cloudbase-init** service -> đổi **Startup Type** sang **Automatic (Delayed Start)**
+  * Mở cửa sổ **Run** dùng tổ hợp phím 'Windows' + R, nhập **services.msc** và bấm **OK**
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/60_WCI_AccessServicesList.png)
+  * Click chuột phải vào dịch vụ **cloudbase-init** và chọn **Properties**
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/61_WCI_ServiceProperties.png)
+  * Đổi **Startup type** sang **Automatic (Delayed Start)**
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/62_WCI_ChooseStartupTypeOption.png)
+  * Click **OK** để lưu thiết lập
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/63_WCI_ClickOK.png)
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/64_WCI_Done.png)
+  > Có một số trường hợp sau khi reboot lại thì không áp dụng metadata gửi từ Cloud-Init của Proxmox; nguyên nhân của sự cố này có thể là do sai lệch thứ tự boot của Cloudbase-Init service (Cloudbase-Init service có thể load quá sớm trước khi nhận dạng được metadata mount từ ổ đĩa ảo CloudInit Drive Cloud-Init Proxmox -> plugin không thực thi/ áp dụng metadata mới). Vì thế ta cần cấu hình lại **Startup Type** như trên để hoãn lại thời gian khởi chạy cloud-init service, đợi OS mount và nhận dạng ổ đĩa ảo CloudInit Drive.
+* Kiểm thử áp dụng cấu hình từ Cloud-Init Proxmox
+  * Cấu hình network của VM trước khi áp dụng cấu hình từ Cloud-Init Proxmox như hình
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/65_WCI_ConfigNetwork_View.png)
+  * Tiếp đến, ta click tab **Cloud-Init** và tiến hành sửa các thông tin cấu hình như trong hình, sau đó click **Regenerate Image**
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/66_WCI_ConfigCloud-Init.png)
+  * Sau đó, **Reboot** lại VM, và kiểm tra lại cấu hình mạng, mật khẩu
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/67_WCI_CheckNetworkConfig.png)
+* Tiếp đến, ta sẽ chạy Sysprep để buộc xóa các thông tin nhận dạng phần cứng (Hardware) mà OS nhận diện được -> buộc OS phải nhận dạng lại ở lần boot tiếp theo
+  
 ## Tạo template Windows tích hợp với Cloudbase-Init
 > Coming soon
