@@ -241,7 +241,37 @@
     ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/66_WCI_ConfigCloud-Init.png)
   * Sau đó, **Reboot** lại VM, và kiểm tra lại cấu hình mạng, mật khẩu
     ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/67_WCI_CheckNetworkConfig.png)
-* Tiếp đến, ta sẽ chạy Sysprep để buộc xóa các thông tin nhận dạng phần cứng (Hardware) mà OS nhận diện được -> buộc OS phải nhận dạng lại ở lần boot tiếp theo
+* Tiếp đến, ta sẽ chạy Sysprep để buộc xóa các thông tin nhận dạng phần cứng (Hardware Identity) mà OS nhận diện được -> buộc OS phải nhận dạng lại ở lần boot tiếp theo
+  * Trước tiên, ta sẽ cài đặt Chrome trên VM
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/68_WCI_InstallChrome.png)
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/69_WCI_ChromeView.png)
+  * Tiếp đến, mở cửa sổ CMD và truy cập đến đường dẫn *C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf* thông qua lệnh
+    ```
+    cd C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf
+    ```
+    và chạy tiếp lệnh sau để bắt đầu chạy Sysprep
+    ```
+    C:\Windows\System32\Sysprep\sysprep.exe /generalize /oobe /unattend:Unattend.xml
+    ```
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/70_WCI_ExcuteCommand.png)
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/71_WCI_SysPrepLoading.png)
+  * Sau khi chạy xong thì sẽ tự động shutdown VM
+    ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/72_WCI_SysprepStopVM.png)
+* Sau khi chạy sysprep thành công thì ta có thể chuyển đổi VM thành template - nhấp chuột phải vào VM và click chọn **Convert to template**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/73_WCI_ConvertToTemplate.png)
+* Click **Yes**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/74_WCI_Yes.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/75_WCI_TemplateView.png)
+* Clone thành VM - Nhấp chuột phải vào template (1) và click chọn **Clone** (2)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/76_WCI_CloneToVM.png)
+* Điền tên VM vào trường **Name**, chọn **Mode** là **Full Clone** và bấm **Clone**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/77_WCI_InputVMInfo.png)
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/78_WCI_VMCloneView.png)
+* Click chọn tab **Cloud-Init**, đổi/nhập lại password ở trường **Password** và bấm **Regenerate Image**
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/79_WCI_InputPasswordAndRegenrateImage.png)
+* **Start** VM, nhập **Password** đã điền trong **Cloud-Init** ở bước trước để vào VM
+  ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/80_WCI_VMConsoleView.png)
   
+    
 ## Tạo template Windows tích hợp với Cloudbase-Init
 > Coming soon
