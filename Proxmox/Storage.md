@@ -11,5 +11,13 @@
   > Cần lưu ý đảm bảo để trống vùng disk phù hợp với nhu cầu ghi dữ liệu của các VM, tránh hiện tượng **over-provisioning** - là hiện tượng mà VM ghi dữ liệu thỏa mản dung lượng disk tối đa được cấp phát nhưng lại không thoả lượng disk thực tế còn trống gây hỏng dữ liệu.
 > Tất cả các cấu hình liên quan đến storage đều được lưu trữ ở file **/etc/pve/storage.cfg**
 > ![](../Proxmox/images/Storage/3_StorageConfigText.png)
+* Về các thuộc tính chính của storage
+  * **ID**: tên định danh duy nhất của storage được proxmox nhận dạng trong **/etc/pve/storage.cfg**
+  * **Content**: các loại dữ liệu mà loại storage đó hỗ trợ lưu trữ.
+    > * Với loại storage là **Directory** thì hỗ trợ **file level** nên sẽ support các dạng lưu trữ như hình
+    > ![](../Proxmox/images/Storage/4_Storage_FileLevel.png)
+    > * Đối với **LVM-Thin** - chỉ hỗ trợ **block level** nên chỉ có thể support **Disk image** và **Container**
+    > ![](../Proxmox/images/Storage/5_Storage_BlockLevel.png)
+    
 
 
