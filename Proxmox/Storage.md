@@ -18,6 +18,8 @@
     > ![](../Proxmox/images/Storage/4_Storage_FileLevel.png)
     > * Đối với **LVM-Thin** - chỉ hỗ trợ **block level** nên chỉ có thể support **Disk image** và **Container**
     > ![](../Proxmox/images/Storage/5_Storage_BlockLevel.png)
+  * **Nodes**: chỉ các **proxmox node** có quyền tương tác/đọc - ghi dữ liệu đối với storage tương ứng
+  * **Enable**: 
     
 
 
