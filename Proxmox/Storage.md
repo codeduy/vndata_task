@@ -19,7 +19,17 @@
     > * Đối với **LVM-Thin** - chỉ hỗ trợ **block level** nên chỉ có thể support **Disk image** và **Container**
     > ![](../Proxmox/images/Storage/5_Storage_BlockLevel.png)
   * **Nodes**: chỉ các **proxmox node** có quyền tương tác/đọc - ghi dữ liệu đối với storage tương ứng
-  * **Enable**: 
+  * **Enable**: khi bỏ tick tùy chọn này thì sẽ ngắt mọi giao tiếp từ thao tác trên giao diện proxmox liên quan đến **Hard Disk** thực thi lên storage tương ứng.
+    > ![](../Proxmox/images/Storage/6_Enabled_NO.png)
+    > * VM ở trạng thái **running**: sẽ không thể tương tác với disk thuộc Storage đã bỏ tick **Enabled** như **Resize** (báo lỗi như hình), **Add** Hard Disk (không hiện disk để **Add**); ở trong VM thì vẫn có thể thực hiện các thao tác sao chép, di chuyển, tải dữ liệu từ Internet bình thường.
+    >   ![](../Proxmox/images/Storage/7_Storage_ResizeDisks.png)
+    >   ![](../Proxmox/images/Storage/8_Storage_CantAddHardDisk.png)
+    > * VM ở trạng thái **stop**, **shutdown** thì sẽ không thể **Start** lại được nữa, và sẽ báo lỗi như hình - **proxmox node** không còn quyền đọc/ghi dữ liệu của VM Disk để khởi động VM
+    >   ![](../Proxmox/images/Storage/10_Storage_StartVMFail.png)
+    > * Ở phía giao diện **Shell** của proxmox node thì vẫn có thể thao tác đọc/ghi dữ liệu bình thường
+    >   ![](../Proxmox/images/Storage/9_Storage_WgetCommand.png)
     
+> LVM: có 3 định nghĩa cần nắm là physical volume, volume group, logical volume
+> Ở volume group, nếu một ổ cứng bị hỏng thì sẽ làm hỏng toàn bộ dữ liệu nằm trên volume group đó; do ở khía cạnh phần mềm thì các app/OS trên lớp trên coi volume group đó là một virtual disk thống nhất.
 
 
