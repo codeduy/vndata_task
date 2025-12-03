@@ -29,16 +29,35 @@
     > * Ở phía giao diện **Shell** của proxmox node thì vẫn có thể thao tác đọc/ghi dữ liệu bình thường
     >   ![](../Proxmox/images/Storage/9_Storage_WgetCommand.png)
     
-> LVM: có 3 định nghĩa cần nắm là physical volume, volume group, logical volume
-> Ở volume group, nếu một ổ cứng bị hỏng thì sẽ làm hỏng toàn bộ dữ liệu nằm trên volume group đó; do ở khía cạnh phần mềm thì các app/OS trên lớp trên coi volume group đó là một virtual disk thống nhất.
->
-> LVM-thin
+
+> 
 >
 > ZFS: cần nắm rõ 3 định nghĩa về ZPOOL(bao gồm các RAID tương tự như LVM), Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi), CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
 > ZFS có thể lưu cả dữ liệu ở file level và block level
 >
-> Tại sao có thin-pool trên block-level storage?
 > 
 > Các loại RAID và ưu/nhược điểm từng loại
+> 
 
 
+## LVM, ZFS
+
+### LVM
+* Có ba định nghĩa cốt lõi:
+  * **Physical Volumes (PV)**: là các thiết bị lưu trữ như ổ đĩa SSD/HDD được **LVM** đánh dấu dùng cho việc quản lí.
+  * **Volume Group (VG)**: gộp tất cả các **PV** thành một ổ thống nhất mà OS nhìn thấy gọi là **VG**.
+  * **Logical Volume (LV)**: là các "mảnh" phân vùng lấy từ **VG** để cấp phát cho các VM, các VM nhận dạng **LV** như các ổ đĩa ảo để lưu trữ dữ liệu
+  > Trong **LVM**, nếu một ổ bị hỏng thì sẽ làm hỏng toàn bộ dữ liệu nằm trên các ổ còn lại - bởi vì OS + VM xem **LV** là một ổ thống nhất.
+* Sơ đồ tổng quát:
+> Coming soon
+
+### LVM-Thin
+* Cũng là **LVM** nhưng có hỗ trợ **thin provisioning** thông qua việc tạo thêm **Thin Pool** từ **VG**
+  > * **Thin Pool** tồn tại trên block-level storage là để hình thành cơ chế **thin provisioning** mà block-level storage không có (VM sẽ lấy disk ảo từ **Thin Pool** để làm virtual **Hard Disk** cho chính VM đó )
+  > * **Thin provisioning** là tính năng giúp tiết kiệm dung lượng disk - phần disk đã cấp phát cho VM mà VM đó chưa dùng thì có thể được sử dụng bởi VM khác.
+  >   * Ví dụ: Cấp phát 100GB cho Linux VM nhưng chỉ dùng có 10GB thì 90GB còn lại có thể dùng cho VM khác, Linux VM đó vẫn có thể sinh dữ liệu trong quá trình vận hành cho tới khi đạt mức giới hạn tối đa đã cấp phát là là 100GB.
+  >   * Vì thế, sẽ gây nên rủi ro gọi là **over-provisioning** - đặt ở trường hợp Linux VM trên, VM nhìn thấy còn trống 90GB mà disk thực tế còn trống chỉ có 10GB, thì khi Linux VM trên ghi 20GB dữ liệu vào disk sẽ làm dữ liệu có khả năng bị hỏng/ mất tính nhất quán của dữ liệu -> Cần monitor storage (cảnh báo khi disk đạt 80-90% tùy vào dung lượng disk/ mức độ tương tác thường xuyên của hệ thống lên disk đó) để tránh **over-provisioning**.
+* Ta có thể tạo nhiều **Thin Pool** từ **VG** để quản lí rủi ro tùy theo nhu cầu - mục đích. Ví dụ, ta có thể tạo hai **Thin Pool**, một pool để chạy các VM trong môi trường production, một pool dùng cho mục đích test/kiểm thử; nếu pool dùng để test/kiểm thử bị **over-provisioning** thì sẽ không ảnh hưởng đến pool dùng để cấp phát cho VM chạy trong môi trường production.
+* Các loại storage có hỗ trợ **thin provisioning** đều hỗ trợ **Snapshot**, nhưng chỉ với VM lưu **Hard Disk** ở định dạng **.qcow2**, còn ở định dạng **.raw** thì không.
+* Sơ đồ tổng quát:
+> Coming soon
