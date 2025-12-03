@@ -37,7 +37,8 @@
 > ZFS: cần nắm rõ 3 định nghĩa về ZPOOL(bao gồm các RAID tương tự như LVM), Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi), CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
 > ZFS có thể lưu cả dữ liệu ở file level và block level
 >
-> Tại sao có thin-pool trên block-level storage
+> Tại sao có thin-pool trên block-level storage?
+> 
 > Các loại RAID và ưu/nhược điểm từng loại
 
 
