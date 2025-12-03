@@ -31,5 +31,13 @@
     
 > LVM: có 3 định nghĩa cần nắm là physical volume, volume group, logical volume
 > Ở volume group, nếu một ổ cứng bị hỏng thì sẽ làm hỏng toàn bộ dữ liệu nằm trên volume group đó; do ở khía cạnh phần mềm thì các app/OS trên lớp trên coi volume group đó là một virtual disk thống nhất.
+>
+> LVM-thin
+>
+> ZFS: cần nắm rõ 3 định nghĩa về ZPOOL(bao gồm các RAID tương tự như LVM), Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi), CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
+> ZFS có thể lưu cả dữ liệu ở file level và block level
+>
+> Tại sao có thin-pool trên block-level storage
+> Các loại RAID và ưu/nhược điểm từng loại
 
 
