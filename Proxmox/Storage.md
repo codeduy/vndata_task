@@ -37,7 +37,8 @@
 >
 > 
 > Các loại RAID và ưu/nhược điểm từng loại
-> 
+>
+> Demo và đối chiếu resize đối với disk .qcow2 và .raw
 
 
 ## LVM, ZFS
