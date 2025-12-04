@@ -34,7 +34,7 @@
 >
 > ZFS: cần nắm rõ 3 định nghĩa về ZPOOL(bao gồm các RAID tương tự như LVM), Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi), CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
 > ZFS có thể lưu cả dữ liệu ở file level và block level
->
+> Yêu cầu về hardware: ZFS cần nhiều RAM để xử lí hơn so với LVM; SSD
 > 
 > Các loại RAID và ưu/nhược điểm từng loại
 >
@@ -47,11 +47,11 @@
 * Có ba định nghĩa cốt lõi:
   * **Physical Volumes (PV)**: là các thiết bị lưu trữ như ổ đĩa SSD/HDD được **LVM** đánh dấu dùng cho việc quản lí.
   * **Volume Group (VG)**: gộp tất cả các **PV** thành một ổ thống nhất mà OS nhìn thấy gọi là **VG**.
-  * **<img width="2921" height="1255" alt="13_Storage_Shell" src="https://github.com/user-attachments/assets/6d6022f5-ca93-43c9-8565-a2009d0dd53f" />
-**: là các "mảnh" phân vùng lấy từ **VG** để cấp phát cho các VM, các VM nhận dạng **LV** như các ổ đĩa ảo để lưu trữ dữ liệu
+  * **Logical Volume (LV)**: là các "mảnh" phân vùng lấy từ **VG** để cấp phát cho các VM, các VM nhận dạng **LV** như các ổ đĩa ảo để lưu trữ dữ liệu
   > Trong **LVM**, nếu một ổ bị hỏng thì sẽ làm hỏng toàn bộ dữ liệu nằm trên các ổ còn lại - bởi vì OS + VM xem **LV** là một ổ thống nhất.
 * Sơ đồ tổng quát:
-> Coming soon
+  
+![](../Proxmox/images/Storage/11_Storage_LVMDiagram.png)
 
 ### LVM-Thin
 * Cũng là **LVM** nhưng có hỗ trợ **thin provisioning** thông qua việc tạo thêm **Thin Pool** từ **VG** - để tạo được **LVM-Thin** thì cần phải có **VG** từ **LVM**
@@ -62,7 +62,17 @@
 * Ta có thể tạo nhiều **Thin Pool** từ **VG** để quản lí rủi ro tùy theo nhu cầu - mục đích. Ví dụ, ta có thể tạo hai **Thin Pool**, một pool để chạy các VM trong môi trường production, một pool dùng cho mục đích test/kiểm thử; nếu pool dùng để test/kiểm thử bị **over-provisioning** thì sẽ không ảnh hưởng đến pool dùng để cấp phát cho VM chạy trong môi trường production.
 * Các loại storage có hỗ trợ **thin provisioning** đều hỗ trợ **Snapshot**, nhưng chỉ với VM lưu **Hard Disk** ở định dạng **.qcow2**, còn ở định dạng **.raw** thì không.
 * Sơ đồ tổng quát:
-> Coming soon
+
+![](../Proxmox/images/Storage/12_Storage_LVMThinDiagram.png)
+
+> ![](../Proxmox/images/Storage/13_Storage_Shell.png)
+
+### Demo tạo Storage LVM, LVM-Thin trên file giả lập
+> test với tạo VM .raw; import disk với định dạng .qcow2 (sẽ fail); kiểm thử snapshot với VM trên LVM (không thể dùng snapshot tích hợp sẵn trên giao diện được) và LVMThin
+>
+> Phân biệt **Snapshots** và **Backup** - **Snapshot** type
+
+
 
 ### ZFS
 
