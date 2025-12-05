@@ -117,11 +117,16 @@
 ### ZFS
 
 
+
+
+
+
+
 > ZFS: cần nắm rõ 3 định nghĩa về ZPOOL(bao gồm các RAID), Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi), CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
 > ZFS có thể lưu cả dữ liệu ở file level và block level
 > Yêu cầu về hardware: ZFS cần nhiều RAM để xử lí hơn so với LVM; SSD
 > 
 > Các loại RAID và ưu/nhược điểm từng loại
 
-### ZFS
+
 
