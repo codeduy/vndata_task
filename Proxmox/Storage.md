@@ -110,7 +110,7 @@
 >     ![](../Proxmox/images/Storage/28_Storage_LVM-ThinAfterVMCreate.png)
 >   * Vì **LVM-Thin** hỗ trợ **Thin Provisioning** nên sẽ chỉ chiếm phần disk - **LVM-Thin** Storage mà VM thực sự dùng, chứ không chiếm hết tất cả phần disk mà đã được cấp phát.
 > * **Snapshots**
->   * Do cơ chế lưu trữ dữ liệu trên **LVM-Thin** và **LVM** khác nhau nên VM được lưu trữ trên **LVM-Thin** sẽ hỗ trợ tính năng **Snapshots** còn **LVM** thì không.
+>   * Do cơ chế lưu trữ dữ liệu trên **LVM-Thin** và **LVM** khác nhau nên VM được lưu trữ trên **LVM-Thin** sẽ hỗ trợ tính năng**Snapshots** còn **LVM** thì không.
 >     ![](../Proxmox/images/Storage/29_Storage_LVM-Thin_SPSnapshots.png)
 >     ![](../Proxmox/images/Storage/30_Storage_LVM_DontSPSnapshots.png)
 
@@ -122,11 +122,10 @@
 
 
 
-> ZFS: cần nắm rõ 3 định nghĩa về ZPOOL(bao gồm các RAID), Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi), CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
-> ZFS có thể lưu cả dữ liệu ở file level và block level
+> ZFS: cần nắm rõ các định nghĩa về VDEV (tương đương PV ở LVM nhưng có thể tích hợp RAID mềm, và có thể tạo nhiều cụm RAID tùy mục đích vận hành); ZPOOL(bao gồm các VDEV gộp lại thành 1 virtual disk duy nhất tương đương VG trên LVM; chỉ cần 1 DEV offline là sẽ làm hỏng toàn bộ ZPOOL); Dataset (là phân vùng được cấp phát từ ZPOOL - ở định dạng block-level storage làm ổ cứng cho các máy ảo tương đương LV trên LVM), ZVOL (là phân vùng được cấp phát từ ZPOOL - dùng như một folder, có thể dùng để chứa file, ISO Images,...); Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi); CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
 > Yêu cầu về hardware: ZFS cần nhiều RAM để xử lí hơn so với LVM; SSD
-> 
-> Các loại RAID và ưu/nhược điểm từng loại
+> Nắm rõ các cơ chế cache - tối ưu tốc độ xử lí trong ZFS Storage (L2ARC); Ưu và nhược điểm của cơ chế này; Demo đối chiếu giữa có dùng và không dùng cache
+> Các loại RAID và ưu/nhược điểm từng loại mà Proxmox hỗ trợ
 
 
 
