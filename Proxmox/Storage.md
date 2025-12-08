@@ -115,7 +115,14 @@
 >     ![](../Proxmox/images/Storage/30_Storage_LVM_DontSPSnapshots.png)
 
 ### ZFS
-
+* Khái quát chung
+  * Tích hợp **RAID** mềm giúp tiết kiệm chi phí hơn so với việc dùng Card **RAID** vật lí trên LVM - dùng CPU, RAM để tính toán - xử lí RAID
+  * **ZFS** hỗ trợ caching trên SSD để tăng tốc độ đọc-ghi cho các dữ liệu được truy cập thường xuyên
+  * **ZFS** cần giao tiếp trực tiếp với SSD disk thay vì trung gian qua các dạng RAID controller để có thể hoạt động đúng cách
+  * Các dạng RAID mà **ZFS** hỗ trợ:
+    * **RAID0**(Striping, Single Disk): là cơ chế gộp các disk đơn vào **ZPOOL** thành một disk thống nhất - tương tự như **VG** trên **LVM**; nếu một disk bị hỏng thì sẽ làm hỏng toàn bộ dữ liệu trên **ZPOOL**
+    * **RAID1**(Mirror): ở dạng **RAID** này thì yêu cầu có tối thiểu 2 disks; dữ liệu sẽ được ghi đều trên các disk - tốc độ ghi sẽ chậm do phải ghi đồng thời lên nhiều disk, nhưng bù lại là tốc độ đọc nhanh do việc sẵn sàng nhiều disks lưu trữ để CPU/RAM đọc song song; về khả năng lưu trữ thì chỉ đáp ứng được 50% với 2 disks và 20% với 5 disks, nhưng bù lại là **độ an toàn và tính sẵn sàng cao** (với 5 disk **RAID1** thì nếu có hỏng hẳn 4 disks thì vẫn còn 1 disk để đọc/ghi)
+    > Theo lý thuyết thì khả năng đọc của **RAID0** và **RAID1** là như nhau (với 2 disks thì **RAID0** đọc 2 disks cùng lúc, disk 1 chứa 1 nửa dữ liệu, disk 2 chứa nửa còn lại; **RAID1** thì dữ liệu của 2 disks như nhau nên disk 1 đọc từ đầu, disk 2 đọc ngược từ phía cuối của dữ liệu); còn đối với việc ghi dữ liệu thì **RAID0** sẽ ghi nhanh hơn so với **RAID1**, do với **RAID0** thì sẽ chia dữ liệu nhỏ ra để ghi vào các disk, còn **RAID1** thì sẽ ghi đầy đủ toàn bộ dữ liệu vào các disks nên tốc độ ghi tương tự như disk lẻ cho dù cụm **RAID1** có nhiều disks
 
 
 
@@ -126,6 +133,8 @@
 > Yêu cầu về hardware: ZFS cần nhiều RAM để xử lí hơn so với LVM; SSD
 > Nắm rõ các cơ chế cache - tối ưu tốc độ xử lí trong ZFS Storage (L2ARC); Ưu và nhược điểm của cơ chế này; Demo đối chiếu giữa có dùng và không dùng cache
 > Các loại RAID và ưu/nhược điểm từng loại mà Proxmox hỗ trợ
+>
+> Vẽ sơ đồ mô hình các RAID ứng với ZFS; mà cả mô hình mà Cache hoạt động
 
 
 
