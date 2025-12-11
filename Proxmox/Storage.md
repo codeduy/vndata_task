@@ -147,7 +147,10 @@
 >
 > Vẽ sơ đồ mô hình các RAID ứng với ZFS; mà cả mô hình mà Cache hoạt động
 > 
->Tốc độ ngẫu nhiên và tốc độ tuần tự ?
+> Tốc độ ngẫu nhiên và tốc độ tuần tự ?
+>
+> Double stripping ở vdev layer và zpool layer ?
+> 
 
 
 
