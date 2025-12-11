@@ -145,6 +145,8 @@
 > Các loại RAID và ưu/nhược điểm từng loại mà Proxmox hỗ trợ
 >
 > Vẽ sơ đồ mô hình các RAID ứng với ZFS; mà cả mô hình mà Cache hoạt động
+> 
+>Tốc độ ngẫu nhiên và tốc độ tuần tự ?
 
 
 
