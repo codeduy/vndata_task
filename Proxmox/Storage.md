@@ -126,12 +126,13 @@
     * **RAID1**(Mirror): ở dạng **RAID** này thì yêu cầu có tối thiểu 2 disks; dữ liệu sẽ được ghi đều trên các disk - tốc độ ghi sẽ chậm do phải ghi đồng thời lên nhiều disk, nhưng bù lại là tốc độ đọc nhanh do việc sẵn sàng nhiều disks lưu trữ để CPU/RAM đọc song song; về khả năng lưu trữ thì chỉ đáp ứng được 50% với 2 disks và 20% với 5 disks, nhưng bù lại là **độ an toàn và tính sẵn sàng cao** (với 5 disk **RAID1** thì nếu có hỏng hẳn 4 disks thì vẫn còn 1 disk để đọc/ghi)
       > Sơ đồ mô tả **RAID1**:
       > Coming soon
+      > 
       > Theo lý thuyết thì khả năng đọc của **RAID0** và **RAID1** là như nhau (với 2 disks thì **RAID0** đọc 2 disks cùng lúc, disk 1 chứa 1 nửa dữ liệu, disk 2 chứa nửa còn lại; **RAID1** thì dữ liệu của 2 disks như nhau nên disk 1 đọc từ đầu, disk 2 đọc ngược từ phía cuối của dữ liệu); còn đối với việc ghi dữ liệu thì **RAID0** sẽ ghi nhanh hơn so với **RAID1**, do với **RAID0** thì sẽ chia dữ liệu nhỏ ra để ghi vào các disk, còn **RAID1** thì sẽ ghi đầy đủ toàn bộ dữ liệu vào các disks nên tốc độ ghi tương tự như disk lẻ cho dù cụm **RAID1** có nhiều disks
     * **RAID10**(RAID0 + RAID1):
       * Là loại **RAID** kết hợp giữa **tốc độ ghi cao** của **RAID0**, **độ an toàn/tính sẵn sàng cao** của **RAID1**. Được chia làm 2 lớp: lớp đầu tiên mà OS + RAM/CPU nhìn thấy là lớp **RAID0**(striping) và lớp dưới là **RAID1**(mirroring).
       * Yêu cầu tối thiểu phải có 4 disks
         > Ví dụ với 4 disks thì sẽ tạo 2 cặp làm **RAID1** ở layer dưới và gộp 2 cặp đó làm **RAID0** ở layer trên; khi ghi dữ liệu từ trên xuống thì **RAID0** sẽ nhận và chia dữ liệu thành 2 mảnh để ghi xuống lớp **RAID1** ở dưới - **tốc độ ghi cao của RAID0**; từng cặp **RAID1** ở layer dưới sẽ nhận từng mảnh dữ liệu -> nhân đôi dữ liệu mảnh đó lên và ghi xuống từng disk của cặp đó - **độ an toàn/tính sẵn sàng cao của RAID1**; cho nên hiệu quả lưu trữ chỉ bằng 50% với mỗi cặp 2 disk **RAID1**, và mỗi cặp chịu rủi ro hỏng tối đa 1 disk, nếu hỏng hết cả cặp disk thì toàn bộ dữ liệu của **ZPOOL** bị hỏng hoàn toàn);
-        > Sơ đồ mô tả **RAID10**:
+        > Sơ đồ mô tả **RAID10**:        > 
         > Coming soon
 
 
