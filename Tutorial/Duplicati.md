@@ -89,9 +89,15 @@
 > Lưu ý:
 > * Phần hướng dẫn trên thực hiện trên **Window Server** 2019 với user mặc định là **Administrator**
 > * Sau khi khởi động lại Window VM thì cần Login VM lại với user **Administrator** để **Duplicati** có thể chạy backup theo lịch(nếu có)
-> * Nếu việc backup bị gián đoạn sau khi ngắt kết nối RDP đến VM thì cần xem xét các yếu tố tác động khác gây Session Termination
+
+
+
+Với mode LocalSystem - Window service 
+
+-> auto backup schedule kể cả user log out
 
 ## Trên Linux Server
 > Coming soon
+
 
 
