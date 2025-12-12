@@ -135,9 +135,18 @@
         > Sơ đồ mô tả **RAID10**:
         >  
         > Coming soon
-    * **RAIDZ-1**: dạng RAID này yêu cầu tối thiểu 3 disks, và sẽ tốn dung lượng tương đương 1 disk dùng cho lưu trữ parity (parity là phần dữ liệu được tính toán từ các mảnh dữ liệu (thông qua phép XOR) được lưu xuống disks; dùng để tính toán/phục hồi dữ liệu trong trường hợp có tối đa 1 disk bị hỏng; parity được lưu trữ lần lượt/rải đều trên các disk chứ không dồn hẳn vào 1 disk nào cả). Ví dụ trong trường hợp RAIDZ-1 với 3 disks thì mỗi disks sẽ lưu trữ khoảng 66% dữ liệu và 33% parity của dữ liệu ở 2 disks còn lại, nếu 1 disk bị hỏng thì sẽ dùng 2 disks còn lại tính toán ra dữ liệu đã được lưu trên disk hỏng trước đó
-    * **RAIDZ-2**: 
-    * **RAIDZ-3**:   
+    * **RAIDZ-1**: dạng RAID này yêu cầu tối thiểu 3 disks, và sẽ tốn dung lượng tương đương 1 disk dùng cho lưu trữ parity (parity là phần dữ liệu được tính toán từ các mảnh dữ liệu được lưu xuống disks; dùng để tính toán/phục hồi dữ liệu trong trường hợp có tối đa 1 disk bị hỏng; parity được lưu trữ lần lượt/rải đều trên các disk chứ không dồn hẳn vào 1 disk nào cả). Ví dụ trong trường hợp RAIDZ-1 với 3 disks thì mỗi disks sẽ lưu trữ khoảng 66% dữ liệu và 33% parity của dữ liệu, nếu 1 disk bị hỏng thì sẽ dùng 2 disks còn lại tính toán ra dữ liệu đã được lưu trên disk hỏng.
+      > Sơ đồ mô tả **RAIDZ-1**:
+      >
+      > Coming soon
+    * **RAIDZ-2**: dạng RAID này thì sẽ yêu cầu tối thiểu 4 disks; tốn dung lượng tương đương 2 disks dùng cho lưu trữ 2 parity (parity được tính toán và rải đều trên các disks tương tự như **RAIDZ-1**; đảm bảo rủi ro ở mức hỏng tối đa 2 disks). Ví dụ trong trường hợp RAIDZ2 với 4 disks thì mỗi disk sẽ lưu trữ 50% dữ liệu và 50% parity của dữ liệu; nếu hỏng 2 disks ngẫu nhiên thì sẽ dùng 2 disks còn lại để tính toán và phục hồi lại dữ liệu.
+      > Sơ đồ mô tả **RAIDZ-2**:
+      >
+      > Coming soon
+    * **RAIDZ-3**: dạng RAID này sẽ yêu cầu tối thiểu 5 disks; yêu cầu dung lượng tương đương 3 disks dùng để lưu trữ 3 parity (đảm bảo rủi ro hư hỏng tối đa 3 disks). Ví dụ với trường hợp RAIDZ3 với 5 disks thì mỗi disk sẽ lưu trữ 40% dữ liệu và 60% parity của dữ liệu; nếu hỏng 3 disks ngẫu nhiên thì sẽ dùng 2 disks còn lại để tính toán và phục hồi lại dữ liệu. 
+      > Sơ đồ mô tả **RAIDZ-3**:
+      >
+      > Coming soon
 
 
 
