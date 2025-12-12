@@ -132,8 +132,12 @@
       * Là loại **RAID** kết hợp giữa **tốc độ ghi cao** của **RAID0**, **độ an toàn/tính sẵn sàng cao** của **RAID1**. Được chia làm 2 lớp: lớp đầu tiên mà OS + RAM/CPU nhìn thấy là lớp **RAID0**(striping) và lớp dưới là **RAID1**(mirroring).
       * Yêu cầu tối thiểu phải có 4 disks
         > Ví dụ với 4 disks thì sẽ tạo 2 cặp làm **RAID1** ở layer dưới và gộp 2 cặp đó làm **RAID0** ở layer trên; khi ghi dữ liệu từ trên xuống thì **RAID0** sẽ nhận và chia dữ liệu thành 2 mảnh để ghi xuống lớp **RAID1** ở dưới - **tốc độ ghi cao của RAID0**; từng cặp **RAID1** ở layer dưới sẽ nhận từng mảnh dữ liệu -> nhân đôi dữ liệu mảnh đó lên và ghi xuống từng disk của cặp đó - **độ an toàn/tính sẵn sàng cao của RAID1**; cho nên hiệu quả lưu trữ chỉ bằng 50% với mỗi cặp 2 disk **RAID1**, và mỗi cặp chịu rủi ro hỏng tối đa 1 disk, nếu hỏng hết cả cặp disk thì toàn bộ dữ liệu của **ZPOOL** bị hỏng hoàn toàn);
-        > Sơ đồ mô tả **RAID10**:        > 
+        > Sơ đồ mô tả **RAID10**:
+        >  
         > Coming soon
+    * **RAIDZ-1**: dạng RAID này yêu cầu tối thiểu 3 disks, và sẽ tốn dung lượng tương đương 1 disk dùng cho lưu trữ parity (parity là phần dữ liệu được tính toán từ các mảnh dữ liệu (thông qua phép XOR) được lưu xuống disks; dùng để tính toán/phục hồi dữ liệu trong trường hợp có tối đa 1 disk bị hỏng; parity được lưu trữ lần lượt/rải đều trên các disk chứ không dồn hẳn vào 1 disk nào cả). Ví dụ trong trường hợp RAIDZ-1 với 3 disks thì mỗi disks sẽ lưu trữ khoảng 66% dữ liệu và 33% parity của dữ liệu ở 2 disks còn lại, nếu 1 disk bị hỏng thì sẽ dùng 2 disks còn lại tính toán ra dữ liệu đã được lưu trên disk hỏng trước đó
+    * **RAIDZ-2**: 
+    * **RAIDZ-3**:   
 
 
 
