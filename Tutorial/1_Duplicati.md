@@ -84,8 +84,7 @@
 * Hoàn thành các bước trên thì ta có thể truy cập giao diện **Duplicati** và sử dụng các tính năng **Backup**, **Restore** như bình thường
   ![](../Tutorial/images/54_Duplicati_PortalView.png)
 
-## Trên Linux Server
-> Coming soon
+
 
 
 
