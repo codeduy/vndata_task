@@ -165,5 +165,5 @@
 > Double stripping ở vdev layer và zpool layer ?
 > 
 
-
+## So sánh - đối chiếu kiến trúc giữa LVM và ZFS
 
