@@ -115,6 +115,11 @@
 >     ![](../Proxmox/images/Storage/30_Storage_LVM_DontSPSnapshots.png)
 
 ### ZFS
+* **ZFS** có 3 thành phần cốt lõi tương ứng với 3 layers: **VDEV**(ở layer này là **RAID** mềm các disk vật lí); **ZPOOL**(gộp các **VDEV** thành 1 virtual disk thống nhất); **ZVOL**(tương tự như **LV** trên **LVM** storage - là phần block level storage lấy từ **ZPOOL** để làm **Hard Disk** cấp phát cho VM) - **Dataset**(là phần phân vùng lấy từ **ZPOOL** và có thể được mount thành thư mục để lưu trữ cold data)
+> Sơ đồ mô tả:
+>
+> Coming soon
+> 
 * Khái quát chung
   * Tích hợp **RAID** mềm giúp tiết kiệm chi phí hơn so với việc dùng Card **RAID** vật lí trên LVM - dùng CPU, RAM để tính toán - xử lí RAID
   * **ZFS** hỗ trợ caching trên SSD để tăng tốc độ đọc-ghi cho các dữ liệu được truy cập thường xuyên
@@ -148,6 +153,9 @@
       >
       > Coming soon
 
+* Các khía cạnh của các cấp độ **RAID** trong **ZFS**
+  * Các VDEV được 
+
 
 
 
@@ -163,7 +171,8 @@
 > Tốc độ ngẫu nhiên và tốc độ tuần tự ?
 >
 > Double stripping ở vdev layer và zpool layer ?
-> 
+>
+> Có thể tạo nhiều VG và ZPOOL ?
 
 ## So sánh - đối chiếu kiến trúc giữa LVM và ZFS
 
