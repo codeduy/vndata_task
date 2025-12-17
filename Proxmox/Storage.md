@@ -154,7 +154,9 @@
       > Coming soon
 
 * Các khía cạnh của các cấp độ **RAID** trong **ZFS**
-  * Các VDEV được 
+  * Các **VDEV** được dữ liệu truyền xuống từ layer trên - **ZPOOL** sẽ được lưu trữ ở dạng striping tương tự **RAID0**; vì thế nên khi gắn nhiều **VDEV** vào **ZPOOL** thì sẽ tăng mạnh hiệu suất đọc - ghi dữ liệu, và sẽ làm hỏng toàn bộ dữ liệu trong **ZPOOL** nếu 1 **VDEV** bất kì bị hỏng hoặc bị tháo hoàn toàn.
+  * Về hiệu năng
+    * Ta sẽ xem xét với 2 tham số là **IOPS** và **bandwidth**
 
 
 
