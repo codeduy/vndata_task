@@ -164,8 +164,8 @@
 
 
 > ZFS: cần nắm rõ các định nghĩa về VDEV (tương đương PV ở LVM nhưng có thể tích hợp RAID mềm, và có thể tạo nhiều cụm RAID tùy mục đích vận hành); ZPOOL(bao gồm các VDEV gộp lại thành 1 virtual disk duy nhất tương đương VG trên LVM; chỉ cần 1 DEV offline là sẽ làm hỏng toàn bộ ZPOOL); Dataset (là phân vùng được cấp phát từ ZPOOL - ở định dạng block-level storage làm ổ cứng cho các máy ảo tương đương LV trên LVM), ZVOL (là phân vùng được cấp phát từ ZPOOL - dùng như một folder, có thể dùng để chứa file, ISO Images,...); Checksum (kiểm tra tính toàn vẹn của dữ liệu lúc đọc và ghi); CoW (Copy on Write - cần đảm bảo pool còn trống để ghi metadata mới ghi xóa dữ liệu)
-> Yêu cầu về hardware: ZFS cần nhiều RAM để xử lí hơn so với LVM; SSD
-> Nắm rõ các cơ chế cache - tối ưu tốc độ xử lí trong ZFS Storage (L2ARC); Ưu và nhược điểm của cơ chế này; Demo đối chiếu giữa có dùng và không dùng cache
+> Yêu cầu về hardware: ZFS cần nhiều RAM để xử lí hơn (cache) so với LVM; SSD
+> Nắm rõ các cơ chế cache - tối ưu tốc độ xử lí trong ZFS Storage (L2ARC); Ưu và nhược điểm của cơ chế này; Demo đối chiếu
 > Các loại RAID và ưu/nhược điểm từng loại mà Proxmox hỗ trợ
 >
 > Vẽ sơ đồ mô hình các RAID ứng với ZFS; mà cả mô hình mà Cache hoạt động
