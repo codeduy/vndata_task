@@ -44,10 +44,10 @@
   ![](../Tutorial/images/32_Duplicati_SoureData.png)
 * Đặt lịch backup tại **Schedule** -> **Continue**
   ![](../Tutorial/images/33_Duplicati_Schedule.png)  
-* Click **Submit**
+* Tại mục **Options**; có thể tùy chỉnh thêm tại **Remote volume size**, **Backup retention** -> **Submit**
   ![](../Tutorial/images/35_Duplicati_Options.png)
   ![](../Tutorial/images/36_Duplicati_Dashboard.png)
-* Click **Start** để chạy backup
+* Click **Start** để kiểm thử việc sao lưu dữ liệu lên **Cloud Object Storage S3**
   ![](../Tutorial/images/37_Duplicati_StartBackup.png)
   ![](../Tutorial/images/40_Duplicati_BackupSuccess.png)
 * Như trong hình thì dữ liệu đã được backup và lưu thành công lên **Object Storage**
@@ -62,30 +62,13 @@
   ![](../Tutorial/images/48_Duplicati_RestoreSuccessful.png)
 
 ### Cài đặt Duplicati ở dạng WindowsService
-* Tải và chạy file cài đặt **Duplicati**. Đến bước cuối cùng thì bỏ check **Launch Duplicati now** -> **Finish**
-  ![](../Tutorial/images/49_Duplicati_Uncheck%26Finish.png)
-* Mở **CMD** với quyền **Administrator** và chạy lần lượt các lệnh sau
-  ```
-  cd "C:\Program Files\Duplicati 2"
-  ```
-  ```
-  Duplicati.WindowsService.exe INSTALL
-  ```
-  ![](../Tutorial/images/50_Duplicati_InstallService.png)
-* Mở **Properties** của **Duplicati shortcut** ở màn hình Desktop và điền chuỗi sau vào trường **Target**:
-  ```
-  "C:\Program Files\Duplicati 2\Duplicati.GUI.TrayIcon.exe" --no-hosted-server --read-config-from-db --server-datafolder="C:\ProgramData\Duplicati"
-  ```
-  Và click **OK**
-  ![](../Tutorial/images/51_Duplicati_PropertiesClick.png)
-  ![](../Tutorial/images/52_Duplicati_TargetModify.png)
-* Truy cập thư mục **C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp** hoặc chạy **Run** và thực thi lệnh **shell:common startup**. Điều chỉnh **Properties** của **Duplicati shortcut** tương tự bước trước
-  ![](../Tutorial/images/53_Duplicati_TargetModify2.png)
-* Hoàn thành các bước trên thì ta có thể truy cập giao diện **Duplicati** và sử dụng các tính năng **Backup**, **Restore** như bình thường
-  ![](../Tutorial/images/54_Duplicati_PortalView.png)
+Với mode LocalSystem - Window service 
+
+-> start session, auto backup schedule kể cả user log out
 
 
-
+## Trên Linux Server
+> Coming soon
 
 
 
