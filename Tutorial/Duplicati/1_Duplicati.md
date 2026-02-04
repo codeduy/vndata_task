@@ -3,63 +3,63 @@
 ### Cài đặt Duplicati ở dạng Foreground App
 * Đầu tiên, ta cần cài **Duplicati** trên Window qua đường link [Duplicati Download](https://duplicati.com/download)
   * Sau khi truy cập vào đường link trên, click chọn **Download for Windows**
-    ![](../Tutorial/Duplicati/images/1_Duplicati_DownloadforWindows.png)
+    ![](../Duplicati/images/1_Duplicati_DownloadforWindows.png)
   * Sau khi tải xong thì tiến hành chạy file cài đặt
-    ![](../Tutorial/Duplicati/images/2_Duplicati_clickNext.png)
+    ![](../Duplicati/images/2_Duplicati_clickNext.png)
   * Click **Finish**
-    ![](../Tutorial/Duplicati/images/7_Duplicati_finishClick.png)
+    ![](../Duplicati/images/7_Duplicati_finishClick.png)
 * Tiếp theo, mở **Duplicati** qua **Tray icon** của ứng dụng **Duplicati**
-  ![](../Tutorial/Duplicati/images/8_Duplicati_Open.png)
+  ![](../Duplicati/images/8_Duplicati_Open.png)
 * Có thể đặt **passphrase** ở bước này hoặc để sau
-  ![](../Tutorial/Duplicati/images/9_Duplicati_NotNow.png)
+  ![](../Duplicati/images/9_Duplicati_NotNow.png)
 * Click **Settings** -> **Register on console** để cấu hình remote session
-  ![](../Tutorial/Duplicati/images/10_Duplicati_RegisterOnConsole.png)
-  ![](../Tutorial/Duplicati/images/12_Duplicati_ReleaseMachineLink.png)
+  ![](../Duplicati/images/10_Duplicati_RegisterOnConsole.png)
+  ![](../Duplicati/images/12_Duplicati_ReleaseMachineLink.png)
 * Truy cập đường link trên và Đăng kí/Đăng nhập tài khoản **Duplicati**
-  ![](../Tutorial/Duplicati/images/14_Duplicati_SignIn.png)
+  ![](../Duplicati/images/14_Duplicati_SignIn.png)
 * Click **Register machine**
-  ![](../Tutorial/Duplicati/images/15_Duplicati_RegisterMachine.png)
-  ![](../Tutorial/Duplicati/images/18_Duplicati_Dashboard.png)
+  ![](../Duplicati/images/15_Duplicati_RegisterMachine.png)
+  ![](../Duplicati/images/18_Duplicati_Dashboard.png)
 * Click **Machines** -> **Details** -> **Start Session** để mở giao diện của **Duplicati** server trên Windows VM
-  ![](../Tutorial/Duplicati/images/19_Duplicati_StartSession.png)
+  ![](../Duplicati/images/19_Duplicati_StartSession.png)
 * Click **Create** tại **Backups**
-  ![](../Tutorial/Duplicati/images/20_Duplicati_CreateClick.png)
+  ![](../Duplicati/images/20_Duplicati_CreateClick.png)
 * Click **Add a new backup**
-  ![](../Tutorial/Duplicati/images/21_Duplicati_AddNewBackUp.png)
+  ![](../Duplicati/images/21_Duplicati_AddNewBackUp.png)
 * Điền tên của job backup vào **Backup name**, điền mật khẩu vào **Create a password** và click **Continue**
-  ![](../Tutorial/Duplicati/images/22_Duplicati_General.png)
-  ![](../Tutorial/Duplicati/images/23_Duplicati_General_Continue.png)
+  ![](../Duplicati/images/22_Duplicati_General.png)
+  ![](../Duplicati/images/23_Duplicati_General_Continue.png)
 * Tại phần **Destination** -> chọn **S3 Compatible**
-  ![](../Tutorial/Duplicati/images/24_Duplicate_S3Choosing.png)
+  ![](../Duplicati/images/24_Duplicate_S3Choosing.png)
 * Nếu quý khách chưa có gói **Cloud Object Storage S3** để dùng cho việc backup thì có thể tham khảo các gói lưu trữ của [**VNData**](https://vndata.vn/) qua đường dẫn [**VNData - Cloud Object Storage S3**](https://vndata.vn/cloud-s3-object-storage-vietnam/)  
-  ![](../Tutorial/Duplicati/images/25-1_Duplicate_VNDataS3Service.png)
+  ![](../Duplicati/images/25-1_Duplicate_VNDataS3Service.png)
 * Điền các thông tin tương ứng vào **Bucket Name** - tên bucket S3, **Folder path** - đường dẫn folder trong bucket đó, **Server** - điền thông tin tại phần **S3 ENDPOINT (HTTPS)** (bỏ phần "https"); tick chọn **Instruct Duplicati to use an SSL (https) connection**; điền lần lượt **Access Key Id**, **Secret Key** ở trang **S3 Portal - VNData** vào **AWS Access Key ID** và **AWS Secret Access Key**
-  ![](../Tutorial/Duplicati/images/28_Duplicati_DesView.png)
-  ![](../Tutorial/Duplicati/images/29_Duplicati_DesView.png)
+  ![](../Duplicati/images/28_Duplicati_DesView.png)
+  ![](../Duplicati/images/29_Duplicati_DesView.png)
 * Sau khi điền xong thì click **Test destination**. Trả kết quả thành công thì bấm **Continue**
-  ![](../Tutorial/Duplicati/images/30_Duplicati_TestConnection.png)
-  ![](../Tutorial/Duplicati/images/31_Duplicati_TestConn.png)
-  ![](../Tutorial/Duplicati/images/32-1_Duplicati_Continue.png)
+  ![](../Duplicati/images/30_Duplicati_TestConnection.png)
+  ![](../Duplicati/images/31_Duplicati_TestConn.png)
+  ![](../Duplicati/images/32-1_Duplicati_Continue.png)
 * Tại phần **Source Data**, chọn các file/thư mục cần sao lưu -> **Continue**
-  ![](../Tutorial/Duplicati/images/32_Duplicati_SoureData.png)
+  ![](../Duplicati/images/32_Duplicati_SoureData.png)
 * Đặt lịch backup tại **Schedule** -> **Continue**
-  ![](../Tutorial/Duplicati/images/33_Duplicati_Schedule.png)  
+  ![](../Duplicati/images/33_Duplicati_Schedule.png)  
 * Tại mục **Options**; có thể tùy chỉnh thêm tại **Remote volume size**, **Backup retention** -> **Submit**
-  ![](../Tutorial/Duplicati/images/35_Duplicati_Options.png)
-  ![](../Tutorial/Duplicati/images/36_Duplicati_Dashboard.png)
+  ![](../Duplicati/images/35_Duplicati_Options.png)
+  ![](../Duplicati/images/36_Duplicati_Dashboard.png)
 * Click **Start** để kiểm thử việc sao lưu dữ liệu lên **Cloud Object Storage S3**
-  ![](../Tutorial/Duplicati/images/37_Duplicati_StartBackup.png)
-  ![](../Tutorial/Duplicati/images/40_Duplicati_BackupSuccess.png)
+  ![](../Duplicati/images/37_Duplicati_StartBackup.png)
+  ![](../Duplicati/images/40_Duplicati_BackupSuccess.png)
 * Như trong hình thì dữ liệu đã được backup và lưu thành công lên **Object Storage**
-  ![](../Tutorial/Duplicati/images/41_Duplicati_BucketView.png)
+  ![](../Duplicati/images/41_Duplicati_BucketView.png)
 * Để **Restore** dữ liệu -> click **Start** tại mục **Restores**
-  ![](../Tutorial/Duplicati/images/42_Duplicati_RestoreClick.png)
+  ![](../Duplicati/images/42_Duplicati_RestoreClick.png)
 * Bấm **Restore** với bản sao lưu mà bạn muốn phục hồi
-  ![](../Tutorial/Duplicati/images/43_Duplicati_RestoreBackupJob.png)
+  ![](../Duplicati/images/43_Duplicati_RestoreBackupJob.png)
 * Chọn file/thư mục cần **Restore** và bấm **Continue** -> **Submit**
-  ![](../Tutorial/Duplicati/images/44_Duplicati_File-FolderSelect.png)
-  ![](../Tutorial/Duplicati/images/46_Duplicati_SubmitClick.png)
-  ![](../Tutorial/Duplicati/images/48_Duplicati_RestoreSuccessful.png)
+  ![](../Duplicati/images/44_Duplicati_File-FolderSelect.png)
+  ![](../Duplicati/images/46_Duplicati_SubmitClick.png)
+  ![](../Duplicati/images/48_Duplicati_RestoreSuccessful.png)
 
 ### Cài đặt Duplicati ở dạng WindowsService
 Với mode LocalSystem - Window service 
@@ -69,6 +69,7 @@ Với mode LocalSystem - Window service
 
 ## Trên Linux Server
 > Coming soon
+
 
 
 
