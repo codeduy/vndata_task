@@ -9,3 +9,9 @@
   ![](../S3-Bucket-Versioning/images/002.png)
 * Sau khi vào được trang S3 Portal -> click chọn **Object Storage**
   ![](../S3-Bucket-Versioning/images/003.png)
+* Click chọn vào gói S3 tương ứng cần cấu hình **Bucket Versioning**
+  ![](../S3-Bucket-Versioning/images/004.png)
+* Chọn **Buckets** -> **Details** tại bucket cần cấu hình **Bucket Versioning**
+  ![](../S3-Bucket-Versioning/images/005.png)
+* Click nút gạt và nhấn **Submit** như trong hình để bật tính năng **Bucket Versioning**
+  ![](../S3-Bucket-Versioning/images/006.png)
