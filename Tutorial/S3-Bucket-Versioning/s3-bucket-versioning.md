@@ -18,7 +18,8 @@
 * Tại vì bucket hiện tại chưa có dữ liệu nên phần **Versions** đang trống
   ![](../S3-Bucket-Versioning/images/007.png)
 * Tiến hành upload một file text với nội dung
-  ![](../S3-Bucket-Versioning/images/008.png)
+
+
 
 
 
