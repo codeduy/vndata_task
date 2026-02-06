@@ -23,5 +23,7 @@
   ![](../S3-Bucket-Versioning/images/009.png)
 * Quay trở lại phần **Versions** thì ta sẽ thấy tồn tại 2 file ở dạng 2 versions khác nhau
   ![](../S3-Bucket-Versioning/images/010.png)
+* Tại đây, ta có thể restore file ở version trước đó - **Previous** 
+
 
 
