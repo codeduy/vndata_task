@@ -17,11 +17,9 @@
   ![](../S3-Bucket-Versioning/images/006.png)
 * Tại vì bucket hiện tại chưa có dữ liệu nên phần **Versions** đang trống
   ![](../S3-Bucket-Versioning/images/007.png)
-* Tiến hành upload một file .zip
+* Tiến hành upload một file text với nội dung
   ![](../S3-Bucket-Versioning/images/008.png)
-* Và upload lại chính file .zip đó. Như hình dưới thì ta sẽ thấy file cũ đã bị ẩn đi, thay vào đó là file mới 
-  ![](../S3-Bucket-Versioning/images/009.png)
-* Quay trở lại phần **Versions** thì ta sẽ thấy tồn tại 2 file ở dạng 2 versions khác nhau
-  ![](../S3-Bucket-Versioning/images/010.png)
+
+
 
 
