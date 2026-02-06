@@ -15,3 +15,4 @@
   ![](../S3-Bucket-Versioning/images/005.png)
 * Click nút gạt và nhấn **Submit** như trong hình để bật tính năng **Bucket Versioning**
   ![](../S3-Bucket-Versioning/images/006.png)
+
