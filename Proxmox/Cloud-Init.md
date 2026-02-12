@@ -214,8 +214,7 @@
   local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\
   check_latest_version=true
   metadata_services=cloudbaseinit.metadata.services.configdrive.ConfigDriveService
-  plugins=cloudbaseinit.plugins.common.networkconfig.NetworkConfigPlugin,
-  cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin
+  plugins=cloudbaseinit.plugins.common.networkconfig.NetworkConfigPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin
   ```
   > ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/58_WCI_CI_Step7.png)
   > * Tại phần **username**, ta sẽ đổi thành **Administrator** -> áp dụng các phần cấu hình password, network chỉ cho user này.
