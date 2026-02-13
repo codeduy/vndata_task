@@ -57,6 +57,11 @@
     * **Expire (delete) after (days)**: Nhập số ngày tồn tại của file hiện hành **(Current Version)**. Khi hết hạn, hệ thống sẽ gán **Delete Marker** cho file đó (file sẽ ẩn đi trong giao diện chính nhưng vẫn còn trong bucket).
     * **Expire noncurrent versions after (days)**: Nhập số ngày lưu trữ các phiên bản cũ **(Noncurrent Versions)**. Thời gian bắt đầu tính từ lúc phiên bản đó trở thành cũ (do bị ghi đè bởi file với phiên bản mới hoặc delete marker). Sau thời gian này, chúng sẽ bị xóa vĩnh viễn để giải phóng dung lượng.
     > Cách tính ngày ở 3 trường trên sẽ như sau: ví dụ với file được upload vào mọi khung giờ từ 00:01 -> 23:59 ngày 10/02 và thiết đặt Expire days là 3 ngày thì file sẽ hết hạn vào 0h UTC+0 (tức 7h sáng) vào 14/2.
+* Các ví dụ thực tế:
+  * Xóa file với tên file bắt đầu bằng chuỗi **Expire-delete** sau khi hết hạn 1 ngày
+    ![](../S3-Bucket-Versioning/images/023.png)
+    ![](../S3-Bucket-Versioning/images/024.png)
+
 
 
 
