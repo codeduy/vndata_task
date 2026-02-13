@@ -35,6 +35,28 @@
   ![](../S3-Bucket-Versioning/images/016.png)
   ![](../S3-Bucket-Versioning/images/017.png)
   ![](../S3-Bucket-Versioning/images/018.png)
+  > Tuy nhiên, việc lưu trữ mọi phiên bản của file cũng có nhược điểm. Nếu không được kiểm soát, các phiên bản cũ **(non-current versions)** sẽ tích tụ theo thời gian, chiếm dụng lớn dung lượng bucket và làm tăng chi phí cho những dữ liệu không còn giá trị sử dụng. Để khắc phục, **Lifecycle Rule** là giải pháp giúp tự động hóa việc quản lý vòng đời của file (tự động xóa hoặc chuyển sang **Cold Storage** để tối ưu chi phí).
+* Để truy cập vào tính năng **Lifecycle Rule** thì tại giao diện **Buckets**, click chọn **Lifecycle configuration** vào bucket cần cấu hình
+  ![](../S3-Bucket-Versioning/images/019.png)
+* Click chọn **Add Lifecycle Rule** để mở giao diện cấu hình
+  ![](../S3-Bucket-Versioning/images/020.png)
+  ![](../S3-Bucket-Versioning/images/021.png)
+  * Sơ lược về các thông số trên:
+    * **Rule ID**: ở trường này thì điền ID theo tên gợi nhớ để dễ quản lí hoặc để trống để hệ thống tự điền.
+      ![](../S3-Bucket-Versioning/images/022.png)
+    * **Status**: bao gồm **Enabled/Disabled** - kích hoạt/vô hiệu hóa rule.
+    * **Prefix Filter**: trường này ta sẽ định nghĩa các file/fake folder hoặc tất cả các dữ liệu trong bucket được áp dụng bởi rule.
+      * Ví dụ:
+        * Áp dụng với tất cả dữ liệu trong bucket: để trống trường này.
+        * Áp dụng với việc xóa tất cả dữ liệu trong thư mục logs/: điền **logs/**
+        * Áp dụng với việc xóa tất cả dữ liệu trong thư mục month_backups/ lồng trong thư mục backups/: điền **backups/month_backups/**
+        * Áp dụng với việc xóa dữ liệu thuộc các file và fake folder bắt đầu bằng chuỗi **logs**: điền **logs**
+        * Áp dụng với việc xóa đúng tên file **abc123.txt**: điền **abc123.txt**
+    * **Transition to another storage class after (days)**:
+    * **Storage Class**:
+    * **Expire (delete) after (days)**: Nhập số ngày tồn tại của file hiện hành **(Current Version)**. Khi hết hạn, hệ thống sẽ gán **Delete Marker** cho file đó (file sẽ ẩn đi trong giao diện chính nhưng vẫn còn trong bucket).
+    * **Expire noncurrent versions after (days)**: Nhập số ngày lưu trữ các phiên bản cũ **(Noncurrent Versions)**. Thời gian bắt đầu tính từ lúc phiên bản đó trở thành cũ (do bị ghi đè bởi file với phiên bản mới hoặc delete marker). Sau thời gian này, chúng sẽ bị xóa vĩnh viễn để giải phóng dung lượng.
+    > Cách tính ngày ở 3 trường trên sẽ như sau: ví dụ với file được upload vào mọi khung giờ từ 00:01 -> 23:59 ngày 10/02 và thiết đặt Expire days là 3 ngày thì file sẽ hết hạn vào 0h UTC+0 (tức 7h sáng) vào 14/2.
 
 
 
