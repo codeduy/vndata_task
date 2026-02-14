@@ -66,8 +66,15 @@
 
 > **Cách tính ngày:** Hệ thống tính theo quy tắc làm tròn đến 0h UTC của ngày kế tiếp.
 > *Ví dụ:* File upload vào bất kỳ giờ nào ngày **10/02** với cấu hình Expire là **3 ngày** -> Hết hạn vào cuối ngày 13/02 -> Thực thi xóa vào **0h00 ngày 14/02 (giờ UTC)**, tức **7h00 sáng ngày 14/02 (giờ Việt Nam)**.
+>
+> **Lưu ý quan trọng:**
+> Trên giao diện quản trị hiện tại, mỗi Lifecycle Rule chỉ hỗ trợ thực thi một hành động duy nhất. Quý khách vui lòng **không cấu hình đồng thời** cả Expire noncurrent versions và Expire current version trong cùng một Rule.
+> Ví dụ: Nếu muốn vừa xóa các dữ liệu ở version cũ và vừa xóa dữ liệu version hiện tại, quý khách vui lòng **tạo 2 Rule riêng biệt** với cùng Prefix:
+> * Rule 1: Expire noncurrent versions after 30 days.
+> * Rule 2: Expire after 365 days.
 
 ### Các ví dụ thực tế:
 * **Ví dụ 1:** Xóa file với tên file bắt đầu bằng chuỗi **Expire-delete** sau khi hết hạn 1 ngày.
   ![](../S3-Bucket-Versioning/images/023.png)
   ![](../S3-Bucket-Versioning/images/024.png)
+
