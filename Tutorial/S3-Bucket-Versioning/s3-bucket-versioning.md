@@ -74,7 +74,14 @@
 > * Rule 2: Expire after 365 days.
 
 ### Các ví dụ thực tế:
-* **Ví dụ 1:** Xóa file với tên file bắt đầu bằng chuỗi **Expire-delete** sau khi hết hạn 1 ngày.
+* **Ví dụ 1:** Xóa file với tên file bắt đầu bằng chuỗi **Expire-delete**.
   ![](../S3-Bucket-Versioning/images/023.png)
   ![](../S3-Bucket-Versioning/images/024.png)
+* **Ví dụ 2:** Xóa đúng file với tên đầy đủ **Expire-delete-after-days.txt**.
+  ![](../S3-Bucket-Versioning/images/025.png)
+  ![](../S3-Bucket-Versioning/images/026.png)
+* **Ví dụ 3:** Xoá toàn bộ dữ liệu trong bucket
+  ![](../S3-Bucket-Versioning/images/027.png)
+  ![](../S3-Bucket-Versioning/images/028.png)
+
 
