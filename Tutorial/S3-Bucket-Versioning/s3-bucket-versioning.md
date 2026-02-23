@@ -79,7 +79,7 @@
 * **Ví dụ 05:** Xóa thư mục rỗng.
   ![](../S3-Bucket-Versioning/images/031.png)
   ![](../S3-Bucket-Versioning/images/032.png)
-* **Ví dụ 06:** Xóa mọi dữ liệu trong một thư mục
+* **Ví dụ 06:** Xóa mọi dữ liệu trong một thư mục và cả thư mục đó.
   ![](../S3-Bucket-Versioning/images/033.png)
   ![](../S3-Bucket-Versioning/images/034.png)
   ![](../S3-Bucket-Versioning/images/035.png)
@@ -89,6 +89,7 @@
   ![](../S3-Bucket-Versioning/images/038.png)
   ![](../S3-Bucket-Versioning/images/039.png)
    
+
 
 
 
