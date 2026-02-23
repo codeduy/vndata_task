@@ -62,12 +62,6 @@
 
 > **Cách tính ngày:** Hệ thống tính theo quy tắc làm tròn đến 0h UTC của ngày kế tiếp.
 > *Ví dụ:* File upload vào bất kỳ giờ nào ngày **10/02** với cấu hình Expire là **3 ngày** -> Hết hạn vào cuối ngày 13/02 -> Thực thi xóa vào **0h00 ngày 14/02 (giờ UTC)**, tức **7h00 sáng ngày 14/02 (giờ Việt Nam)**.
->
-> **Lưu ý quan trọng:**
-> Trên giao diện quản trị hiện tại, mỗi Lifecycle Rule chỉ hỗ trợ thực thi một hành động duy nhất. Quý khách vui lòng **không cấu hình đồng thời** cả Expire noncurrent versions và Expire current version trong cùng một Rule.
-> Ví dụ: Nếu muốn vừa xóa các dữ liệu ở version cũ và vừa xóa dữ liệu version hiện tại, quý khách vui lòng **tạo 2 Rule riêng biệt** với cùng Prefix:
-> * Rule 1: Expire noncurrent versions after 30 days.
-> * Rule 2: Expire after 365 days.
 
 ### Các ví dụ thực tế:
 * **Ví dụ 01:** Xóa file với tên file bắt đầu bằng chuỗi **Expire-delete**.
@@ -82,20 +76,20 @@
 * **Ví dụ 04:** Xóa tất cả các file/thư mục bắt đầu bằng chuỗi **folder-test**.
   ![](../S3-Bucket-Versioning/images/029.png)
   ![](../S3-Bucket-Versioning/images/030.png)
-* **Ví dụ 05:** Gộp 2 loại rules vào 1 rule áp dụng cho 1 object
-* **Ví dụ 06:** Xóa thư mục rỗng.
+* **Ví dụ 05:** Xóa thư mục rỗng.
   ![](../S3-Bucket-Versioning/images/031.png)
   ![](../S3-Bucket-Versioning/images/032.png)
-* **Ví dụ 07:** Xóa mọi dữ liệu trong một thư mục
+* **Ví dụ 06:** Xóa mọi dữ liệu trong một thư mục
   ![](../S3-Bucket-Versioning/images/033.png)
   ![](../S3-Bucket-Versioning/images/034.png)
   ![](../S3-Bucket-Versioning/images/035.png)
   ![](../S3-Bucket-Versioning/images/036.png)
   ![](../S3-Bucket-Versioning/images/037.png)
-* **Ví dụ 08:** Xóa thư mục lồng trong một thư mục khác.
+* **Ví dụ 07:** Xóa thư mục lồng trong một thư mục khác.
   ![](../S3-Bucket-Versioning/images/038.png)
   ![](../S3-Bucket-Versioning/images/039.png)
    
+
 
 
 
