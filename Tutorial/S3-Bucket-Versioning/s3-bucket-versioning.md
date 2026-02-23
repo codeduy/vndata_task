@@ -58,9 +58,6 @@
     * Áp dụng cho thư mục con **month_backups** nằm trong thư mục **backups**: Điền `backups/month_backups/`.
     * Áp dụng cho các file/thư mục có tên **bắt đầu bằng chữ logs**: Điền `logs`.
     * Áp dụng cho đúng tên file **abc123.txt**: Điền `abc123.txt`.
-* **Transition to another storage class after (days)**: Nhập số ngày để hệ thống tự động chuyển dữ liệu sang lớp lưu trữ khác.
-* **Storage Class**: Chọn loại lớp lưu trữ đích (Ví dụ: `GLACIER`, `DEEP_ARCHIVE`...).
-  > *Lưu ý: Tính năng này thường dùng để tương thích API với các phần mềm backup. Trên hệ thống lưu trữ của VNData, việc thay đổi Storage Class chỉ thay đổi nhãn (metadata) mà không thay đổi hiệu năng hay vị trí vật lý.*
 * **Expire (delete) after (days)**: Nhập số ngày tồn tại của file hiện hành **(Current Version)**. Khi hết hạn, hệ thống sẽ gán **Delete Marker** cho file đó (file sẽ ẩn đi trong giao diện chính nhưng vẫn còn trong bucket).
 * **Expire noncurrent versions after (days)**: Nhập số ngày lưu trữ các phiên bản cũ **(Noncurrent Versions)**. Thời gian bắt đầu tính từ lúc phiên bản đó trở thành cũ (do bị ghi đè bởi file mới hoặc bị xóa). Sau thời gian này, chúng sẽ bị xóa vĩnh viễn.
 
@@ -86,7 +83,7 @@
 * **Ví dụ 04:** Xóa tất cả các object bắt đầu bằng chuỗi **folder-test**.
   ![](../S3-Bucket-Versioning/images/029.png)
   ![](../S3-Bucket-Versioning/images/030.png)
-* **Ví dụ 05:** Gộp 3 loại rules vào 1 rule áp dụng cho 1 object
+* **Ví dụ 05:** Gộp 2 loại rules vào 1 rule áp dụng cho 1 object
 * **Ví dụ 06:** Xóa object(fake folder) rỗng.
   ![](../S3-Bucket-Versioning/images/031.png)
   ![](../S3-Bucket-Versioning/images/032.png)
@@ -100,6 +97,7 @@
   ![](../S3-Bucket-Versioning/images/038.png)
   ![](../S3-Bucket-Versioning/images/039.png)
    
+
 
 
 
