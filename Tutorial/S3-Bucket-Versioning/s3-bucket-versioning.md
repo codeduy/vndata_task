@@ -49,7 +49,6 @@
 
 ### Giải thích các thông số cấu hình:
 * **Rule ID**: Điền tên gợi nhớ để dễ quản lý (hoặc để trống để hệ thống tự sinh ID).
-  ![](../S3-Bucket-Versioning/images/022.png)
 * **Status**: Chọn **Enabled** để kích hoạt hoặc **Disabled** để vô hiệu hóa rule.
 * **Prefix Filter**: Trường quan trọng để định nghĩa phạm vi áp dụng của Rule (File, Thư mục hoặc Toàn bộ bucket).
   * **Các ví dụ:**
@@ -80,23 +79,25 @@
 * **Ví dụ 03:** Xoá toàn bộ dữ liệu trong bucket.
   ![](../S3-Bucket-Versioning/images/027.png)
   ![](../S3-Bucket-Versioning/images/028.png)
-* **Ví dụ 04:** Xóa tất cả các object bắt đầu bằng chuỗi **folder-test**.
+* **Ví dụ 04:** Xóa tất cả các file/thư mục bắt đầu bằng chuỗi **folder-test**.
   ![](../S3-Bucket-Versioning/images/029.png)
   ![](../S3-Bucket-Versioning/images/030.png)
 * **Ví dụ 05:** Gộp 2 loại rules vào 1 rule áp dụng cho 1 object
-* **Ví dụ 06:** Xóa object(fake folder) rỗng.
+* **Ví dụ 06:** Xóa thư mục rỗng.
   ![](../S3-Bucket-Versioning/images/031.png)
   ![](../S3-Bucket-Versioning/images/032.png)
-* **Ví dụ 07:** Xóa mọi object trong một fake folder
+* **Ví dụ 07:** Xóa mọi dữ liệu trong một thư mục
   ![](../S3-Bucket-Versioning/images/033.png)
   ![](../S3-Bucket-Versioning/images/034.png)
   ![](../S3-Bucket-Versioning/images/035.png)
   ![](../S3-Bucket-Versioning/images/036.png)
   ![](../S3-Bucket-Versioning/images/037.png)
-* **Ví dụ 08:** Xóa fake folder lồng trong một fake folder khác.
+* **Ví dụ 08:** Xóa thư mục lồng trong một thư mục khác.
   ![](../S3-Bucket-Versioning/images/038.png)
   ![](../S3-Bucket-Versioning/images/039.png)
    
+
+
 
 
 
