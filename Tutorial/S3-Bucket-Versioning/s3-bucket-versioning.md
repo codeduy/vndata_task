@@ -58,9 +58,6 @@
     * Áp dụng cho thư mục con **month_backups** nằm trong thư mục **backups**: Điền `backups/month_backups/`.
     * Áp dụng cho các file/thư mục có tên **bắt đầu bằng chữ logs**: Điền `logs`.
     * Áp dụng cho đúng tên file **abc123.txt**: Điền `abc123.txt`.
-* **Transition to another storage class after (days)**: Nhập số ngày để hệ thống tự động chuyển dữ liệu sang lớp lưu trữ khác.
-* **Storage Class**: Chọn loại lớp lưu trữ đích (Ví dụ: `GLACIER`, `DEEP_ARCHIVE`...).
-  > *Lưu ý: Tính năng này thường dùng để tương thích API với các phần mềm backup. Trên hệ thống lưu trữ của VNData, việc thay đổi Storage Class chỉ thay đổi nhãn (metadata) mà không thay đổi hiệu năng hay vị trí vật lý.*
 * **Expire (delete) after (days)**: Nhập số ngày tồn tại của file hiện hành **(Current Version)**. Khi hết hạn, hệ thống sẽ gán **Delete Marker** cho file đó (file sẽ ẩn đi trong giao diện chính nhưng vẫn còn trong bucket).
 * **Expire noncurrent versions after (days)**: Nhập số ngày lưu trữ các phiên bản cũ **(Noncurrent Versions)**. Thời gian bắt đầu tính từ lúc phiên bản đó trở thành cũ (do bị ghi đè bởi file mới hoặc bị xóa). Sau thời gian này, chúng sẽ bị xóa vĩnh viễn.
 
@@ -74,14 +71,33 @@
 > * Rule 2: Expire after 365 days.
 
 ### Các ví dụ thực tế:
-* **Ví dụ 1:** Xóa file với tên file bắt đầu bằng chuỗi **Expire-delete**.
+* **Ví dụ 01:** Xóa file với tên file bắt đầu bằng chuỗi **Expire-delete**.
   ![](../S3-Bucket-Versioning/images/023.png)
   ![](../S3-Bucket-Versioning/images/024.png)
-* **Ví dụ 2:** Xóa đúng file với tên đầy đủ **Expire-delete-after-days.txt**.
+* **Ví dụ 02:** Xóa đúng file với tên đầy đủ **Expire-delete-after-days.txt**.
   ![](../S3-Bucket-Versioning/images/025.png)
   ![](../S3-Bucket-Versioning/images/026.png)
-* **Ví dụ 3:** Xoá toàn bộ dữ liệu trong bucket
+* **Ví dụ 03:** Xoá toàn bộ dữ liệu trong bucket.
   ![](../S3-Bucket-Versioning/images/027.png)
   ![](../S3-Bucket-Versioning/images/028.png)
+* **Ví dụ 04:** Xóa tất cả các object bắt đầu bằng chuỗi **folder-test**.
+  ![](../S3-Bucket-Versioning/images/029.png)
+  ![](../S3-Bucket-Versioning/images/030.png)
+* **Ví dụ 05:** Gộp 2 loại rules vào 1 rule áp dụng cho 1 object
+* **Ví dụ 06:** Xóa object(fake folder) rỗng.
+  ![](../S3-Bucket-Versioning/images/031.png)
+  ![](../S3-Bucket-Versioning/images/032.png)
+* **Ví dụ 07:** Xóa mọi object trong một fake folder
+  ![](../S3-Bucket-Versioning/images/033.png)
+  ![](../S3-Bucket-Versioning/images/034.png)
+  ![](../S3-Bucket-Versioning/images/035.png)
+  ![](../S3-Bucket-Versioning/images/036.png)
+  ![](../S3-Bucket-Versioning/images/037.png)
+* **Ví dụ 08:** Xóa fake folder lồng trong một fake folder khác.
+  ![](../S3-Bucket-Versioning/images/038.png)
+  ![](../S3-Bucket-Versioning/images/039.png)
+   
+
+
 
 
