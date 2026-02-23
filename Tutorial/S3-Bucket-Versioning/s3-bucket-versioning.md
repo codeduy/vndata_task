@@ -49,7 +49,6 @@
 
 ### Giải thích các thông số cấu hình:
 * **Rule ID**: Điền tên gợi nhớ để dễ quản lý (hoặc để trống để hệ thống tự sinh ID).
-  ![](../S3-Bucket-Versioning/images/022.png)
 * **Status**: Chọn **Enabled** để kích hoạt hoặc **Disabled** để vô hiệu hóa rule.
 * **Prefix Filter**: Trường quan trọng để định nghĩa phạm vi áp dụng của Rule (File, Thư mục hoặc Toàn bộ bucket).
   * **Các ví dụ:**
@@ -97,6 +96,7 @@
   ![](../S3-Bucket-Versioning/images/038.png)
   ![](../S3-Bucket-Versioning/images/039.png)
    
+
 
 
 
