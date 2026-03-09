@@ -26,15 +26,36 @@
   ![](../S3-Pre-signed-URL/images/009.png)
 
 ## 3. Ví dụ thực tế
-* **Ví dụ 01**: Thiết đặt **Presigned URL** với object **s3_test.txt**
+* **Ví dụ 01**: Thiết đặt **Presigned URL** với **HTTP GET** áp dụng trên object **s3_test.txt**
   ![](../S3-Pre-signed-URL/images/010.png)
   * Các bước thao tác:
     * Ở phần **method** chọn **GET**, **Expiration** là 60 phút
     * Bấm chọn **Generate** -> click **Copy URL**
     * Kiểm thử **HTTP GET** qua lệnh
       ```
-      curl -o s3_test.txt "Presigned URL đã generate ở bước trên"
+      curl -o s3_test.txt "Presigned_URL_HTTP_GET_đã_generate_ở_bước_trên"
       ```
       ![](../S3-Pre-signed-URL/images/011.png)
-      
-  
+  * Nếu **Presigned URL** đã hết hạn thì sẽ trả về file với kết quả lỗi như ảnh sau:
+    ![](../S3-Pre-signed-URL/images/012.png) 
+* **Ví dụ 02**: Thiết đặt **Presigned URL** với **HTTP PUT** áp dụng trên object **s3_test.txt**
+  * Các bước khởi tạo **Presigned URL** với **HTTP PUT** tương tự như ở **Ví dụ 01**
+  * Ở ví dụ này, sẽ điều chỉnh file **s3_test.txt** tại local lại với nội dung **123456** và **PUT** lại file s3_test.txt lên Bucket với lệnh sau
+    ```
+    curl -s -v -X PUT -T "s3_test.txt" -H "Content-Type: text/plain" "Presigned_URL_HTTP_PUT_đã_generate_ở_bước_trên" 2>&1 | grep "< HTTP/"
+    ```
+    ![](../S3-Pre-signed-URL/images/013.png)
+    ![](../S3-Pre-signed-URL/images/014.png)
+    > Khi đó, file **s3_test.txt** cũ sẽ bị thay thế thành file **s3_test.txt** mới với nội dung **123456**
+  * Nếu **Presigned URL** đã hết hạn thì sẽ trả về file với kết quả lỗi như ảnh sau:
+    ![](../S3-Pre-signed-URL/images/015.png)
+* **Ví dụ 03**: Thiết đặt **Presigned URL** với **HTTP DELETE** áp dụng trên object **s3_test.txt**
+  * Các bước khởi tạo **Presigned URL** với **HTTP DELETE** tương tự như ở các ví dụ trên
+  * Thực thi lệnh sau để xóa file **s3_test.txt** khỏi bucket
+    ```
+    curl -s -v -X DELETE "Presigned_URL_HTTP_DELETE_đã_generate_ở_bước_trên" 2>&1 | grep "< HTTP/"
+    ```
+    ![](../S3-Pre-signed-URL/images/016.png)
+  * Nếu **Presigned URL** đã hết hạn thì sẽ trả về file với kết quả lỗi như ảnh sau:
+    ![](../S3-Pre-signed-URL/images/017.png)
+    
