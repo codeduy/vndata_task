@@ -18,3 +18,23 @@
   ![](../S3-Pre-signed-URL/images/007.png)
 * Click chọn dấu ba chấm -> **Presign URL**
   ![](../S3-Pre-signed-URL/images/008.png)
+* Tại đây, ta sẽ cần chú ý ở hai phần là **Method** và **Expiration**
+  * **Method**: bao gồm ba phương thức HTTP là **GET**, **PUT**, **DELETE**
+  * **Expiration**: bao gồm **No expiration (max 7d)**, **Expire by minutes**, **Expire by days**
+    > Tại mục **Expiration**, ở 3 tùy chọn trên đều chỉ có thời gian quy đổi tối đa là 7 ngày
+  
+  ![](../S3-Pre-signed-URL/images/009.png)
+
+## 3. Ví dụ thực tế
+* **Ví dụ 01**: Thiết đặt **Presigned URL** với object **s3_test.txt**
+  ![](../S3-Pre-signed-URL/images/010.png)
+  * Các bước thao tác:
+    * Ở phần **method** chọn **GET**, **Expiration** là 60 phút
+    * Bấm chọn **Generate** -> click **Copy URL**
+    * Kiểm thử **HTTP GET** qua lệnh
+      ```
+      curl -o s3_test.txt "Presigned URL đã generate ở bước trên"
+      ```
+      ![](../S3-Pre-signed-URL/images/011.png)
+      
+  
