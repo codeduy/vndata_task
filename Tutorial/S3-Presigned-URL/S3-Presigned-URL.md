@@ -21,7 +21,7 @@
 * Tại giao diện khởi tạo, quý khách cần lưu ý 2 thông số quan trọng:
   * **Method (Phương thức):** Bao gồm 3 tùy chọn HTTP là **GET** (Tải về), **PUT** (Tải lên/Ghi đè), **DELETE** (Xóa file).
   * **Expiration (Thời gian hết hạn):** Cho phép thiết lập thời gian URL có hiệu lực (Tính theo phút hoặc ngày).
-    > **Lưu ý:** Theo chuẩn hệ thống S3, thời gian sống tối đa của một Pre-signed URL luôn bị giới hạn ở mức **7 ngày**. Hệ thống không hỗ trợ tạo đường link tồn tại vĩnh viễn.
+    > **Lưu ý:** Theo chuẩn hệ thống S3, thời gian sống tối đa của một Presigned URL luôn bị giới hạn ở mức **7 ngày**. Hệ thống không hỗ trợ tạo đường link tồn tại vĩnh viễn.
   
   ![](../S3-Presigned-URL/images/009.png)
 
@@ -67,6 +67,7 @@
     *(Lưu ý: Lệnh xóa thành công sẽ trả về mã trạng thái `204 No Content`)*.
 * **Kiểm tra Timeout:** Nếu URL xóa đã hết hạn, thao tác sẽ bị chặn lại:
   ![](../S3-Presigned-URL/images/017.png)
+
 
 
 
