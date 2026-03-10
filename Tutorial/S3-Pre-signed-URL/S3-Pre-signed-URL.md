@@ -21,7 +21,7 @@
 * Tại giao diện khởi tạo, quý khách cần lưu ý 2 thông số quan trọng:
   * **Method (Phương thức):** Bao gồm 3 tùy chọn HTTP là **GET** (Tải về), **PUT** (Tải lên/Ghi đè), **DELETE** (Xóa file).
   * **Expiration (Thời gian hết hạn):** Cho phép thiết lập thời gian URL có hiệu lực (Tính theo phút hoặc ngày).
-    > **📌 Lưu ý bảo mật:** Theo chuẩn hệ thống S3, thời gian sống tối đa của một Pre-signed URL luôn bị giới hạn ở mức **7 ngày**. Hệ thống không hỗ trợ tạo đường link tồn tại vĩnh viễn.
+    > **Lưu ý:** Theo chuẩn hệ thống S3, thời gian sống tối đa của một Pre-signed URL luôn bị giới hạn ở mức **7 ngày**. Hệ thống không hỗ trợ tạo đường link tồn tại vĩnh viễn.
   
   ![](../S3-Pre-signed-URL/images/009.png)
 
@@ -51,7 +51,7 @@
     ```
     ![](../S3-Pre-signed-URL/images/013.png)
     ![](../S3-Pre-signed-URL/images/014.png)
-    > Lúc này, trên hệ thống S3, file `s3_test.txt` cũ đã bị thay thế thành file mới với nội dung là **123456**.
+    > Lúc này, file `s3_test.txt` cũ trên hệ thống S3 đã bị thay thế thành file mới với nội dung là **123456**.
 * **Kiểm tra Timeout:** Tương tự, nếu sử dụng URL quá hạn để upload, hệ thống sẽ báo lỗi:
   ![](../S3-Pre-signed-URL/images/015.png)
 
@@ -67,5 +67,6 @@
     *(Lưu ý: Lệnh xóa thành công sẽ trả về mã trạng thái `204 No Content`)*.
 * **Kiểm tra Timeout:** Nếu URL xóa đã hết hạn, thao tác sẽ bị chặn lại:
   ![](../S3-Pre-signed-URL/images/017.png)
+
 
 
