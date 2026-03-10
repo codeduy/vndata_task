@@ -43,7 +43,8 @@
 
 ### Ví dụ 02: Thiết đặt Presigned URL với HTTP PUT (Cập nhật file)
 * **Mục đích:** Cho phép ghi đè nội dung mới lên file `s3_test.txt` thông qua URL.
-* **Các bước thực hiện:** Khởi tạo URL tương tự Ví dụ 01, nhưng đổi **Method** thành **PUT**.
+* **Các bước thực hiện:**
+  * Khởi tạo URL tương tự Ví dụ 01, nhưng đổi **Method** thành **PUT**.
   * Tại máy tính Local, tạo/sửa một file `s3_test.txt` với nội dung mới là **123456**.
   * Dùng lệnh `curl` sau để đẩy file lên S3 (Lưu ý phải có tham số `-H "Content-Type: text/plain"` để file hiển thị đúng định dạng trên UI):
     ```bash
@@ -67,6 +68,7 @@
     *(Lưu ý: Lệnh xóa thành công sẽ trả về mã trạng thái `204 No Content`)*.
 * **Kiểm tra Timeout:** Nếu URL xóa đã hết hạn, thao tác sẽ bị chặn lại:
   ![](../S3-Presigned-URL/images/017.png)
+
 
 
 
