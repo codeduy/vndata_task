@@ -38,7 +38,7 @@
     curl -o s3_test.txt "<Dán_URL_đã_Copy_vào_đây>"
     ```
     ![](../S3-Pre-signed-URL/images/011.png)
-* **Kiểm tra Timeout:** Nếu gọi lệnh khi URL đã hết hạn, hệ thống sẽ từ chối truy cập và trả về thông báo lỗi định dạng XML (với mã lỗi là **<Code>UnknownError</Code>**) như ảnh chi tiết dưới đây:
+* **Kiểm tra Timeout:** Nếu gọi lệnh khi URL đã hết hạn, hệ thống sẽ từ chối truy cập và trả về thông báo lỗi như ảnh chi tiết dưới đây:
   ![](../S3-Pre-signed-URL/images/012.png) 
 
 ### Ví dụ 02: Thiết đặt Presigned URL với HTTP PUT (Cập nhật file)
@@ -67,3 +67,4 @@
     *(Lưu ý: Lệnh xóa thành công sẽ trả về mã trạng thái `204 No Content`)*.
 * **Kiểm tra Timeout:** Nếu URL xóa đã hết hạn, thao tác sẽ bị chặn lại:
   ![](../S3-Pre-signed-URL/images/017.png)
+
