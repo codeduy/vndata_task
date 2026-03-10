@@ -11,7 +11,7 @@
   ![](../S3-Pre-signed-URL/images/003.png)
 * Click chọn vào gói S3 tương ứng cần thao tác.
   ![](../S3-Pre-signed-URL/images/004.png)
-* Mở Bucket chứa các Object (file) cần tạo URL chia sẻ.
+* Mở Bucket chứa các Object (file) cần tạo **Presign URL**.
   ![](../S3-Pre-signed-URL/images/005.png)
 * *(Ví dụ: Trong bucket đã upload sẵn file **s3_test.txt** với nội dung là **abcxyz**)*.
   ![](../S3-Pre-signed-URL/images/006.png)
@@ -67,4 +67,5 @@
     *(Lưu ý: Lệnh xóa thành công sẽ trả về mã trạng thái `204 No Content`)*.
 * **Kiểm tra Timeout:** Nếu URL xóa đã hết hạn, thao tác sẽ bị chặn lại:
   ![](../S3-Pre-signed-URL/images/017.png)
+
 
