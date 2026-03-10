@@ -4,7 +4,7 @@
 * Nếu quý khách chưa có gói S3, vui lòng tham khảo và đăng ký dịch vụ theo [link](https://vndata.vn/cloud-s3-object-storage-vietnam/).
   ![](../S3-Presigned-URL/images/001.png)
 
-## 2. Truy cập và khởi tạo Pre-signed URL
+## 2. Truy cập và khởi tạo Presigned URL
 * Truy cập vào [VNDATA S3 Portal](https://cloud.vndata.vn/) và đăng nhập bằng thông tin tài khoản tương tự trang [VNDATA - Clients Portal](https://clients.vndata.vn/).
   ![](../S3-Presigned-URL/images/002.png)
 * Sau khi đăng nhập thành công, chọn mục **Object Storage** ở thanh menu bên trái.
@@ -67,6 +67,7 @@
     *(Lưu ý: Lệnh xóa thành công sẽ trả về mã trạng thái `204 No Content`)*.
 * **Kiểm tra Timeout:** Nếu URL xóa đã hết hạn, thao tác sẽ bị chặn lại:
   ![](../S3-Presigned-URL/images/017.png)
+
 
 
 
