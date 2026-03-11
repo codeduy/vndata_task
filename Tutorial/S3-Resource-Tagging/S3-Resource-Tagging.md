@@ -58,9 +58,10 @@
     ![](../S3-Resource-Tagging/images/020.png)
   * Kết quả:
     ![](../S3-Resource-Tagging/images/021.png)
-  > Lưu ý: để để rule khớp file có tag thì cần cấu hình cả tag key và tag value tương ứng với file đó
+  > Lưu ý: để rule khả dụng với 1 file bất kì thì cần cấu hình cả tag key và tag value trùng với tag của file đó
   > * *Ví dụ với rule này thì không thể khớp với file 003.txt(có tag là status:delete)*
   >   ![](../S3-Resource-Tagging/images/022.png)
     
+
 
 
