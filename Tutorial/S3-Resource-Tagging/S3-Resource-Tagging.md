@@ -29,6 +29,7 @@
     ![](../S3-Resource-Tagging/images/009.png)
 * Ví dụ: Chuyển dữ liệu bucket đã lọc theo bucket tag để chuyển sang tài khoản/endpoint S3 khác
   * Lọc theo mỗi **Tag KEY**
+    ![](../S3-Resource-Tagging/images/014.png)
     ![](../S3-Resource-Tagging/images/012.png)
     ![](../S3-Resource-Tagging/images/010.png)
   * Lọc theo **Tag KEY** và **Tag VALUE**
@@ -36,5 +37,6 @@
     ![](../S3-Resource-Tagging/images/011.png)
 
   
+
 
 
