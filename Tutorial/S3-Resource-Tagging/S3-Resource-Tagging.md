@@ -53,7 +53,7 @@
     ![](../S3-Resource-Tagging/images/019.png)
 * Ví dụ: cấu hình lifecycle rule bao gồm tham số về tag cho các file trong bucket
   > Quý khách có thể tìm hiểu thêm về tính năng **Lifecycle Rules** qua [bài viết](https://wiki.vndata.vn/s3-object-storage/huong-dan-su-dung/s3-bucket-versioning/)
-  * Gắn tag cho các file **001.txt, 002.txt, 003.txt, 004.txt** đều có tag với cặp **KEY:VALUE** tương ứng là **status:delete**
+  * Gắn tag cho các file **001.txt, 002.txt, 003.txt, 004.txt** với thông tin cặp **KEY:VALUE** là **status:delete**
   * Cấu hình **Lifecycle Rules** cho các file như trong hình
     ![](../S3-Resource-Tagging/images/020.png)
   * Kết quả:
@@ -62,4 +62,5 @@
   > * *Ví dụ với rule này thì không thể khớp với file 003.txt(có tag là status:delete)*
   >   ![](../S3-Resource-Tagging/images/022.png)
     
+
 
