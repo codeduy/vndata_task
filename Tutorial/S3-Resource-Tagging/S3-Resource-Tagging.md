@@ -15,7 +15,7 @@
   ![](../S3-Resource-Tagging/images/005.png)
   
 ### 2.1 Quản lí tag cho bucket
-* Để gắn tag cho bucket ta thực hiện theo các bước sau đây:
+* Để gắn tag cho bucket, ta thực hiện theo các bước sau đây:
   * Chọn dấu ```...``` -> **Details** -> **Tags**
     ![](../S3-Resource-Tagging/images/006.png)
     ![](../S3-Resource-Tagging/images/007.png)
@@ -36,8 +36,29 @@
     ![](../S3-Resource-Tagging/images/013.png)
     ![](../S3-Resource-Tagging/images/014.png)
 
-  
+### 2.2 Quản lí tag cho file
+* Để gắn tag cho file, ta thực hiện theo các bước sau đây:
+  * Chọn bucket chứa file cần gắn tag
+    ![](../S3-Resource-Tagging/images/015.png)
+  * Tại file cần gắn tag -> Chọn **Details** -> Chọn **Tags**
+    ![](../S3-Resource-Tagging/images/016.png)
+    ![](../S3-Resource-Tagging/images/017.png)
+  * Điền tag vào ô **KEY**, **VALUE** 
+  * *(Ở trong ví dụ này thì sẽ điền **KEY** là **File** và **VALUE** là **TEXT**)*
+    ![](../S3-Resource-Tagging/images/018.png)
 
+    > Lưu ý: tương tự như bucket; có thể chỉ cần điền chuỗi vào ô **KEY**, ô **VALUE** có thể để trống (ứng với chuỗi rỗng)
 
-
-
+  * Bấm **Save Tags** để lưu tag lại cho file
+    ![](../S3-Resource-Tagging/images/019.png)
+* Ví dụ: cấu hình lifecycle rule bao gồm tham số về tag cho các file trong bucket
+  > Quý khách có thể tìm hiểu thêm về tính năng **Lifecycle Rules** qua [bài viết](https://wiki.vndata.vn/s3-object-storage/huong-dan-su-dung/s3-bucket-versioning/)
+  * Tạo sẵn các file **001.txt, 002.txt, 003.txt, 004.txt** đều có tag với cặp **KEY:VALUE** tương ứng là **status:delete**
+  * Cấu hình **Lifecycle Rules** cho các file như trong hình
+    ![](../S3-Resource-Tagging/images/020.png)
+  * Kết quả:
+    ![](../S3-Resource-Tagging/images/021.png)
+  > Lưu ý: để để rule khớp file có tag thì cần cấu hình cả tag key và tag value tương ứng với file đó
+  > * *Ví dụ với rule này thì không thể khớp với file 003.txt(có tag là status:delete)*
+  >   ![](../S3-Resource-Tagging/images/022.png)
+    
