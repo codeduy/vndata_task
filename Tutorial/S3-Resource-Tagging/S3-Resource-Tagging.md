@@ -29,7 +29,7 @@
   ![](../S3-Resource-Tagging/images/009.png)
 
 **Ứng dụng thực tế: Dùng Bucket Tag để tự động hóa chuyển vùng dữ liệu (Data Transfer)**
-> Thay vì thao tác thủ công, quý khách có thể kết hợp Tag với các công cụ tự động hóa (như AWS CLI và Rclone) để lọc và chuyển dữ liệu đồng loạt sang tài khoản/endpoint S3 khác.
+> Thay vì thao tác thủ công, quý khách có thể kết hợp Tag với các công cụ (như AWS CLI và Rclone) để lọc và chuyển dữ liệu đồng loạt sang tài khoản/endpoint S3 khác.
 * Lọc Bucket chỉ theo **Tag KEY**:
   ![](../S3-Resource-Tagging/images/010.png)
   ![](../S3-Resource-Tagging/images/011.png)
@@ -67,3 +67,4 @@ Tính năng quản lý vòng đời (Lifecycle) cho phép tự động dọn d�
   > **Lưu ý quan trọng:** Để Rule áp dụng chính xác lên một File, cấu hình trong Rule phải **khớp hoàn toàn** cả Tag Key và Tag Value của File đó. 
   > *Ví dụ: Nếu Rule chỉ quy định `status:`, nó sẽ bỏ qua file `003.txt` (có tag là `status:delete`).*
   ![](../S3-Resource-Tagging/images/022.png)
+
