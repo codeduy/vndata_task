@@ -33,7 +33,11 @@
   * **AllowedMethods**:
     * Khi website đã được cấp phép ở `AllowedOrigins`, thì `AllowedMethods` sẽ quy định các giao thức HTTP mà các website đó được thực thi lên các file trong Bucket S3.
     * Bao gồm các giao thức như: **GET, HEAD, PUT, POST, DELETE**.
-* Vấn đề về bypass cache trong kiểm thử
+
+### 2.2 Ví dụ
+* 
+
+> Lưu ý: bypass cache
 
 
 
