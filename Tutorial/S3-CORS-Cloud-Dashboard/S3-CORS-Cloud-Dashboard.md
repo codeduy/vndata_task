@@ -14,6 +14,14 @@
 * Click vào tab **Buckets**.
   ![](../S3-CORS-Cloud-Dashboard/images/005.png)
 
+### 2.1 CORS Default Template
+* Tại bucket cần cấu hình CORS, chọn `...` -> **CORS Configuration** -> **Insert Default Template**
+  ![](../S3-CORS-Cloud-Dashboard/images/006.png)
+  ![](../S3-CORS-Cloud-Dashboard/images/007.png)
+  ![](../S3-CORS-Cloud-Dashboard/images/008.png)
+* Tại đây, ta cần chú ý hai phần là **AllowedOrigins** và **AllowedMethods**
+
+
 
 
 
