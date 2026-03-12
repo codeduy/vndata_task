@@ -64,8 +64,9 @@ Tính năng quản lý vòng đời (Lifecycle) cho phép tự động dọn d�
 * **Kết quả:** Hệ thống sẽ tự động xử lý các file khớp điều kiện.
   ![](../S3-Resource-Tagging/images/021.png)
 
-  > **Lưu ý quan trọng:** Để Rule áp dụng chính xác lên một File, cấu hình trong Rule phải **khớp hoàn toàn** cả Tag Key và Tag Value của File đó. 
+  > **Lưu ý:** Để Rule áp dụng chính xác lên một File, cấu hình trong Rule phải **khớp hoàn toàn** cả Tag Key và Tag Value của File đó. 
   > *Ví dụ: Nếu Rule chỉ quy định `status:`, nó sẽ bỏ qua file `003.txt` (có tag là `status:delete`).*
   ![](../S3-Resource-Tagging/images/022.png)
+
 
 
