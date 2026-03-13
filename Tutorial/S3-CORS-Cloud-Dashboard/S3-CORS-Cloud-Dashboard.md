@@ -35,9 +35,29 @@
     * Bao gồm các giao thức như: **GET, HEAD, PUT, POST, DELETE**.
 
 ### 2.2 Ví dụ
-* 
+* **Đối với AllowedMethods**
+  * Cấu hình CORS - HTTP GET cho các file trong bucket vndata02 như trong ảnh
+    ![](../S3-CORS-Cloud-Dashboard/images/009.png)
+    ![](../S3-CORS-Cloud-Dashboard/images/010.png)
+  * Dùng tính năng [**Presigned URL**]() để generate URL với HTTP method là GET cho file **s3_test.txt**
+  * Tiến hành kiểm thử
+    ![](../S3-CORS-Cloud-Dashboard/images/011.png)
+  * Tiếp theo, sẽ generate Presigned URL với HTTP method là DELETE cho file **s3_test.txt** và kiểm thử
+    ![](../S3-CORS-Cloud-Dashboard/images/012.png)
+    > Tại vì ở bước cấu hình CORS chưa thêm method DELETE nên sẽ báo lỗi khi gửi request HTTP DELETE
+  * Sau khi thêm bổ sung thêm cấu hình CORS thì hiện đã xóa được file
+    ![](../S3-CORS-Cloud-Dashboard/images/013.png)
+    ![](../S3-CORS-Cloud-Dashboard/images/014.png)
 
-> Lưu ý: bypass cache
+* **Đối với AllowedOrigins**
+  * Chỉnh cấu hình **AllowedOrigins** chỉ chấp nhận mỗi tên miền **https://vndata.vn**, thực thi lệnh HTTP GET và xuất hiện lỗi như hình
+    ![](../S3-CORS-Cloud-Dashboard/images/015.png)
+    ![](../S3-CORS-Cloud-Dashboard/images/016.png)
+  * Sau khi allow đúng origin thì đã thực thi request GET được
+    ![](../S3-CORS-Cloud-Dashboard/images/017.png)
+    ![](../S3-CORS-Cloud-Dashboard/images/018.png)
+
+
 
 
 
