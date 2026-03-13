@@ -31,8 +31,8 @@
       * Dấu `*` (Cho phép tất cả): Khi điền là `["*"]`, bất kỳ website nào cũng có thể gọi API tới file nằm trong bucket.
       * Dấu `*` làm tiền tố: Có thể dùng `*` để đại diện cho tất cả subdomain. Ví dụ: `https://*.vndata.vn` sẽ cho phép cả `app.vndata.vn` và `api.vndata.vn`.(Lưu ý: Chỉ cho phép 1 dấu `*` trong chuỗi).
   * **AllowedMethods**:
-    * Khi website đã được cấp phép ở `AllowedOrigins`, thì `AllowedMethods` sẽ quy định các giao thức HTTP mà các website đó được thực thi lên các file trong Bucket S3.
-    * Bao gồm các giao thức như: **GET, HEAD, PUT, POST, DELETE**.
+    * Khi website đã được cấp phép ở `AllowedOrigins`, thì `AllowedMethods` sẽ quy định các phương thức HTTP mà các website đó được thực thi lên các file trong Bucket S3.
+    * Bao gồm các phương thức như: **GET, HEAD, PUT, POST, DELETE**.
 
 ### 2.2 Ví dụ
 * **Đối với AllowedMethods**
@@ -56,6 +56,9 @@
   * Sau khi allow đúng origin thì đã thực thi request GET được
     ![](../S3-CORS-Cloud-Dashboard/images/017.png)
     ![](../S3-CORS-Cloud-Dashboard/images/018.png)
+
+> Lưu ý: Để kiểm thử cấu hình CORS thì cần tick chọn **Disable Cache** trong cửa sổ F12 để thuận tiện cho việc kiểm thử
+  ![](../S3-CORS-Cloud-Dashboard/images/019.png)
 
 
 
