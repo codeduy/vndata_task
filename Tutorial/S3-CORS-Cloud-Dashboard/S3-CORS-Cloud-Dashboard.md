@@ -39,7 +39,7 @@
   * Cấu hình CORS ban đầu: Chỉ cho phép HTTP **GET** đối với các file trong bucket `vndata02`.
     ![](../S3-CORS-Cloud-Dashboard/images/009.png)
     ![](../S3-CORS-Cloud-Dashboard/images/010.png)
-  * Dùng tính năng [**Presigned URL**](điền-link-vào-đây) để tạo URL với HTTP method là **GET** cho file `s3_test.txt`.
+  * Dùng tính năng [**Presigned URL**](https://wiki.vndata.vn/s3-object-storage/huong-dan-su-dung/s3-presigned-url/) để tạo URL với HTTP method là **GET** cho file `s3_test.txt`.
   * Tiến hành kiểm thử, yêu cầu thực thi thành công.
     ![](../S3-CORS-Cloud-Dashboard/images/011.png)
   * Tiếp theo, tạo Presigned URL với HTTP method là **DELETE** cho file `s3_test.txt` và kiểm thử.
@@ -59,3 +59,4 @@
 
 > **Lưu ý:** Trong quá trình thao tác, quý khách nên tick chọn ô **Disable Cache** trong tab Network của DevTools (F12) để tránh việc trình duyệt sử dụng lại kết quả kiểm duyệt CORS cũ, giúp việc kiểm thử chính xác hơn.
   ![](../S3-CORS-Cloud-Dashboard/images/019.png)
+
