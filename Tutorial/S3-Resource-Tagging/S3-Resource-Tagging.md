@@ -55,7 +55,7 @@
   ![](../S3-Resource-Tagging/images/019.png)
 
 **Ứng dụng thực tế: Kết hợp Object Tag với Lifecycle Rules**
-Tính năng quản lý vòng đời (Lifecycle) cho phép tự động dọn dẹp dữ liệu dựa trên Tag của File.
+(Tính năng quản lý vòng đời (Lifecycle) cho phép tự động dọn dẹp dữ liệu dựa trên Tag của File)
 > Quý khách có thể tìm hiểu chi tiết về tính năng này qua bài viết: [Hướng dẫn sử dụng S3 Lifecycle Rules](https://wiki.vndata.vn/s3-object-storage/huong-dan-su-dung/s3-bucket-versioning/).
 
 * **Kịch bản:** Gắn Tag cho các file `001.txt, 002.txt, 003.txt, 004.txt` với thông tin **KEY:VALUE** là `status:delete`.
@@ -67,6 +67,7 @@ Tính năng quản lý vòng đời (Lifecycle) cho phép tự động dọn d�
   > **Lưu ý:** Để Rule áp dụng chính xác lên một File, cấu hình trong Rule phải **khớp hoàn toàn** cả Tag Key và Tag Value của File đó. 
   > *Ví dụ: Nếu Rule chỉ quy định `status:`, nó sẽ bỏ qua file `003.txt` (có tag là `status:delete`).*
   ![](../S3-Resource-Tagging/images/022.png)
+
 
 
 
