@@ -28,14 +28,14 @@
   ![](../OpenClaw/images/11.png)
 * Tại **Configure skills now?** -> Chọn **No**
   ![](../OpenClaw/images/12.png)
-* Tại **Enable hooks?** -> Nhấp **Space** để chọn tùy chọn này và nhấp **Enter**
+* Tại **Enable hooks?** -> Nhấp **Space** để chọn tùy chọn **Skip for now** và nhấp **Enter**
   ![](../OpenClaw/images/13.png)
 * Chọn **Hatch in TUI (recommended)**
   ![](../OpenClaw/images/14.png)
 * Tại giao diện này, có thể chat thử vài câu với bot. Nếu có phản hồi là OK
   ![](../OpenClaw/images/15.png)
   Dùng tổ hợp phím **Ctrl + C** để thoát khỏi giao diện **TUI** này
-* Tiếp theo chạy các lệnh sau để giới hạn tài khoản Telegram truy cập vào bot
+* Tiếp theo chạy các lệnh sau để giới hạn tài khoản Telegram có thể chat với bot
   ```
   openclaw config set channels.telegram.allowFrom '["ĐIỀN_ID_LẤY_TỪ_@userinfobot"]'
   ```
