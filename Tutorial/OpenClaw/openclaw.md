@@ -18,7 +18,7 @@
   ![](../OpenClaw/images/4.png)
   ![](../OpenClaw/images/5.png)
   ![](../OpenClaw/images/6.png)
-* Di chuột lên xuống và nhấp **Enter** để chọn model măc định
+* Điều hướng mũi tên lên xuống và nhấp **Enter** để chọn model măc định
   ![](../OpenClaw/images/7.png)
 * Nhấp **Enter** để chọn **Telegram (Bot API)** -> **Enter Telegram bot token**
   ![](../OpenClaw/images/8.png)
