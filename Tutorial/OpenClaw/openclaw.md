@@ -10,30 +10,30 @@
   ```
   curl -fsSL https://openclaw.ai/install.sh | bash
   ```
-  ![](1.png)
+  ![](../OpenClaw/images/1.png)
 * Chọn **Yes** -> **QuickStart**
-  ![](2.png)
-  ![](3.png)  
+  ![](../OpenClaw/images/2.png)
+  ![](../OpenClaw/images/3.png)  
 * Chọn **Google** -> **Google Gemini API key** -> Nhập API Key
-  ![](4.png)
-  ![](5.png)
-  ![](6.png)
+  ![](../OpenClaw/images/4.png)
+  ![](../OpenClaw/images/5.png)
+  ![](../OpenClaw/images/6.png)
 * Di chuột lên xuống và nhấp **Enter** để chọn model măc định
-  ![](7.png)
+  ![](../OpenClaw/images/7.png)
 * Nhấp **Enter** để chọn **Telegram (Bot API)** -> **Enter Telegram bot token**
-  ![](8.png)
-  ![](9.png)
-  ![](10.png)
+  ![](../OpenClaw/images/8.png)
+  ![](../OpenClaw/images/9.png)
+  ![](../OpenClaw/images/10.png)
 * Chọn **DuckDuckGo Search** tại **Search provider**
-  ![](11.png)
+  ![](../OpenClaw/images/11.png)
 * Tại **Configure skills now?** -> Chọn **No**
-  ![](12.png)
+  ![](../OpenClaw/images/12.png)
 * Tại **Enable hooks?** -> Nhấp **Space** để chọn tùy chọn này và nhấp **Enter**
-  ![](13.png)
+  ![](../OpenClaw/images/13.png)
 * Chọn **Hatch in TUI (recommended)**
-  ![](14.png)
+  ![](../OpenClaw/images/14.png)
 * Tại giao diện này, có thể chat thử vài câu với bot. Nếu có phản hồi là OK
-  ![](15.png)
+  ![](../OpenClaw/images/15.png)
   Dùng tổ hợp phím **Ctrl + C** để thoát khỏi giao diện **TUI** này
 * Tiếp theo chạy các lệnh sau để giới hạn tài khoản Telegram truy cập vào bot
   ```
@@ -45,14 +45,14 @@
   ```
   openclaw gateway restart
   ```
-  ![](16.png)
+  ![](../OpenClaw/images/16.png)
 * Khi này thì đã có thể tương tác với bot qua Telegram
-  ![](17.png)
+  ![](../OpenClaw/images/17.png)
 * Nếu muốn sửa lại cấu hình OpenClaw thì có thể chạy lệnh sau
   ```
   openclaw configure
   ```
-  ![](18.png)
+  ![](../OpenClaw/images/18.png)
 * Hoặc tiện hơn thì có thể truy cập OpenClaw Dashboard trên thiết bị cá nhân (PC)
   * Chạy lệnh sau trên PC để login và tạo tunnel vào VPS chạy OpenClaw
     ```
@@ -62,6 +62,6 @@
     ```
     openclaw dashboard --no-open
     ```
-    ![](19.png)
+    ![](../OpenClaw/images/19.png)
   * Truy cập link trên để vào trang OpenClaw Control Dashboard
-    ![](20.png)
+    ![](../OpenClaw/images/20.png)
