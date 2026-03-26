@@ -5,7 +5,7 @@
 * [Google AI Studio](https://aistudio.google.com/u/2/api-keys) API Key
 * Telegram Bot Token (Tạo bot và lấy API Token thông qua [@BotFather](https://telegram.me/BotFather#))
 
-## 2. Cài đặt OpenClaw
+## 2. Cài đặt và Cấu hình OpenClaw
 * Chạy lệnh sau để tiến hành cài đặt OpenClaw:
   ```
   curl -fsSL https://openclaw.ai/install.sh | bash
