@@ -63,4 +63,5 @@
     openclaw dashboard --no-open
     ```
     ![](19.png)
-  * 
+  * Truy cập link trên để vào trang OpenClaw Control Dashboard
+    ![](20.png)
