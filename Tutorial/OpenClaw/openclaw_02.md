@@ -10,14 +10,14 @@
   ```
   curl -fsSL https://openclaw.ai/install.sh | bash
   ```
-  ![](../OpenClaw/images/1.png)
+  ![01](https://s3-hcm-r2.s3cloud.vn/img-blog/openclaw/1.png)
 * Chọn **Yes** -> **QuickStart**
-  ![](../OpenClaw/images/2.png)
-  ![](../OpenClaw/images/3.png)  
+  ![02](https://s3-hcm-r2.s3cloud.vn/img-blog/openclaw/2.png)
+  ![03](https://s3-hcm-r2.s3cloud.vn/img-blog/openclaw/3.png)  
 * Chọn **Google** -> **Google Gemini API key** -> Nhập API Key
-  ![](../OpenClaw/images/4.png)
-  ![](../OpenClaw/images/5.png)
-  ![](../OpenClaw/images/6.png)
+  ![04](https://s3-hcm-r2.s3cloud.vn/img-blog/openclaw/4.png)
+  ![05](https://s3-hcm-r2.s3cloud.vn/img-blog/openclaw/5.png)
+  ![06](../OpenClaw/images/6.png)
 * Điều hướng mũi tên lên xuống và nhấp **Enter** để chọn model mặc định
   ![](../OpenClaw/images/7.png)
 * Nhấp **Enter** để chọn **Telegram (Bot API)** -> **Enter Telegram bot token**
