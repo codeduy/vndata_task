@@ -13,3 +13,11 @@
   ![06](../K8s/images/06.png)
 * Điền tên tại **Cluster Name** và bấm **Review & Create Cluster**
   ![07](../K8s/images/07.png)
+
+
+
+## 2. Access K8s
+
+## 3. Auto scaling
+
+## 4. Load balancer
