@@ -1,6 +1,6 @@
 # Hướng dẫn triển khai K8s Cluster
 ## 1. Khởi tạo K8s Cluster
-* Tại mục **Virtual Machines** -> chọn **Kubernetes** -> chọn **Create New**
+* Tại phần **Virtual Machines** -> chọn **Kubernetes** -> chọn **Create New**
   ![01](../K8s/images/01.png)
 * Chọn phiên bản **Kubernetes** tại **Select Version**, **Network** tại **Select Network**, cấu hình của mỗi node trong cluster tại **Choose Cluster Capacity** 
   ![02](../K8s/images/02.png)
