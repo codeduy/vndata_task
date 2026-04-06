@@ -15,6 +15,11 @@
   ![07](../K8s/images/07.png)
 
 ## 2. Truy cập và quản lí K8s Cluster
+* Sau khi khởi tạo thành công K8s Cluster thì có thể tải config file và truy cập - quản lí thông qua CLI hoặc K8s Dashboard UI
+  ![07](../K8s/images/08.png)
+  ![07](../K8s/images/09.png)
+  ![07](../K8s/images/010.png)
+  
 
 ## 3. Auto scaling
 
