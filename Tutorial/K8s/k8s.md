@@ -2,7 +2,7 @@
 ## 1. Khởi tạo K8s Cluster
 * Tại phần **Virtual Machines** -> chọn **Kubernetes** -> chọn **Create New**
   ![01](../K8s/images/01.png)
-* Chọn phiên bản **Kubernetes**, Private **Network**, cấu hình của mỗi node trong cluster tại **Choose Cluster Capacity** và số lượng worker node tại **Node Count**
+* Chọn phiên bản **Kubernetes**, Private **Network** (nếu không cần dùng chung mạng cục bộ với K8s Cluser khác thì có thể để trống phần này), cấu hình của mỗi node trong cluster tại **Choose Cluster Capacity** và số lượng worker node tại **Node Count**
   ![02](../K8s/images/02.png)
 * Chọn dung lượng disk tương ứng cho từng node trong cluster
   ![03](../K8s/images/03.png)
@@ -15,7 +15,6 @@
   ![07](../K8s/images/07.png)
 
 ## 2. Truy cập và quản lí K8s Cluster
-
 
 ## 3. Auto scaling
 
