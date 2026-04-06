@@ -2,7 +2,7 @@
 ## 1. Khởi tạo K8s Cluster
 * Tại phần **Virtual Machines** -> chọn **Kubernetes** -> chọn **Create New**
   ![01](../K8s/images/01.png)
-* Chọn phiên bản **Kubernetes** tại **Select Version**, **Network** tại **Select Network**, cấu hình của mỗi node trong cluster tại **Choose Cluster Capacity** 
+* Chọn phiên bản **Kubernetes**, Private **Network**, cấu hình của mỗi node trong cluster tại **Choose Cluster Capacity** 
   ![02](../K8s/images/02.png)
 * Chọn dung lượng disk tương ứng cho từng node trong cluster
   ![03](../K8s/images/03.png)
