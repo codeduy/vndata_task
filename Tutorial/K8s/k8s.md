@@ -16,11 +16,47 @@
 
 ## 2. Truy cập và quản lí K8s Cluster
 * Sau khi khởi tạo thành công K8s Cluster thì có thể tải config file và truy cập - quản lí thông qua CLI hoặc K8s Dashboard UI
-  ![07](../K8s/images/08.png)
-  ![07](../K8s/images/09.png)
-  ![07](../K8s/images/010.png)
+  ![08](../K8s/images/08.png)
+  ![09](../K8s/images/09.png)
+  ![010](../K8s/images/010.png)
   
-
 ## 3. Auto scaling
+### Kích hoạt
+* Chọn biểu tượng **Scale Kubenestes Cluster**
+![011](../K8s/images/011.png)
+* Điền số lượng node (**Worker Node**) tối thiểu, tối đa và bấm **Submit**
+![012](../K8s/images/012.png)
+![013](../K8s/images/013.png)
+
+### Kiểm thử 
+* Khởi tạo ứng dụng web **php-apache** để tiếp nhận các luồng request truy cập
+```
+kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
+```
+![014](../K8s/images/014.png)
+![015](../K8s/images/015.png)
+* Thiết lập định mức tài nguyên CPU cho mỗi pod **php-apache** là 200m
+```
+kubectl set resources deployment php-apache --requests=cpu=200m
+```
+* Thiết lập điều kiện HPA cho pod **php-apache**
+```
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+```
+![016](../K8s/images/016.png)
+* Khởi tạo các pod **load-generator** để tạo lưu lượng đến **php-apache**
+```
+kubectl apply -f load-generator.yaml
+```
+![017](../K8s/images/017.png)
+![018](../K8s/images/018.png)
+![019](../K8s/images/019.png)
+* Khi đó, tính năng **Auto Scaling** đã hoạt động để đáp ứng mức tài nguyên yêu cầu tăng cao cho các pods **php-apache**, **load-generator**
+![020](../K8s/images/020.png) 
+![021](../K8s/images/021.png)
+![022](../K8s/images/022.png)
+* Khi giảm lưu lượng HTTP thông qua giảm số lượng pod **load-generator** -> giảm mức yêu cầu tài nguyên từ các worker node -> **Auto Scaling** sẽ tự động xóa các worker node không cần thiết khỏi cluster
+![023](../K8s/images/023.png)
+![024](../K8s/images/024.png)
 
 ## 4. Load balancer
