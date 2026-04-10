@@ -60,3 +60,6 @@ kubectl apply -f load-generator.yaml
 ![024](../K8s/images/024.png)
 
 ## 4. Load balancer
+* Deploy Apache, Nginx
+* Deploy ingress
+* Demo
