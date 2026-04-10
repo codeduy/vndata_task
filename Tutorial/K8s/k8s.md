@@ -22,20 +22,20 @@
   
 ## 3. Auto scaling
 ### Kích hoạt
-* Chọn biểu tượng **Scale Kubenestes Cluster**
+* Chọn biểu tượng **Scale Kubernetes Cluster**
 ![011](../K8s/images/011.png)
-* Điền số lượng node (**Worker Node**) tối thiểu, tối đa và bấm **Submit**
+* Điền giới hạn số lượng **Worker Node** (tối thiểu, tối đa) cho cụm và bấm **Submit**
 ![012](../K8s/images/012.png)
 ![013](../K8s/images/013.png)
 
 ### Kiểm thử 
-* Khởi tạo ứng dụng web **php-apache** để tiếp nhận các luồng request truy cập
+* Khởi tạo ứng dụng web **php-apache** để tiếp nhận các luồng truy cập
 ```
 kubectl apply -f https://k8s.io/examples/application/php-apache.yaml
 ```
 ![014](../K8s/images/014.png)
 ![015](../K8s/images/015.png)
-* Thiết lập định mức tài nguyên CPU cho mỗi pod **php-apache** là 200m
+* Thiết lập định mức tài nguyên CPU tối thiểu cho mỗi pod **php-apache** là 200m
 ```
 kubectl set resources deployment php-apache --requests=cpu=200m
 ```
