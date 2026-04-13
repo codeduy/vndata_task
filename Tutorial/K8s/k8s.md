@@ -59,6 +59,7 @@ kubectl apply -f load-generator.yaml
 ![023](../K8s/images/023.png)
 ![024](../K8s/images/024.png)
 
+> Lưu ý: tính năng Auto Scaling chưa thể hoạt động được trên phiên bản Kubernetes v1.33.1
 ## 4. Load balancer
 * Cài đặt Nginx Ingress Controller
 ```
