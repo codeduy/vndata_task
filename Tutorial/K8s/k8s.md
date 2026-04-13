@@ -69,7 +69,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 * Chờ cấp phát public IP
 ![027](../K8s/images/027.png)
 > Ingress Controller đã tự động giao tiếp với VNData Cloud để tạo Load Balancer và nhận Public IP
-* Triển khai 2 Ứng dụng Backend (Nginx & Apache):
+* Triển khai 2 Ứng dụng Web Server (Nginx & Apache):
   * Tạo app Nginx:
     ```
     kubectl create deployment web-nginx --image=nginx
