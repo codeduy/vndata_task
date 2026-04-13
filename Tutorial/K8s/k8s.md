@@ -19,6 +19,7 @@
   ![08](../K8s/images/08.png)
   ![09](../K8s/images/09.png)
   ![010](../K8s/images/010.png)
+* Nâng cấp phiên bản K8s
   
 ## 3. Auto scaling
 ### Kích hoạt
