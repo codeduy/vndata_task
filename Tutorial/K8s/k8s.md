@@ -60,6 +60,38 @@ kubectl apply -f load-generator.yaml
 ![024](../K8s/images/024.png)
 
 ## 4. Load balancer
-* Deploy Apache, Nginx
-* Deploy ingress
-* Demo
+* Cài đặt Nginx Ingress Controller
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.0/deploy/static/provider/cloud/deploy.yaml
+```
+![025](../K8s/images/025.png)
+![026](../K8s/images/026.png)
+* Chờ cấp phát public IP
+![027](../K8s/images/027.png)
+> Ingress Controller đã tự động giao tiếp với VNData Cloud để tạo Load Balancer và nhận Public IP
+* Triển khai 2 Ứng dụng Backend (Nginx & Apache):
+  * Tạo app Nginx:
+    ```
+    kubectl create deployment web-nginx --image=nginx
+    kubectl expose deployment web-nginx --port=80 --type=ClusterIP
+    ```
+  * Tạo App Apache:
+    ```
+    kubectl create deployment web-apache --image=httpd
+    kubectl expose deployment web-apache --port=80 --type=ClusterIP
+    ```
+  ![028](../K8s/images/028.png)
+  ![029](../K8s/images/029.png)
+  ![030](../K8s/images/030.png)
+* Tạo file cấu hình ``ingress.yaml``  
+  ![031](../K8s/images/031.png)
+* Áp dụng cấu hình trên vào cluster K8s
+  ![032](../K8s/images/032.png)
+  ![033](../K8s/images/033.png)
+* Cấu hình tên miền cục bộ  
+  ![034](../K8s/images/034.png)
+* Kiểm thử thông qua việc truy cập 2 tên miền cục bộ trên
+  ![035](../K8s/images/035.png)
+  ![036](../K8s/images/036.png)
+  
+
