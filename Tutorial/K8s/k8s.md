@@ -19,7 +19,14 @@
   ![08](../K8s/images/08.png)
   ![09](../K8s/images/09.png)
   ![010](../K8s/images/010.png)
-* Nâng cấp phiên bản K8s
+* Để nâng cấp phiên bản K8s, cần thực hiện theo các bước dưới đây:
+  ![037](../K8s/images/037.png)
+  * Sau đó trạng thái của cluster sẽ chuyển qua **Upgrading** 
+  ![038](../K8s/images/038.png)
+  ![039](../K8s/images/039.png)
+  * Hoàn thành nâng cấp
+  ![040](../K8s/images/040.png)
+  
   
 ## 3. Auto scaling
 ### Kích hoạt
@@ -60,7 +67,7 @@ kubectl apply -f load-generator.yaml
 ![023](../K8s/images/023.png)
 ![024](../K8s/images/024.png)
 
-> Lưu ý: tính năng Auto Scaling chưa thể hoạt động được trên phiên bản Kubernetes v1.33.1
+> Lưu ý: tính năng Auto Scaling chưa thể hoạt động được trên phiên bản Kubernetes v1.33.1, v1.32.5, v1.33.1
 ## 4. Load balancer
 * Cài đặt Nginx Ingress Controller
 ```
