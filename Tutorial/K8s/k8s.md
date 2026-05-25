@@ -22,7 +22,7 @@
 * Để nâng cấp phiên bản K8s, cần thực hiện theo các bước dưới đây:
   ![037](../K8s/images/037.png)
 * Sau đó trạng thái của cluster sẽ chuyển qua **Upgrading** 
- <!-- ![038](../K8s/images/038.png) -->
+  ![038](../K8s/images/038.png)
   ![039](../K8s/images/039.png)
 * Hoàn thành nâng cấp
   ![040](../K8s/images/040.png)
