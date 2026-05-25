@@ -28,6 +28,7 @@
   ![040](../K8s/images/040.png)
   
 ## 3. Auto scaling
+> Demo K8s Cluster với thông số là 2 Control Plane Nodes, 1 Worker nodes
 ### Kích hoạt
 * Chọn biểu tượng **Scale Kubernetes Cluster**
 ![011](../K8s/images/011.png)
