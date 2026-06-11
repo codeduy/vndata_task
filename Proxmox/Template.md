@@ -51,8 +51,10 @@
     ![](../Proxmox/images/Template/LinuxTemplate/5_LinuxTemplate_ConvertToTemplate_ClickYes.png)
     ![](../Proxmox/images/Template/LinuxTemplate/6_LinuxTemplate_TemplateConverted.png)
 
+> Để tạo template hoàn chỉnh, cần follow theo bài tại ![Cloud-init](../Proxmox/Cloud-Init.md) -> Shutdown VM -> Convert to template
 ### Tạo template Window Server 2019
 > Coming soon
+> Follow theo bài về ![Cloud-init](../Proxmox/Cloud-Init.md) -> Shutdown VM -> Convert to template
 
 ## VM Backup & Restore
 * **Backup & Restore** là tính năng được tích hợp sẵn trong **proxmox** giúp sao lưu (**Backup**) dữ liệu trong Disk của VM và khôi phục (**Restore**) bản sao lưu - hoàn tác VM về trạng thái cũ tương ứng với bản Backup
