@@ -218,7 +218,7 @@
   ```
   > ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/58_WCI_CI_Step7.png)
   > * Tại phần **username**, ta sẽ đổi thành **Administrator** -> áp dụng các phần cấu hình password, network chỉ cho user này.
-  > * Chèn thêm **first_logon_behaviour=no** để Windows buộc người dùng đặt lại password cho lần login đầu tiên.
+  > * Chèn thêm **first_logon_behaviour=no** để Windows không buộc người dùng đặt lại password cho lần login đầu tiên.
   > * Thêm dòng **metadata_services=cloudbaseinit.metadata.services.configdrive.ConfigDriveService** để Cloudbase-Init đọc dữ liệu từ ổ đĩa ảo **CloudInit Drive** mà ta đã thêm ở bước trước.
   > * Tại phần **plugins**, ta sẽ thêm 2 plugins về cấu hình Network, Password; ở đây có thể bỏ phần plugins này thì mặc định Cloudbase-Init sẽ chạy tất cả các plugin mà có hỗ trợ cho Windows; nhưng vẫn nên thêm cụ thể các plugins mà ta cần dùng để phần cấu hình rõ ràng hơn và tránh các lỗi không cần thiết. Nếu metadata gửi từ Cloud-Init của proxmox có sự thay đổi thì sẽ thực thi các plugin theo thứ tự từ trái qua phải.
   > * Tham khảo thêm tại [Cloudbase-Init Docs](https://cloudbase-init.readthedocs.io/en/latest/tutorial.html#configuration-file)
