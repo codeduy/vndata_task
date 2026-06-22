@@ -192,29 +192,33 @@
 * Click **Finish**
   ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/57_WCI_CI_Step6.png)
 * Tiếp theo, ta truy cập thư mục **C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf**, sửa lại file **cloudbase-init.conf** theo nội dung sau:
-  ```
-  [DEFAULT]
-  username=Administrator
-  groups=Administrators
-  inject_user_password=true
-  first_logon_behaviour=no
-  config_drive_raw_hhd=true
-  config_drive_cdrom=true
-  config_drive_vfat=true
-  bsdtar_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\bsdtar.exe
-  mtools_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\
-  verbose=true
-  debug=true
-  log_dir=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\
-  log_file=cloudbase-init.log
-  default_log_levels=comtypes=INFO,suds=INFO,iso8601=WARN,requests=WARN
-  logging_serial_port_settings=
-  mtu_use_dhcp_config=true
-  ntp_use_dhcp_config=true
-  local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\
-  check_latest_version=true
-  metadata_services=cloudbaseinit.metadata.services.configdrive.ConfigDriveService
-  plugins=cloudbaseinit.plugins.common.networkconfig.NetworkConfigPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin
+```
+[DEFAULT]
+username=Administrator
+groups=Administrators
+inject_user_password=true
+first_logon_behaviour=no
+check_latest_version=true
+config_drive_raw_hhd=true
+config_drive_cdrom=true
+config_drive_vfat=true
+bsdtar_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\bsdtar.exe
+mtools_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\bin\
+local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\
+metadata_services=cloudbaseinit.metadata.services.configdrive.ConfigDriveService
+verbose=true
+debug=true
+log_dir=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\log\
+log_file=cloudbase-init.log
+default_log_levels=comtypes=INFO,suds=INFO,iso8601=WARN,requests=WARN
+mtu_use_dhcp_config=true
+ntp_use_dhcp_config=true
+netbios_host_name_compatibility=true
+rdp_set_keepalive=true
+ntp_enable_service=true
+real_time_clock_utc=true
+allow_reboot=true
+plugins=cloudbaseinit.plugins.common.mtu.MTUPlugin,cloudbaseinit.plugins.windows.ntpclient.NTPClientPlugin,cloudbaseinit.plugins.common.sethostname.SetHostNamePlugin,cloudbaseinit.plugins.common.networkconfig.NetworkConfigPlugin,cloudbaseinit.plugins.common.setuserpassword.SetUserPasswordPlugin,cloudbaseinit.plugins.windows.extendvolumes.ExtendVolumesPlugin,cloudbaseinit.plugins.common.userdata.UserDataPlugin,cloudbaseinit.plugins.common.localscripts.LocalScriptsPlugin
   ```
   > ![](../Proxmox/images/Cloud-Init/Windows_CloudbaseInit/58_WCI_CI_Step7.png)
   > * Tại phần **username**, ta sẽ đổi thành **Administrator** -> áp dụng các phần cấu hình password, network chỉ cho user này.
